@@ -44,59 +44,100 @@
   top: 74px;
 }
 
-.person-text{
+.person-text {
+  position: absolute;
+  width: 49px;
+  height: 18px;
+  left: 1396.6px;
+  top: 124px;
 
-    position: absolute;
-    width: 49px;
-    height: 18px;
-    left: 1396.6px;
-    top: 124px;
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
 
-    /* font-family: 'SF Pro'; */
-    font-style: normal;
-    font-weight: 590;
-    font-size: 15px;
-    line-height: 38px;
-    /* identical to box height */
-
-
-    color: #000000;
+  color: #000000;
 }
 
-.chats-text{
+.chats-text {
+  position: absolute;
+  width: 43px;
+  height: 18px;
+  left: 1624px;
+  top: 124px;
 
-    position: absolute;
-    width: 43px;
-    height: 18px;
-    left: 1624px;
-    top: 124px;
-    
-    /* font-family: 'SF Pro'; */
-    font-style: normal;
-    font-weight: 590;
-    font-size: 15px;
-    line-height: 38px;
-    /* identical to box height */
-    
-    color: #000000;
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: #000000;
 }
 
-.saves-text{
+.saves-text {
+  position: absolute;
+  width: 44px;
+  height: 18px;
+  left: 1514px;
+  top: 124px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* after div */
+
+.pin-map {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 59px;
+  top: 210px;
+}
+
+.union {
+  /* Union */
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 626px;
+  top: 210px;
+}  
+
+.calendar {
+  /* calendar-week */
+
 
     position: absolute;
-    width: 44px;
-    height: 18px;
-    left: 1514px;
-    top: 124px;
+    width: 50px;
+    height: 50px;
+    left: 1180px;
+    top: 210px;
+}
 
-    /* font-family: 'SF Pro'; */
-    font-style: normal;
-    font-weight: 590;
-    font-size: 15px;
-    line-height: 38px;
-    /* identical to box height */
+.add {
+  position: absolute;
+  width: 49px;
+  height: 49px;
+  left: 1499px;
+  top: 212px;
+}
 
-
-    color: #000000;
-
+.filter {
+ 
+position: absolute;
+height: 18px;
+left: 1624px;
+top: 26.6%;
 }
