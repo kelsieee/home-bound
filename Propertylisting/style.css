@@ -139,5 +139,14 @@
 position: absolute;
 height: 18px;
 left: 1624px;
-top: 26.6%;
+top: 12.1%;
+}
+
+.carouselll{
+    position: absolute;
+    width: 1586px;
+    height: 561px;
+    left: 72px;
+    top: 314px;
+    border-radius: 30px;
 }
