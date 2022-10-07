@@ -5985,17 +5985,8 @@ textarea.form-control-lg {
   padding: 1rem 1rem;
   color: #212529;
 }
-
-.carousel {
-  position: relative;
-  width: 1586px;
-  height: 561px;
-  left: 72px;
-  top: 314px;
-  border-radius: 30px;
-
-
-}
+/* 
+ */
 
 .carousel.pointer-event {
   touch-action: pan-y;
