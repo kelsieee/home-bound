@@ -2462,6 +2462,10 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
+.Searchbar {
+  height: 40px;
+  width: 200px;
+}
 
 .form-check {
   display: block;
@@ -3088,6 +3092,8 @@ textarea.form-control-lg {
   border-color: #6c757d;
 }
 
+
+
 .btn-success {
   color: #fff;
   background-color: #198754;
@@ -3098,6 +3104,18 @@ textarea.form-control-lg {
   background-color: #157347;
   border-color: #146c43;
 }
+
+.btn-info{
+  color:white;
+}
+
+.btn-info:hover, .btn-info:focus {
+  color: #fff;
+  background-color: #0a53be;
+  border-color: #0b5ed7;
+}
+
+
 .btn-check:focus + .btn-success, .btn-success:focus {
   color: #fff;
   background-color: #157347;
@@ -3117,12 +3135,12 @@ textarea.form-control-lg {
   background-color: #198754;
   border-color: #198754;
 }
-
+/* 
 .btn-info {
   color: #000;
   background-color: #0dcaf0;
   border-color: #0dcaf0;
-}
+} */
 .btn-info:hover {
   color: #000;
   background-color: #31d2f2;
@@ -11289,11 +11307,23 @@ html {
 }
 
 header {
-  padding-top: 9.5rem;
-  padding-bottom: 6rem;
+  padding-top: 10.5rem;
+  padding-bottom: 2.5rem;
+  
 }
 
 section {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+#head-navbar {
+  width: 100%;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+}
+.nav>li {
+  display: inline-block;
+  white-space: nowrap;
 }

@@ -21,29 +21,55 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item fs-4 me-4"><a class="nav-link" href="#about">Profile</a></li>
+                        <li class="nav-item fs-4" ><a class="nav-link" href="#services">Saves</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                     </ul>
                 </div>
             </div>
         </nav>
        
-
-
-
-
-    
-
-        <header class="bg-primary bg-gradient text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
-                <p class="lead">A functional Bootstrap 5 boilerplate for one page scrolling websites</p>
-                <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
+        <header class="bg-success bg-gradient text-white">
+            <div class="container-fluid text-center">
+                <!-- <h1 class="fw-bolder">Welcome </h1> -->
+                <!-- <p class="lead">bootstrap</p> -->
+                    <input class="Searchbar form-control me-1 d-inline-flex" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-lg btn-dark me-3 " type="submit">Enter  Location</button>
+                    <input class="Searchbar form-control me-1 d-inline-flex" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-lg btn-dark me-3" type="submit">Search </button>
+                    
+                    <li class="nav-item dropdown d-inline-flex">
+                        <a class="nav-link text-black dropdown-toggle fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Duration                       
+                         </a>
+                        <ul class="dropdown-menu me-3">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                     
+                    <a class="btn btn-lg btn-dark me-3" href="#about">Go</a>
+                    <a class="btn btn-lg btn-dark me-3" href="#about">add</a>
+                    
+                    <li class="nav-item dropdown d-inline-flex">
+                        <a class="nav-link text-black dropdown-toggle fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter                       
+                         </a>
+                        <ul class="dropdown-menu me-3">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
             </div>
         </header>
 
-
+<br>
+<br>
+<!-- <br> -->
 <!-- carousel -->
 <div id="carouselExampleControls" class="carousel slide carouselll" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -66,6 +92,24 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <!-- <section id="username"> -->
+    <div class="container ms-5 me-5 mt-5 pt-2 px-5 d-inline-flex" >
+        <div class="row d-inline-flex">
+            <img src="images/profile1.jpg" height='100px!' width="100px!" alt="" class="pe-5">
+        </div>
+        <div class="row">
+            <h1> <span style="font-weight: bold">username</span></h1>
+            <h3>Singapore, Region Postal Code</h3>
+        </div>
+        <div class="d-inline-flex  ">
+            <img src="images/bookmark-w.png" width='100px'alt="" class="me-4 mx-5">
+            <img src="images/white-chat.png" width='80px' height='91px' alt="" >
+        </div>
+    </div>
+
+<!-- </section> -->
+
+
         <!-- About section-->
         <section id="about">
             <div class="container px-4">
