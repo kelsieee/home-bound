@@ -17,10 +17,10 @@
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active ">
-            <img src="images/1_0.jpg.jpg" style='width:30px' class="d-block w-100" alt="...">
+            <img src="images/1_0.jpg.jpg" class="d-block w-100" alt="...">
           </div>
           <!-- <div class="carousel-item">
-            <img src="images/maxresdefault.jpg" class="d-block w-100" alt="...">
+            <img src="images/Photo8_PSR estate.jpg" class="d-block w-100" alt="...">
           </div> -->
           <div class="carousel-item">
             <img src="images/PSRproperty11.jpg.jpg" class="d-block w-100" alt="...">
@@ -35,15 +35,26 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-
-        <div class="mt-5 mx-">
-        
-        </div>
-        
         
     </div>
+    <div class="d-flex p-5 mx-5 mt-0 pt-0 pb-0">
+      <h3 class="fw-bold  mt-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+          <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        </svg>
+        Username</h3>
+      </div>
+      <div class="d-flex p-5 mx-5 mt-0 pt-0">
+      <h6>Singapore, 020030</h6>
 
+      
+
+      </div>
+
+    </div>
+
+      
     <div class="p-5 mx-5">
       <h3 class="fw-bold">Facilities</h3>
         <div class="bg-light py-3 px-2">
@@ -54,18 +65,15 @@
             
           
         <div class="d-flex justify-content-between p-2">
-          <img src="images/beds-bedroom-icon-25.png" style="width:30px" alt="">
           
           <div>
           2 bedrooms        </div>
         </div> 
 
         <div class="d-flex justify-content-between p-2">
-          <img src="images/1185871.png" style="width: 40px" alt="">
         Internet inclusive     
       </div> 
       <div class="d-flex justify-content-between p-2">
-    <img src="images/637270.png" style="width: 30px" alt="">
         1 shared restroom
         </div> 
 
@@ -335,33 +343,29 @@
             </svg>
             @username
           </div> -->
-          <div id="map">
-
-            <script>
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-            
-            
-            function initMap() {
-              // The location of Uluru
-              const uluru = { lat: -25.344, lng: 131.031 };
-              // The map, centered at Uluru
-              const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: uluru,
-              });
-              // The marker, positioned at Uluru
-              const marker = new google.maps.Marker({
-                position: uluru,
-                map: map,
-              });
-            }
-            
-            window.initMap = initMap;
-            
-         
+          <div id="map"></div>
+  
+          <!--Add a script by google -->
+          <script src=
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyDyeRjHSEVpqt_N54lKrJKxuFzN7sJI8fI&callback=initMap&libraries=&v=weekly" 
+              async>
           </script>
+        
+        <script>
 
-          </div>
+          function initMap() {
+      
+            var macc = {lat: 42.1382114, lng: -71.5212585};
+      
+            var map = new google.maps.Map(
+      
+                document.getElementById('map'), {zoom: 15, center: macc});
+      
+            var marker = new google.maps.Marker({position: macc, map: map});
+      
+          }
+      
+       </script>
         </div>
     </div>
     
