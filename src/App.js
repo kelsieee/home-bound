@@ -25,11 +25,18 @@ const center = {
   lng: 103.852119
 }
 
+const libraries = ['places'];
+
 function App() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    libraries: ['places'],
-  })
+    libraries,
+  });
+
+  // const { isLoaded } = useJsApiLoader({
+  //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  //   // googleMapsApiKey: 'AIzaSyAn79AiGzCUlR6BbwYaoNIpLXQ6gHAlY5I',
+  // })
 
   const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
