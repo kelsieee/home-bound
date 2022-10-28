@@ -26,6 +26,8 @@ body{
     align-self: center;
     justify-self: center;
     margin-top: 30%;
+    animation: monitorIn 3s ease-in-out forwards; /* assign animation to monitor with 'monitorIn' as keyframe name */
+    opacity: 0;
 }
 
 #illustration{
