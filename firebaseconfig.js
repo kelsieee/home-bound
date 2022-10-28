@@ -1,8 +1,8 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 
 
 
@@ -27,45 +27,80 @@ const auth = getAuth();
 
 
 let signUp = document.getElementById('signUp')
+let loginBtn = document.getElementById('loginBtn')
 
-signUp.addEventListener("click", (e) => {
+if (signUp != null) {
+    signUp.addEventListener("click", (e) => {
 
-    const username = document.getElementById("username").value;
-    const dob = document.getElementById("dob").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById('password').value;
-    const roommate = document.getElementById('inputRoommate').checked;
-    const landlord = document.getElementById('inputLandlord').checked;
-    var type = "Not Selected"
-    if(roommate == true){
-        type = "Roommate";
-    }
-    else{
-        type = "Landlord";
-    }
+        const username = document.getElementById("username").value;
+        const dob = document.getElementById("dob").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById('password').value;
+        const roommate = document.getElementById('inputRoommate').checked;
+        const landlord = document.getElementById('inputLandlord').checked;
+        var type = "Not Selected"
+        if (roommate == true) {
+            type = "Roommate";
+        }
+        else {
+            type = "Landlord";
+        }
 
 
 
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log(user.uid)
-            set(ref(database, 'users/' + user.uid), {
-                username: username,
-                dob: dob,
-                email: email,
-                type: type
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user.uid)
+                set(ref(database, 'users/' + user.uid), {
+                    username: username,
+                    dob: dob,
+                    email: email,
+                    type: type
+                })
+
+
+                alert('user created')
+                // ...
             })
-            
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // ..
+            });
+    })
+}
 
-            alert('user created')
-            // ...
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage);
-            // ..
-        });
-})
+
+if (loginBtn != null) {
+    loginBtn.addEventListener("click", (e) => {
+        const inputEmail = document.getElementById('inputEmail').value
+        const inputPassword = document.getElementById('inputPassword').value
+        signInWithEmailAndPassword(auth, inputEmail, inputPassword)
+            .then((userCredential) => {
+                var currentdate = new Date()
+                var datetime = "Last Login: " + currentdate.getDay() + "/" + currentdate.getMonth()
+                    + "/" + currentdate.getFullYear() + " @ "
+                    + currentdate.getHours() + ":"
+                    + currentdate.getMinutes()
+                const user = userCredential.user;
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: datetime
+                }
+
+                )
+                alert("User Logged in!")
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage)
+            });
+
+    })
+}
+
