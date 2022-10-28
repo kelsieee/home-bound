@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -21,11 +22,14 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="landing.css">
 
-    <title>Home Bound</title>
+
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
 
 </head>
 
 <body>
+
+
     <div class="body-inner">
         <!-- Header start -->
         <!-- <header id="header" class="header-one"> -->
@@ -122,330 +126,204 @@
         <!-- </header> -->
         <!--/ Header end -->
 
+
         <section id="project-area" class="project-area solid-bg">
             <div class="container">
-                <div class="row text-center">
-                    <div class="col-lg-12">
-                        <h2 class="section-title">WELCOME!</h2>
-                        <h3 class="section-sub-title">Our listings</h3>
-                    </div>
+              <div class="row text-center">
+                <div class="col-lg-12">
+                  <h2 class="section-title">WELCOME!</h2>
+                  <h3 class="section-sub-title">Our listings</h3>
                 </div>
-                <!--/ Title row end -->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="shuffle-btn-group">
-                            <label class="active" for="all">
-                                <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">All
-                                Listings
-                            </label>
-                            <label for="accommodation">
-                                <input type="radio" name="shuffle-filter" id="accommodation" value="accommodation">Accommodation
-                            </label>
-                            <label for="roomies">
-                                <input type="radio" name="shuffle-filter" id="roomies" value="roomies">Roomies
-                            </label>
-                        </div><!-- project filter end -->
-
-
-                        <div class="row shuffle-wrapper">
-                            <div class="col-1 shuffle-sizer"></div>
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room1.jpg" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room1.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">JASON SMITH</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
+              </div>
+              <!--/ Title row end -->
+          
+              <div class="row">
+                <div class="col-12">
+                  <div class="shuffle-btn-group">
+                    <label class="active" for="all">
+                      <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Show All
+                    </label>
+                    <label for="commercial">
+                      <input type="radio" name="shuffle-filter" id="commercial" value="commercial">Roommates
+                    </label>
+                    <label for="apartment">
+                      <input type="radio" name="shuffle-filter" id="apartment" value="apartment">Roomies
+                    </label>
+                   
+                  </div><!-- project filter end -->
+          
+          
+                  <div class="row shuffle-wrapper">
+                    <div class="col-1 shuffle-sizer"></div>
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/room/room1.jpg" aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">JASON SMITH</a>
+                                    </h3>
+                                    <p class="project-cat">Accommodation</p>
                                 </div>
-                            </div><!-- shuffle item 1 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile1.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile1.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">Lily Kim</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 2 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room2.jpg" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room2.jpg" height='200px'
-                                            alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">Johnny Park</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 3 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room3.png" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room3.png" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">PRINSEP RESIDENCE</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 4 end -->
-
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room4.jpg" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room4.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">HOLLY RESIDENCE</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 5 end -->
-
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile2.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile2.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 6 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile3.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile3.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 7 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room5.jfif" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room5.jfif" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 8 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile4.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile4.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 9 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room5.jfif" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room5.jfif" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 10 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile5.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile5.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 11 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room7.jpg" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room7.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 12 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile6.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile6.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 13 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile7.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile7.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Roomies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 14 end -->
-
-                            <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;accommodation&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/room/room8.jpg" aria-label="project-img">
-                                        <img class="img-fluid" src="images/room/room8.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">Accommodation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- shuffle item 15 end -->
-
-                            <!-- <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;roomies&quot;]">
-                                <div class="project-img-container">
-                                    <a class="gallery-popup" href="images/profile/profile8.jpg"
-                                        aria-label="project-img">
-                                        <img class="img-fluid" src="images/profile/profile8.jpg" alt="project-img">
-                                        <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                                    </a>
-                                    <div class="project-item-info">
-                                        <div class="project-item-info-content">
-                                            <h3 class="project-item-title">
-                                                <a href="projects-single.html">NANYANG DORM</a>
-                                            </h3>
-                                            <p class="project-cat">2 BEDS</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>shuffle item 16 end -->
-
-                        </div><!-- shuffle end -->
-                    </div>
-                    <div class="col-12">
-                        <div class="general-btn text-center">
-                          <a class="btn btn-primary" href="projects.html">View All Listings</a>
+                            </div>
                         </div>
-                    </div>
-
-                </div><!-- Content row end -->
+                    </div><!-- shuffle item 1 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/profile/profile1.jpg"
+                                aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">Lily Kim</a>
+                                    </h3>
+                                    <p class="project-cat">Roomies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 2 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/room/room2.jpg" aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" height='200px'
+                                    alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">Johnny Park</a>
+                                    </h3>
+                                    <p class="project-cat">Accommodation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 3 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/room/room3.png" aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="images/roomie/1_0.jpg.jpg">PRINSEP RESIDENCE</a>
+                                    </h3>
+                                    <p class="project-cat">Accommodation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 4 end -->
+          
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/room/room4.jpg" aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">HOLLY RESIDENCE</a>
+                                    </h3>
+                                    <p class="project-cat">Accommodation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 5 end -->
+          
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/profile/profile2.jpg"
+                                aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">NANYANG DORM</a>
+                                    </h3>
+                                    <p class="project-cat">Roomies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 6 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/profile/profile3.jpg"
+                                aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">NANYANG DORM</a>
+                                    </h3>
+                                    <p class="project-cat">Roomies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 7 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/room/room5.jfif" aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">NANYANG DORM</a>
+                                    </h3>
+                                    <p class="project-cat">Accommodation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 8 end -->
+          
+                    <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                        <div class="project-img-container">
+                            <a class="gallery-popup" href="images/profile/profile4.jpg"
+                                aria-label="project-img">
+                                <img class="img-fluid" src="images/hero_1.jpeg" alt="project-img">
+                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                                <div class="project-item-info-content">
+                                    <h3 class="project-item-title">
+                                        <a href="projects-single.html">NANYANG DORM</a>
+                                    </h3>
+                                    <p class="project-cat">Roomies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- shuffle item 9 end -->
+          
+          
+                
+              </div><!-- Content row end -->
             </div>
             <!--/ Container end -->
-        </section><!-- Project area end -->
+          </section><!-- Project area end -->
+          
+          
 
 
 
