@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+    <title>Register Page</title>
+
+    <style>
+        input { 
+            text-align: center;
+        }
+    </style>
+
+</head>
+<script type="module" src="/firebaseconfig.js"></script>
+
+<body>
+    <!-- Navigation-->
+    <!-- <nav class="navbar navbar-expand-lg navbar bg-white fixed-top w-75" id="mainNav">
+        <div class="container px-2 py-1">
+            <a class="navbar-brand" href="#page-top">
+                <img src="images/homebound-graphics.png" width="372px" alt="">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item fs-4 me-4"><a class="nav-link" href="#about">Profile</a></li>
+                    <li class="nav-item fs-4" ><a class="nav-link" href="#services">Saves</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+                <!-- </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <div>
+        <p class="display-1 text-center fw-bold" style="margin:auto; margin-top:50px; margin-bottom:50px; padding-top: 80px;">Hey there, we're so happy to have you.
+        <i class="bi bi-emoji-laughing"></i></p>
+        <p class="display-5 text-center fw-bold mb-5">Create an account to get started.</p>
+    </div>
+
+    <!-- <div class="container">
+        <form>
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputName" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-stars"></i> Name</label>
+                <div class="col-sm-8">
+                    <input type="username" class="form-control form-control-lg bg-secondary bg-opacity-25 is-valid" style="border-radius: 30px" id="username" required>
+                    <div class="invalid-feedback">Enter a name.</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputDOB" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-lightning"></i> DOB</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-25 is-valid" style="border-radius: 30px;" id="dob" placeholder="DD   /   MM   /   YYYY" required>
+                    <div class="invalid-feedback">Enter a valid Date Of Birth.</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputEmail" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-envelope"></i> Email</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="email" required>
+                    <div class="invalid-feedback">Enter a valid email</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password" required>
+                    <div class="invalid-feedback">Enter a password</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputPassword2" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Re-enter Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password2" required>
+                    <div class="invalid-feedback">Password does not match</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputType" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-person-video2"></i> I'm registering as a...</label>
+                <div class="form-check form-check-inline col-sm-4">
+                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputRoommate" value="Roommate" required>
+                    <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">
+                        Roommate
+                    </label>
+                    <div class="invalid-feedback">Please select user type</div>
+                </div>
+
+                <div class="form-check form-check-inline col-sm-4">
+                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputLandlord" value="Landlord" required>
+                    <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">
+                        Landlord
+                    </label>
+                    <div class="invalid-feedback">Please select user type</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-secondary bg-opacity-50 btn-lg px-5 py-3 fw-bold" style="border-radius: 30px" id="signUp" name="signup_submit">Join the community  <i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+            </div>
+        </form>
+    </div> -->
+
+    <div class="container w-75">
+        <div>
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputName" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-stars"></i> Name</label>
+                <div class="col-sm-8">
+                    <input type="username" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px" id="username" required>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputDOB" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-lightning"></i> DOB</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="dob" placeholder="DD   /   MM   /   YYYY" required>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputEmail" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-envelope"></i> Email</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="email" required>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password" required>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputPassword2" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Re-enter Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password2" required>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-sm-1"></div>
+                <label for="inputType" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-person-video2"></i> I'm registering as a...</label>
+                <div class="form-check form-check-inline col-sm-4">
+                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputRoommate" value="Roommate" required>
+                    <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">
+                        Roommate
+                    </label>
+                    <div class="invalid-feedback">Please select user type</div>
+                </div>
+
+                <div class="form-check form-check-inline col-sm-4">
+                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputLandlord" value="Landlord" required>
+                    <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">
+                        Landlord
+                    </label>
+                    <div class="invalid-feedback">Please select user type</div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="text-center">
+                    <button type = "submit" class="btn btn-secondary bg-opacity-50 btn-lg px-5 py-3 fw-bold" style="border-radius: 30px" id="signUp" name="signup_submit">Join the community  <i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBjHnf4J60cmRVPvRx60iB1HdtYDoFus-8",
+        authDomain: "wad2-login.firebaseapp.com",
+        projectId: "wad2-login",
+        storageBucket: "wad2-login.appspot.com",
+        messagingSenderId: "416797111775",
+        appId: "1:416797111775:web:f572cad671caf62a1a806a",
+        databaseURL: "https://wad2-login-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+
+
+    signUp.addEventListener("click", (e) => {
+    
+        const username = document.getElementById("username").value;
+        const dob = document.getElementById("dob").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById('password').value;
+        const roommate = document.getElementById('inputRoommate').checked;
+        const landlord = document.getElementById('inputLandlord').checked;
+        var type = "Not Selected"
+        if(roommate == true){
+            type = "Roommate";
+        }
+        else{
+            type = "Landlord";
+        }
+    
+
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user.uid)
+                set(ref(database, 'users/' + user.uid), {
+                    username: username,
+                    dob: dob,
+                    email: email,
+                    type: type
+                })
+                
+
+                alert('user created')
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // ..
+            });
+    })
+</script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- <script src="/register.js"></script> -->
+
+</html>
