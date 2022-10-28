@@ -25,6 +25,7 @@ body{
     grid-area: left;
     align-self: center;
     justify-self: center;
+    margin-top: 30%;
 }
 
 #illustration{
@@ -33,6 +34,7 @@ body{
     justify-self: center;
     width: 80%;
     padding: 20%;
+    margin-right: 20%;
 }
 
 img#logo{
