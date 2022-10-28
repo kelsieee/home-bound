@@ -28,7 +28,7 @@ const auth = getAuth();
 
 let signUp = document.getElementById('signUp')
 let loginBtn = document.getElementById('loginBtn')
-let signOut = document.getElementById('signOut')
+let signOutBtn = document.getElementById('signOut')
 
 if (signUp != null) {
     signUp.addEventListener("click", (e) => {
@@ -105,8 +105,8 @@ if (loginBtn != null) {
     })
 }
 
-if (signOut != null) {
-    signOut.addEventListener("click", (e) => {
+if (signOutBtn != null) {
+    signOutBtn.addEventListener("click", (e) => {
         signOut(auth).then(() => {
             // Sign-out successful.
             alert("Successfully Signed Out!")
