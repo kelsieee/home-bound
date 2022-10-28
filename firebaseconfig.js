@@ -28,7 +28,7 @@ const auth = getAuth();
 
 let signUp = document.getElementById('signUp')
 let loginBtn = document.getElementById('loginBtn')
-let signOut = document.getElementById('signOut')
+let signOutBtn = document.getElementById('signOut')
 
 if (signUp != null) {
     signUp.addEventListener("click", (e) => {
@@ -36,7 +36,7 @@ if (signUp != null) {
         const username = document.getElementById("username").value;
         const dob = document.getElementById("dob").value;
         const email = document.getElementById("email").value;
-        const password = document.getElementById('password').value;
+        const password = document.getElementById('password1').value;
         const roommate = document.getElementById('inputRoommate').checked;
         const landlord = document.getElementById('inputLandlord').checked;
         var type = "Not Selected"
@@ -105,8 +105,8 @@ if (loginBtn != null) {
     })
 }
 
-if (signOut != null) {
-    signOut.addEventListener("click", (e) => {
+if (signOutBtn != null) {
+    signOutBtn.addEventListener("click", (e) => {
         signOut(auth).then(() => {
             // Sign-out successful.
             alert("Successfully Signed Out!")
