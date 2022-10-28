@@ -107,7 +107,6 @@ if (loginBtn != null) {
 
 if (signOut != null) {
     signOut.addEventListener("click", (e) => {
-        const auth = getAuth();
         signOut(auth).then(() => {
             // Sign-out successful.
             alert("Successfully Signed Out!")
