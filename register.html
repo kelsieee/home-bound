@@ -5,209 +5,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+
+    <!-- Vue 3: development -->
+    <script src="https://unpkg.com/vue@next"></script>
+
     <title>Register Page</title>
 
     <style>
-        input { 
-            text-align: center;
+        .bi {
+            color: #ffb600;
         }
+        ::placeholder {
+            color: black;
+            font-weight: bold;
+        }
+        
+        input[type=date] {
+            font-weight: bold;
+        }
+
+        input {
+            text-align: center;
+            width: 100%;
+        }
+
+        .input-group i {
+            position: absolute;
+        }
+
+        .input-group .bi {
+            padding: 10px;
+            color: #ffb600;
+            min-width: 50px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 20px;
+            background-color: black;
+            border-radius: 30px;
+        }
+        .form-check-input {
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .form-check-label {
+            font-size: 1.25rem;
+            padding-left: 5px;
+        }
+
+        input[type=radio] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-secondary:hover {
+            color: white;
+        }
+
     </style>
 
 </head>
 <script type="module" src="/firebaseconfig.js"></script>
 
-<body>
-    <!-- Navigation-->
-    <!-- <nav class="navbar navbar-expand-lg navbar bg-white fixed-top w-75" id="mainNav">
-        <div class="container px-2 py-1">
-            <a class="navbar-brand" href="#page-top">
-                <img src="images/homebound-graphics.png" width="372px" alt="">
+<div>
+    <div class="container justify-content-center">
 
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item fs-4 me-4"><a class="nav-link" href="#about">Profile</a></li>
-                    <li class="nav-item fs-4" ><a class="nav-link" href="#services">Saves</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
-                <!-- </ul>
-            </div>
-        </div>
-    </nav> -->
-
-    <div>
-        <p class="display-1 text-center fw-bold" style="margin:auto; margin-top:50px; margin-bottom:50px; padding-top: 80px;">Hey there, we're so happy to have you.
-        <i class="bi bi-emoji-laughing"></i></p>
-        <p class="display-5 text-center fw-bold mb-5">Create an account to get started.</p>
+        <p class="display-3 text-center fw-bold"
+            style="margin:auto; margin-top:50px; margin-bottom:50px; padding-top: 80px;">Hey there, we're so happy to
+            have you.
+            <i class="bi bi-emoji-laughing"></i>
+        </p>
+        <p class="display-6 text-center fw-bold mb-5">Create an account to get started.</p>
     </div>
-
-    <!-- <div class="container">
-        <form>
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputName" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-stars"></i> Name</label>
-                <div class="col-sm-8">
-                    <input type="username" class="form-control form-control-lg bg-secondary bg-opacity-25 is-valid" style="border-radius: 30px" id="username" required>
-                    <div class="invalid-feedback">Enter a name.</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputDOB" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-lightning"></i> DOB</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-25 is-valid" style="border-radius: 30px;" id="dob" placeholder="DD   /   MM   /   YYYY" required>
-                    <div class="invalid-feedback">Enter a valid Date Of Birth.</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputEmail" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-envelope"></i> Email</label>
-                <div class="col-sm-8">
-                    <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="email" required>
-                    <div class="invalid-feedback">Enter a valid email</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password" required>
-                    <div class="invalid-feedback">Enter a password</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputPassword2" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Re-enter Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password2" required>
-                    <div class="invalid-feedback">Password does not match</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputType" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-person-video2"></i> I'm registering as a...</label>
-                <div class="form-check form-check-inline col-sm-4">
-                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputRoommate" value="Roommate" required>
-                    <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">
-                        Roommate
-                    </label>
-                    <div class="invalid-feedback">Please select user type</div>
+    <div class="container" id="register">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-6">
+                <div class="input-group mb-3">
+                    <i class="bi bi-person-fill"></i>
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        type="username" placeholder="Name" id="username" v-model="name">
                 </div>
 
-                <div class="form-check form-check-inline col-sm-4">
-                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputLandlord" value="Landlord" required>
-                    <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">
-                        Landlord
-                    </label>
-                    <div class="invalid-feedback">Please select user type</div>
+                <div class="input-group mb-3">
+                    <i class="bi bi-calendar-fill"></i>
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        type="date"  id="dob" v-model="dob">
                 </div>
-                <div class="col-sm-1"></div>
-            </div>
 
-            <div class="row mb-5">
+                <div class="input-group mb-3">
+                    <i class="bi bi-envelope-fill"></i>
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        type="email" placeholder="Email" id="email" v-model="email">
+                </div>
+
+                <div class="input-group mb-3">
+                    <i class="bi bi-key-fill"></i>
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        type="password" placeholder="Password" id="password1" v-model="password">
+                </div>
+
+                <div class="input-group mb-3">
+                    <i class="bi bi-key-fill"></i>
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        type="password" placeholder="Re-enter Password" id="password2" v-model="cfm_password">
+                </div>
+
+                <div class="input-group mb-3 ">
+                    <div class="col text-center">
+                        <div class="form-check form-check-inline mt-2 ms-2">
+                            <input class="form-check-input" type="radio" name="usertype"
+                                id="inputRoommate" value="Roommate" v-model="user_type">
+                            <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">Roommate</label>
+                        </div>
+                        <div class="form-check form-check-inline mt-2 ms-2">
+                            <input class="form-check-input" type="radio" name="usertype"
+                                id="inputLandlord" value="Landlord" v-model="user_type">
+                            <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">Landlord</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-secondary bg-opacity-50 btn-lg px-5 py-3 fw-bold" style="border-radius: 30px" id="signUp" name="signup_submit">Join the community  <i class="bi bi-arrow-right-circle"></i></button>
-                </div>
-            </div>
-        </form>
-    </div> -->
-
-    <div class="container w-75">
-        <div>
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputName" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-stars"></i> Name</label>
-                <div class="col-sm-8">
-                    <input type="username" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px" id="username" required>
-                    <span class="error" aria-live="polite"></span>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputDOB" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-lightning"></i> DOB</label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="dob" placeholder="DD   /   MM   /   YYYY" required>
-                    <span class="error" aria-live="polite"></span>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputEmail" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-envelope"></i> Email</label>
-                <div class="col-sm-8">
-                    <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="email" required>
-                    <span class="error" aria-live="polite"></span>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password" required>
-                    <span class="error" aria-live="polite"></span>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputPassword2" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-fingerprint"></i> Re-enter Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;" id="password2" required>
-                    <span class="error" aria-live="polite"></span>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-sm-1"></div>
-                <label for="inputType" class="col-sm-2 col-form-label col-form-label-lg fw-bold text-end"><i class="bi bi-person-video2"></i> I'm registering as a...</label>
-                <div class="form-check form-check-inline col-sm-4">
-                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputRoommate" value="Roommate" required>
-                    <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">
-                        Roommate
-                    </label>
-                    <div class="invalid-feedback">Please select user type</div>
+                    <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div>
+                    <button type = "submit" class="btn btn-secondary btn-lg px-5 py-3 fw-bold" 
+                        style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">Join the community  
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                    <br><br>
+                    <p class=" text-center">Don't have an account? <a data-toggle="tab" href="#signup">Sign Up</a></p>
                 </div>
 
-                <div class="form-check form-check-inline col-sm-4">
-                    <input type="radio" class="form-check-input form-check-input-lg" name="usertype" id="inputLandlord" value="Landlord" required>
-                    <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">
-                        Landlord
-                    </label>
-                    <div class="invalid-feedback">Please select user type</div>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="text-center">
-                    <button type = "submit" class="btn btn-secondary bg-opacity-50 btn-lg px-5 py-3 fw-bold" style="border-radius: 30px" id="signUp" name="signup_submit">Join the community  <i class="bi bi-arrow-right-circle"></i></button>
-                </div>
             </div>
         </div>
     </div>
+    </body>
 
-</body>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    users: [], // need to link to db
+                    name: '',
+                    dob: '',
+                    email: '',
+                    password: '',
+                    cfm_password: '',
+                    user_type: '',
+                    show: false,
+                    error: ''
+                };
+            },
+            methods: {
+                signup() {
+                    console.log("in validate")
+                    this.show = false;
 
-<!-- <script type="module">
+                    if (this.name == ''|| this.dob == '' || this.email == '' || this.password == '' || this.cfm_password == '' || this.user_type == '') { 
+                        this.error = "Please fill in all the fields!";
+                        this.show = true;
+                    } 
+                    if (this.password != this.cfm_password) {
+                            this.error = "Passwords must match!";
+                            this.show = true;
+                    }
+                }
+            }
+        });
+        const vm = app.mount('#register');
+    </script>
+
+    <!-- <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
     import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
@@ -279,7 +248,9 @@
     })
 </script> -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<!-- <script src="/register.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/register.js"></script> -->
 
 </html>
