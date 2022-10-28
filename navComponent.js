@@ -12,6 +12,12 @@ main.component('nav-component', {
     
     template: `
 
+    <style>
+      .dropdown-menu {
+        width: 100%;
+        }
+    </style>
+
 
     <body>
     <nav class="navbar navbar-expand-lg bg-light ">
@@ -21,7 +27,7 @@ main.component('nav-component', {
             <ul class=" list-unstyled navbar   my-1 mx-3 my-lg-0 ">
 
                 <li>
-                    <img src="logo.png" style="width: 300px" alt="">
+                    <img src="images/logo.png" style="width: 300px" alt="">
                 </li>
                 </ul>
             <div></div>
@@ -92,15 +98,16 @@ main.component('nav-component', {
         <ul class="navbar-nav  mb-2 mb-lg-2 container-fluid">
            
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="35" fill="black" class="bi bi-sliders2" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
                     </svg>
-                </a>
+                </span>
 
                 <ul class="dropdown-menu dropdown-menu-lg-end">
+                <div class="pe-5 ps-3">
                 <li><h4>Roomies</h4></li>
-                <li><a class="dropdown-item" href="#"><h6>Cleanliness</h6></a></li>
+                <li><h6>Cleanliness</h6></li>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                     <label class="form-check-label" for="inlineRadio1">1</label>
@@ -123,7 +130,7 @@ main.component('nav-component', {
                   </div>
 
 
-                <li><a class="dropdown-item" href="#"><h6>Overnight Stay</h6></a></li>
+                <li><h6>Overnight Stay</h6></li>
                 <li>
                     
                     <div class="form-check form-check-inline">
@@ -139,33 +146,33 @@ main.component('nav-component', {
                 </li>
                 <li><hr class="dropdown-divider"></li>
                 <li><h4>Accomodation</h4></li>
-                <li><a class="dropdown-item" href="#"><h6>Price per month</h6></a></li>
+                <li><h6>Price per month</h6></li>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1"> &lt;1000</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">1000&lt;1500</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio3">1500&lt;2000</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio4">2000-2500</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio5">&gt;2500</label>
-                  </div>
+                  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1"> &lt;1000</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">1000&lt;1500</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio3">1500&lt;2000</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio4">2000-2500</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio5">&gt;2500</label>
+                </div>
 
 
 
-                <li><a class="dropdown-item" href="#"><h6>Number of Rooms</h6></a></li>
-                
+                <li><h6>Number of Rooms</h6></li>
+                <li>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -188,7 +195,20 @@ main.component('nav-component', {
                       </div>
 
 
+
                 </li>
+
+                <li class="py-2">
+                <form>
+                <button type="button" class="btn form-control  me-2  bg-success bg-opacity-25" style="border-radius: 30px;"  type="submit">Go</button>
+                </form>
+                </li>
+                
+                
+                </div>
+
+                
+
                 </ul>
           </li>
         </form>
