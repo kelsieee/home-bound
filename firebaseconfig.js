@@ -2,7 +2,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
 import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 
 
 
@@ -28,6 +28,7 @@ const auth = getAuth();
 
 let signUp = document.getElementById('signUp')
 let loginBtn = document.getElementById('loginBtn')
+let signOut = document.getElementById('signOut')
 
 if (signUp != null) {
     signUp.addEventListener("click", (e) => {
@@ -101,6 +102,22 @@ if (loginBtn != null) {
                 alert(errorMessage)
             });
 
+    })
+}
+
+if (signOut != null) {
+    signOut.addEventListener("click", (e) => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            alert("Successfully Signed Out!")
+        }).catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage)
+
+        });
     })
 }
 
