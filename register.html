@@ -77,51 +77,54 @@
         <p class="display-3 text-center fw-bold"
             style="margin:auto; margin-top:50px; margin-bottom:50px; padding-top: 80px;">Hey there, we're so happy to
             have you.
-            <i class="bi bi-emoji-laughing"></i>
+            <i class="bi bi-emoji-laughing ms-2"></i>
         </p>
         <p class="display-6 text-center fw-bold mb-5">Create an account to get started.</p>
     </div>
     <div class="container" id="register">
         <div class="row justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <i class="bi bi-person-fill"></i>
                     <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                         type="username" placeholder="Name" id="username" v-model="name">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <i class="bi bi-calendar-fill"></i>
                     <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                         type="date"  id="dob" v-model="dob">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <i class="bi bi-envelope-fill"></i>
-                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                    <input class="input-field form-control-lg bg-secondary bg-opacity-25 fw-light" style="border-radius: 30px;"
                         type="email" placeholder="Email" id="email" v-model="email">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <i class="bi bi-key-fill"></i>
                     <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                         type="password" placeholder="Password" id="password1" v-model="password">
                 </div>
 
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <i class="bi bi-key-fill"></i>
                     <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                         type="password" placeholder="Re-enter Password" id="password2" v-model="cfm_password">
                 </div>
 
-                <div class="input-group mb-3 ">
-                    <div class="col text-center">
-                        <div class="form-check form-check-inline mt-2 ms-2">
+                <div class="input-group mb-4">
+                    <div class="d-flex justify-content-center col text-center">
+                        <p class="fs-5 fw-bold mt-1 me-4 mt-3">
+                            I am a...
+                        </p>
+                        <div class="form-check form-check-inline mt-3 ms-2">
                             <input class="form-check-input" type="radio" name="usertype"
                                 id="inputRoommate" value="Roommate" v-model="user_type">
                             <label class="form-check-label form-check-label-lg fw-bold" for="inputRoommate">Roommate</label>
                         </div>
-                        <div class="form-check form-check-inline mt-2 ms-2">
+                        <div class="form-check form-check-inline mt-3 ms-2">
                             <input class="form-check-input" type="radio" name="usertype"
                                 id="inputLandlord" value="Landlord" v-model="user_type">
                             <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">Landlord</label>
@@ -132,7 +135,7 @@
                     <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div>
                     <button type = "submit" class="btn btn-secondary btn-lg px-5 py-3 fw-bold" 
                         style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">Join the community  
-                        <i class="bi bi-arrow-right-circle"></i>
+                        <i class="bi bi-arrow-right-circle ms-2"></i>
                     </button>
                 </div>
 
