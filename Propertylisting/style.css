@@ -305,3 +305,7 @@ button:disabled {
   cursor: auto;
 }
 
+.carousel-item {
+  height: 520px;
+  width: 790px;
+}
