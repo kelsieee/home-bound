@@ -69,18 +69,18 @@
 
         <p class="display-1 text-center fw-bold" style="margin:auto; margin-top:50px; margin-bottom:50px;">Feels great
             to be back </p>
-        <p class="display-5 text-center fw-bold mb-5">Log in to continue</p>
+        <p class="display-5 text-center fw-bold mb-5">Log in to continue.</p>
             
         <div class="container" id="form">
             <div class="row justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-4">
                         <i class="bi bi-person-fill"></i>
                         <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                             type="email" placeholder="Email" id="inputEmail" v-model="inputEmail">
                     </div>
 
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-4">
                         <i class="bi bi-envelope-fill"></i>
                         <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                             type="password" placeholder="Password" id="inputPassword" v-model="inputPassword">
@@ -89,9 +89,11 @@
                     <div class="text-center">
                         <div class="alert alert-danger p-30" v-if="show">{{error}}</div>
                         <button type="submit" class="btn btn-secondary btn-lg px-5 py-3 mt-3" 
-                            style="border-radius: 30px" id = "loginBtn" @click="validate">Let's Go!</button>
+                            style="border-radius: 30px" id = "loginBtn" @click="validate">Let's Go!
+                            <i class="bi bi-arrow-right-circle ms-1"></i>
+                        </button>
                     </div>
-                    <p class=" text-center mt-3">Don't have an account? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+                    <p class=" text-center mt-4">Don't have an account? <a data-toggle="tab" href="#signup">Sign up now.</a></p>
                 </div>
             </div>
         </div>
