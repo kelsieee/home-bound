@@ -1,0 +1,225 @@
+/* top of page */
+.logo-1 {
+  position: absolute;
+  width: 372px;
+  height: 90px;
+  left: 43px;
+  top: 38px;
+}
+
+.divider-1 {
+  position: absolute;
+  width: 1677px;
+  height: 0px;
+  left: 19px;
+  top: 175.51px;
+
+  border: 1px solid #d1d1d1;
+  transform: rotate(-0.14deg);
+}
+
+/* icons */
+
+.saved {
+  position: absolute;
+  width: 44px;
+  height: 78px;
+  left: 1512px;
+  top: 64px;
+}
+
+.chat {
+  position: absolute;
+  width: 44px;
+  height: 78px;
+  left: 1624px;
+  top: 64px;
+}
+
+.person {
+  position: absolute;
+  width: 60px;
+  height: 65px;
+  left: 1389px;
+  top: 74px;
+}
+
+.person-text {
+  position: absolute;
+  width: 49px;
+  height: 18px;
+  left: 1396.6px;
+  top: 124px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.chats-text {
+  position: absolute;
+  width: 43px;
+  height: 18px;
+  left: 1624px;
+  top: 124px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.saves-text {
+  position: absolute;
+  width: 44px;
+  height: 18px;
+  left: 1514px;
+  top: 124px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 38px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+/* after div */
+
+.pin-map {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 59px;
+  top: 210px;
+}
+
+.union {
+  /* Union */
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 626px;
+  top: 210px;
+}
+
+.calendar {
+  /* calendar-week */
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 1180px;
+  top: 210px;
+}
+
+.add {
+  position: absolute;
+  width: 49px;
+  height: 49px;
+  left: 1499px;
+  top: 212px;
+}
+
+.filter {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 1180px;
+  top: 210px;
+  /*   
+  position: absolute;
+  height: 18px;
+  left: 1624px;
+  top: 12.1%; */
+}
+
+
+
+.profilepic {
+  position: absolute;
+  width: 109px;
+  height: 111px;
+  left: 72px;
+  top: 930px;
+  border-radius: 50%;
+
+  background: #d9d9d9;
+}
+.username {
+  position: absolute;
+  width: 228px;
+  height: 60px;
+  left: 229px;
+  top: 939px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 60px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.location {
+  position: absolute;
+  width: 334px;
+  height: 30px;
+  left: 262px;
+  top: 1007px;
+
+  /* font-family: 'SF Pro'; */
+  font-style: normal;
+  font-weight: 274;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.geo {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 229px;
+  top: 1010px;
+}
+
+.bookmarkw {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 1266px;
+  top: 954px;
+}
+
+.chatw {
+
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 1392px;
+  top: 959px;
+  
+}
+
+.alert1{
+  position: absolute;
+  width: 560px;
+  height: 140px;
+  left: 72px;
+  top: 547px;
+  
+}
