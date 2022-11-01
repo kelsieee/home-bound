@@ -6,39 +6,69 @@
     <title>Roomie Listing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <script src="js/scripts.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+  
   </head>
   <body>
 
   
     <!-- <div class="d-flex align-items-center justify-content-center"> -->
     <div class="d-flex p-5 mx-5 justify-content-center mx-auto w-50">
-      <img src="images/Screenshot 2022-10-19 at 7.34.35 PM.png" class="d-block w-100" alt="..." style="border-radius:20px">
-
-
-      <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active ">
-            <img src="images/1_0.jpg.jpg" class="d-block w-100" alt="...">
-          </div> -->
-          <!-- <div class="carousel-item">
-            <img src="images/Photo8_PSR estate.jpg" class="d-block w-100" alt="...">
-          </div> -->
-          <!-- <div class="carousel-item">
-            <img src="images/PSRproperty11.jpg.jpg" class="d-block w-100" alt="...">
-          </div>
+      
+      <form>
+        <div class="holder image-upload">
+          <label for="photo">
+               <img id="imgPreview" src="images/Screenshot 2022-10-19 at 7.34.35 PM.png" alt="pic" 
+               style="border-radius:30px"/>
+          </label>
+          <input type="file" name="photograph"
+          id="photo" required="true" />
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div> -->
-        
+      </div>
+      </form>
+
+        <style>
+          
+          img {
+              max-width: 300px;
+              max-height: 300px;
+              min-width: 500px;
+              min-height: 300px;
+          }
+          input[type="file"] {
+              margin-top: 5px;
+          }
+          .heading {
+              font-family: Montserrat;
+              font-size: 45px;
+              color: green;
+          }
+          .image-upload>input {
+           display: none;
+            }
+        </style>
+
+        <script>
+          $(document).ready(() => {
+              $("#photo").change(function () {
+                  const file = this.files[0];
+                  if (file) {
+                      let reader = new FileReader();
+                      reader.onload = function (event) {
+                          $("#imgPreview")
+                            .attr("src", event.target.result);
+                      };
+                      reader.readAsDataURL(file);
+                  }
+              });
+          });
+        </script>
     </div>
+
+    
     <div class="d-flex p-5 mx-5 mt-0 pt-0 pb-0">
       <h3 class="fw-bold  mt-0 mx-auto">
     
