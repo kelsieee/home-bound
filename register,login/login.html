@@ -9,16 +9,16 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
 
     <!-- Vue -->
     <script src="https://unpkg.com/vue@next"></script>
 
     <title>Login</title>
-`
+
     <style>
-        .bi {
-            /* color: #ffb600; */
-        }
+      
         ::placeholder {
             color: black;
             font-weight: 500;
@@ -38,7 +38,7 @@
             /* color: #ffb600; */
             color: white;
             min-width: 50px;
-            text-align: center;
+            /* text-align: center; */
             margin-bottom: 40px;
             font-size: 20px;
             background-color: black;
@@ -64,8 +64,11 @@
 
 <script type = "module"  src = "/firebaseconfig.js"></script>
 
-<body>
-    <div class="container justify-content-center">
+<div id="main">
+    <nav-component></nav-component>
+</div>
+
+    <div class="container justify-content-center" >
 
         <p class="display-1 text-center fw-bold" style="margin:auto; margin-top:50px; margin-bottom:50px;">Welcome back!</p>
         <p class="display-5 text-center fw-bold mb-5">Log in to continue.</p>
@@ -156,6 +159,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../navComponent.js"></script>
+
+
+    <!-- <script src="https://unpkg.com/vue/dist/vue.min.js"></script> -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
