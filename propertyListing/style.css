@@ -4,19 +4,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 /* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-#container {
+
+.wrapper, .sidebar {
   height: 100%;
   display: flex;
 }
 
-#sidebar {
+.wrapper, #sidebar {
   flex-basis: 5rem;
   flex-grow: 1;
   padding: 1rem;
@@ -48,7 +43,7 @@ h2 {
   margin: 0 0 5px 0;
   flex-grow: 0;
 }
-
+/* 
 ul {
   list-style-type: none;
   padding: 0;
@@ -67,9 +62,10 @@ li {
   cursor: pointer;
 }
 
+
 li:nth-child(odd) {
   background-color: #fcfcfc;
-}
+} */
 
 button {
   width: 100%;

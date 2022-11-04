@@ -12,7 +12,7 @@ main.component('nav-component', {
     template: `
 
 
-    <body>
+    <body >
     <nav class="navbar navbar-expand-lg sticky-nav " style='background: #dbe6da; position:sticky '>
         <div class="container-fluid" >
             <ul class=" list-unstyled navbar my-1 mx-3 my-lg-0 ">

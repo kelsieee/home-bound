@@ -72,6 +72,11 @@ function initMap() {
         li.addEventListener("click", () => {
           map.setCenter(place.geometry.location);
         });
+
+
+          
+
+
       }
     }
   }
