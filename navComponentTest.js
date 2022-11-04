@@ -29,7 +29,7 @@ main.component('nav-component', {
 
             <li class="nav-item text-center mx-5 ">
                 <a class="nav-link" href="/register,login/register.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="black" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="black" class="bi bi-person-fill" viewBox="0 0 16 16" >
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     </svg>
                 
@@ -38,12 +38,12 @@ main.component('nav-component', {
             </li>
                 <li class="nav-item text-center">
                     <a class="nav-link" href="/home.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="44" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-                        </svg>
-                </a>
-                Homepage
-                </li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="44" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                            </svg>
+                    </a>
+                    Homepage
+                    </li>
             </ul>     
         </div>
         </nav>
@@ -67,7 +67,7 @@ main.component('nav-component', {
           </li>
           <li>
             <form>
-            <button type="button" class="btn form-control  me-2 bg-opacity-25" style="border-radius: 30px;"  type="submit" style="background-color:#67aa94; color:white">Go</button>
+              <button type="button" class="btn form-control  me-2 bg-opacity-25" style="border-radius: 30px;"  type="submit" style="background-color:#67aa94; color:white">Go</button>
             </form>
           </li>
         </ul>
@@ -76,17 +76,24 @@ main.component('nav-component', {
         
       <div class="row">
 
-          
-
         <div class="d-flex">
           
-        <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
-          <button type="button" class="btn  px-5   h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space: nowrap' > List a property  </button>
-          </a>
+          <a class="nav-link" href="/home.html">
+            <button type="button" class="btn  px-5   h-30" style='border-radius:30px; background-color:#67aa94 ;color:white' > +Listing  </button>
+            
+
+            </a>
+        <div class="d-flex">
           
-        <a class="nav-link" href="/roomieCreation.html">
-        <button type="button" class="btn  px-5   h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space:nowrap' >  List as a roommate  </button>
-        </a>
+          <a class="nav-link" href="/home.html">
+            <button type="button" class="btn  px-5 w-100  h-30" style='border-radius:30px; background-color:#67aa94; color:white'   white-space: nowrap;
+            text-align: center;> +Roomie  </button>
+            
+
+            </a>
+
+        <form class="search" role="menu" >
+
         
 
         <ul class="navbar-nav  mb-2 mb-lg-2 container-fluid">
