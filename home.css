@@ -868,6 +868,7 @@ ul.navbar-nav > li > a {
   opacity: 0;
   transform: perspective(1px) scale3d(0, 0, 0);
   transition: all 400ms;
+  
 }
 .shuffle-item .project-img-container:hover .gallery-popup .gallery-icon {
   opacity: 1;
@@ -876,6 +877,7 @@ ul.navbar-nav > li > a {
 .shuffle-item .project-img-container .project-item-info {
   position: absolute;
   top: 50%;
+
   margin-top: -10%;
   bottom: 0;
   left: 0;
@@ -950,6 +952,7 @@ ul.navbar-nav > li > a {
   color: #000;
   font-size: 10px;
   text-transform: uppercase;
+  
 }
 .shuffle-item .project-img-container:hover .project-item-info-content {
   opacity: 1;
