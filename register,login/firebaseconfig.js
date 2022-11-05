@@ -151,7 +151,7 @@ if(listProperty != null){
 
 
 
-if (signUp != "") {
+if (signUp != null) {
     signUp.addEventListener("click", (e) => {
 
         const username = document.getElementById("username").value;
