@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roomie Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
+
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <div id="main">
+    <nav-component></nav-component>
+    </div>
+
+    <div class="d-flex mt-5 justify-content-center">
+        <h1 class="fw-bold text-center">Your Favourites</h1>
+        <i class="bi bi-balloon-heart-fill ms-2 fa-3x"></i>
+    </div>
+    
+    <section  class="mt-0 mb-0" >
+      <div class="container">
+          <div class="row">
+          <div class="col-12">
+      
+              <div class="row shuffle-wrapper">
+              <div class="col-1 shuffle-sizer"></div>
+      
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                  <div class="project-container">
+                      <div class="project-img-container">
+                          <a class="gallery-popup" 
+                              aria-label="project-img">
+                              <img class="img-fluid" src="images/room/room1.jpg" alt="project-img">
+                              <span class="gallery-icon"  ><i class="bi bi-heart"  id='heart1' onclick="changeImage()"></i>
+                          </span>
+                          </a>
+                          <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                  <h3 class="project-item-title">
+                                      <a href="Propertylisting/index.html">1 Bedroom Hostel</a>
+                                  </h3>
+                                  <p class="project-cat">Accommodation</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-desc">
+                          <div class="project-item-price">$750 / month</div>
+                          <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>37 Defu Lane (East)</div>
+                          <div class="icon">
+                              <span><i class="fa fa-bed"></i>2</span>
+                              <span><i class="fa fa-bath"></i>1</span>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- shuffle item 1 end -->
+      
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
+                  <div class="project-container">
+                      <div class="project-img-container">
+                          <a class="gallery-popup"
+                              aria-label="project-img">
+                              <img class="img-fluid" src="images/room/room2.png" alt="project-img">
+                              <span class="gallery-icon"><i class="bi bi-heart" id='heart2' onclick="changeImage()" ></i>
+</span>
+                          </a>
+                          <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                  <h3 class="project-item-title">
+                                      <a href="Propertylisting/propertylisting.html">2 BedroomS in HDB</a>
+                                  </h3>
+                                  <p class="project-cat">Accommodation</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-desc">
+                          <div class="project-item-price">$2,100 / month</div>
+                          <div class="address"><span><i class="bi bi-geo-alt-fill"></i></span>115 Edgefield Plains (North-East)</div>
+                          <div class="icon">
+                              <span><i class="fa fa-bed"></i>2</span>
+                              <span><i class="fa fa-bath"></i>1</span>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- shuffle item 2 end -->
+
+              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
+                  <div class="project-container">
+                      <div class="project-img-container">
+                          <a class="gallery-popup" 
+                              aria-label="project-img">
+                              <img class="img-fluid" src="images/profile/profile1.jpg" alt="project-img">
+                              <span class="gallery-icon"><i class="bi bi-heart" id='heart3' onclick="changeImage()" ></i>
+</span>
+                          </a>
+                          <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                  <h3 class="project-item-title">
+                                      <a href="roomielisting/roomieListing.html">Jamie Natalia</a>
+                                  </h3>
+                                  <p class="project-cat">Roomies</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-desc">
+                          <div class="project-item-price">$1,000 / month</div>
+                          <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>Central, South, West</div>
+                          <div class="icon">
+                              <span><i class="fa fa-graduation-cap"></i>22</span>
+                              <span class="space"></span>
+                              <span><i class="fa fa-bed" ></i><span class="space2"></span>Looking for 1 room</span>
+                          </div>
+                      </div>
+                  </div>
+              </div><!-- shuffle item 3 end -->
+          
+          </div><!-- Content row end -->
+      </div><!--/ Container end -->
+      </section>
+    
+    <!-- Refer to my own external JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../navComponent.js"></script>
+
+
+    <!-- <script src="https://unpkg.com/vue/dist/vue.min.js"></script> -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
