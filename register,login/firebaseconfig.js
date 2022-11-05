@@ -32,6 +32,7 @@ let signOutBtn = document.getElementById('signOut')
 let listRoomie = document.getElementById('listRoomie')
 
 function createRoomie(){
+    
     const firstname = document.getElementById("firstname").value
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
@@ -42,20 +43,36 @@ function createRoomie(){
     const duration = document.getElementById("duration").value
     const introduction = document.getElementById("intro").value
     const hobbies = document.getElementById("hobbies").value
-    set(ref(database, 'roomie/' + name),{
-        name: name,
-        budget: budget,
-        time: time,
-        accommodation: accommodation,
-        date: date,
-        duration: duration,
-        introduction: introduction,
-        hobbies: hobbies
-    })
-    alert('roomie listed')
+    const phone = document.getElementById("phone").value
+    const email = document.getElementById("email").value
+    const tele = document.getElementById("tele").value
+
+    if(firstname!="" && lastname!="" && budget!="" && time!="" && accommodation!="" && date!=""
+        && duration!="" && introduction!="" && hobbies!="" && phone!="" && email!="" && tele!=""){
+            set(ref(database, 'roomie/' + name),{
+                budget: budget,
+                timeframe: time,
+                accommodation: accommodation,
+                movedate: date,
+                duration: duration,
+                intro: introduction,
+                hobbies: hobbies,
+            })
+        
+            set(ref(database, `roomie/${name}/contact`),{
+                phone: phone,
+                email: email,
+                tele: tele,
+            })
+            alert('roomie listed')
+        }
+
+    
+
+
 }
 
-if(listRoomie != null){
+if(listRoomie != ""){
     listRoomie.addEventListener("click", (e)=>{
         
         createRoomie()
@@ -67,7 +84,7 @@ if(listRoomie != null){
 
 
 
-if (signUp != null) {
+if (signUp != "") {
     signUp.addEventListener("click", (e) => {
 
         const username = document.getElementById("username").value;
@@ -112,7 +129,7 @@ if (signUp != null) {
 }
 
 
-if (loginBtn != null) {
+if (loginBtn != "") {
     loginBtn.addEventListener("click", (e) => {
         const inputEmail = document.getElementById('inputEmail').value
         const inputPassword = document.getElementById('inputPassword').value
@@ -142,7 +159,7 @@ if (loginBtn != null) {
     })
 }
 
-if (signOutBtn != null) {
+if (signOutBtn != "") {
     signOutBtn.addEventListener("click", (e) => {
         signOut(auth).then(() => {
             // Sign-out successful.

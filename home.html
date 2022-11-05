@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="plugins/slick/slick.css">
     <link rel="stylesheet" href="plugins/slick/slick-theme.css">
     <!-- Colorbox -->
-    <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+    <!-- <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> -->
     <!-- Template styles-->
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="landing.css">
@@ -90,10 +90,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room1.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room1.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"  ><i class="bi bi-heart"  id='heart1' onclick="changeImage()"></i>
+                            </span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -106,7 +107,7 @@
                         </div>
                         <div class="project-desc">
                             <div class="project-item-price">$750 / month</div>
-                            <div class="address"><span><i class="bi bi-geo-alt-fill"></i></span>37 Defu Lane (East)</div>
+                            <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>37 Defu Lane (East)</div>
                             <div class="icon">
                                 <span><i class="fa fa-bed"></i>2</span>
                                 <span><i class="fa fa-bath"></i>1</span>
@@ -118,10 +119,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room2.png"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room2.png" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart2' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -146,10 +148,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile1.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/profile/profile1.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart3' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -162,11 +165,11 @@
                         </div>
                         <div class="project-desc">
                             <div class="project-item-price">$1,000 / month</div>
-                            <div class="address"><span><i class="bi bi-geo-alt-fill"></i></span>Central, South, West</div>
+                            <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>Central, South, West</div>
                             <div class="icon">
                                 <span><i class="fa fa-graduation-cap"></i>22</span>
                                 <span class="space"></span>
-                                <span><i class="fa fa-bed"></i><span class="space2"></span>Looking for 1 room</span>
+                                <span><i class="fa fa-bed" ></i><span class="space2"></span>Looking for 1 room</span>
                             </div>
                         </div>
                     </div>
@@ -175,11 +178,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile2.jpg"
-                                aria-label="project-img">
-                                <img class="img-fluid" src="images/profile/profile2.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                            </a>
+                            <div class="gallery-popup" >
+                                <img class="img-fluid" src="images/profile/profile2.jpg">
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart4' onclick="changeImage()" ></i>
+                                </span>
+                            </div>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
                                     <h3 class="project-item-title">
@@ -204,15 +207,16 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room3.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room3.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart5' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
                                     <h3 class="project-item-title">
-                                        <a href="Propertylisting/propertylisting.html">2 Room HDB Flat</a>
+                                        <a href="Propertylisting/propertylisting.html" >2 Room HDB Flat</a>
                                     </h3>
                                     <p class="project-cat">Accommodation</p>
                                 </div>
@@ -232,10 +236,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile3.jpg"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/profile/profile3.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id="heart6" onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -261,10 +266,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room4.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room4.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart7' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -289,10 +295,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room5.jpg"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room5.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart8' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -317,10 +324,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room6.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room6.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart9' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -345,10 +353,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room7.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room7.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart10' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -374,10 +383,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile4.jpg"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/profile/profile4.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart11' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -403,10 +413,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room8.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room8.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart12' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -431,10 +442,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile5.jpg"
+                            <a class="gallery-popup" 
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/profile/profile5.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart13' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -460,10 +472,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/room/room9.jpg"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/room/room9.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart14' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -488,10 +501,11 @@
                 <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
                     <div class="project-container">
                         <div class="project-img-container">
-                            <a class="gallery-popup" href="images/profile/profile6.jpg"
+                            <a class="gallery-popup"
                                 aria-label="project-img">
                                 <img class="img-fluid" src="images/profile/profile6.jpg" alt="project-img">
-                                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                                <span class="gallery-icon"><i class="bi bi-heart" id='heart15' onclick="changeImage()" ></i>
+</span>
                             </a>
                             <div class="project-item-info">
                                 <div class="project-item-info-content">
@@ -609,6 +623,25 @@
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"></script>
 
+
+            <script>
+
+
+                function changeImage(){
+                    // let heart = document.getElementById('heart1');
+                    // console.log(heart)
+                    // let img = '<i class="bi bi-heart-fill">'
+                    // console.log(heart)
+                    // heart.innerHTML = ''
+                    // heart.innerHTML = img 
+                    // return heart   
+                    if($(this).attr('src') == '<i class="bi bi-heart-fill">')
+                        $(this).attr('src', '<i class="bi bi-heart">');
+                        else
+                        $(this).attr('src', '<i class="bi bi-heart-fill">');
+                    }
+            </script>
+
         <!-- Javascript Files -->
 
         <!-- initialize jQuery Library -->
@@ -619,7 +652,7 @@
         <script src="plugins/slick/slick.min.js"></script>
         <script src="plugins/slick/slick-animation.min.js"></script>
         <!-- Color box -->
-        <script src="plugins/colorbox/jquery.colorbox.js"></script>
+        <!-- <script src="plugins/colorbox/jquery.colorbox.js"></script> -->
         <!-- shuffle -->
         <script src="plugins/shuffle/shuffle.min.js" defer></script>
 
