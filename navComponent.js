@@ -1,31 +1,24 @@
 // Vue instance
-const main = Vue.createApp({
-
-
-    
-})
+const main = Vue.createApp({});
 
 // Create a new Vue component
-main.component('nav-component', {
-
-    
-    template: `
+main.component("nav-component", {
+  template: `
 
 
     <body >
-    <nav class="navbar" style='background: #dbe6da; position:sticky '>
+    <nav class="navbar" style='background: #dbe6da; position:sticky ;overflow:hidden; white-space: nowrap'>
         <div class="container-fluid" >
-            <ul class=" list-unstyled navbar my-1 mx-3 my-lg-0 ">
-
+            <ul class=" list-unstyled navbar  mx-3 my-0 ">
                 <li>
-                    <img src="/images/logo.png" style="width: 300px" alt="">
+                    <img src="/images/logo.png" style="width: 200px; display:inline-block" alt="">
                 </li>
                 </ul>
             <div>
             
             </div>
          
-            <ul class=" list-unstyled navbar my-1 mx-3 my-lg-0 ">
+            <ul class=" list-unstyled navbar my-1  my-0 ">
 
             <li class="nav-item text-center mx-5 ">
                 <a class="nav-link" href="/register,login/login.html">
@@ -48,45 +41,50 @@ main.component('nav-component', {
         </div>
         </nav>
 
-    <nav class="navbar position-sticky " style='background:#dbe6da; '>
-      <div class="container-fluid d-flex"  style='display:inline-block'>
-        <ul class="list-unstyled navbar my-1 mx-3 my-lg-0 d-flex"  style='display:inline-block'>
-          <li class="d-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-search px-2" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg>
-            <input class="form-control me-2  bg-opacity-25" style="border-radius: 30px; width:300px"type="search" placeholder="Where are you looking?" aria-label="Location">
-          </li>
-          <li class="d-flex">
+
+
+
+        <nav class="navbar" style='background: #dbe6da; position:sticky ;overflow:hidden; white-space: nowrap'>
+        <div class="container-fluid" >
+            <ul class=" list-unstyled navbar my-1  mx-3 my-0 ">
+                <li class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-search px-2" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+                  <input class="form-control me-2  bg-opacity-25" style="border-radius: 30px; width:300px"type="search" placeholder="Where are you looking?" aria-label="Location">
+                </li>
+                <li class="d-flex">
+                  
+                </li>
+                <li>
+                  <form>
+                  <button type="button" class="btn form-control  me-2 bg-opacity-25" style="border-radius: 30px;"  type="submit" style="background-color:#67aa94; color:white">Go</button>
+                  </form>
+                </li>
+
+              </li>
+                </ul>
+            <div>
             
-          </li>
-          <li>
-            <form>
-            <button type="button" class="btn form-control  me-2 bg-opacity-25" style="border-radius: 30px;"  type="submit" style="background-color:#67aa94; color:white">Go</button>
-            </form>
-          </li>
-        </ul>
-        <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
-        <button type="button" class="btn  me-2 d-inline-flex h-30" style='border-radius:30px; visibility:hidden; background-color:#67aa94 ;color:white; white-space: nowrap' > List a property  </button>
-      </a>
-        
-      <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
-      <button type="button" class="btn  me-2 d-inline-flex h-30" style='border-radius:30px; visibility:hidden; background-color:#67aa94 ;color:white; white-space: nowrap' > List a property  </button>
-    </a>
-      
-        <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
-        <button type="button" class="btn  me-2 d-inline-flex h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space: nowrap' > List a property  </button>
-      </a>
-        
+            </div>
+         
+            <ul class=" list-unstyled navbar my-1  my-0 ">
 
-        <a class="nav-link" href="/roomieCreation.html">
-        <button type="button" class="btn  px-5   h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space:nowrap' >  List as a roommate  </button>
-        </a>
-        
+            <li class="nav-item text-center  ">
+            <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
+            <button type="button" class="btn  me-2 d-inline-flex h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space: nowrap' > List a property  </button>
+          </a>
+            </li>
+                <li class="nav-item text-center">
+                <a class="nav-link" href="/roomieCreation.html">
+                <button type="button" class="btn  px-5   h-30" style='border-radius:30px; background-color:#67aa94 ;color:white; white-space:nowrap' >  List as a roommate  </button>
+                </a>
+                </li>
 
-           
-            <li class="nav-item dropdown d-inline-flex">
-                <span class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+            <li class="nav-item text-center dropdown">
+            
+            <span class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="35" fill="black" class="bi bi-sliders2" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
                     </svg>
@@ -198,20 +196,17 @@ main.component('nav-component', {
                 
 
                 </ul>
-          </li>
-        </form>
-        </div>
-      </div>
-          
+            </li>
 
-      </nav>
+            </ul>     
+
+        </div>
+        </nav>
+
     
   </body>
     `,
-    
-
-
-})
+});
 
 // Link this Vue instance with <div id="main">
-main.mount("#main")
+main.mount("#main");
