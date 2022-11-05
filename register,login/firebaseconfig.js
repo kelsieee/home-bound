@@ -29,6 +29,43 @@ const auth = getAuth();
 let signUp = document.getElementById('signUp')
 let loginBtn = document.getElementById('loginBtn')
 let signOutBtn = document.getElementById('signOut')
+let listRoomie = document.getElementById('listRoomie')
+
+function createRoomie(){
+    const firstname = document.getElementById("firstname").value
+    const lastname = document.getElementById("lastname").value
+    const name = firstname + ' ' + lastname
+    const budget = document.getElementById("budget").value
+    const time = document.getElementById("time").value
+    const accommodation = document.getElementById("accommodation").value
+    const date = document.getElementById("movedate").value
+    const duration = document.getElementById("duration").value
+    const introduction = document.getElementById("intro").value
+    const hobbies = document.getElementById("hobbies").value
+    set(ref(database, 'roomie/' + name),{
+        name: name,
+        budget: budget,
+        time: time,
+        accommodation: accommodation,
+        date: date,
+        duration: duration,
+        introduction: introduction,
+        hobbies: hobbies
+    })
+    alert('roomie listed')
+}
+
+if(listRoomie != null){
+    listRoomie.addEventListener("click", (e)=>{
+        
+        createRoomie()
+    
+    })
+}
+
+
+
+
 
 if (signUp != null) {
     signUp.addEventListener("click", (e) => {
