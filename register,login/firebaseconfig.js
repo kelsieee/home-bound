@@ -30,6 +30,7 @@ let signUp = document.getElementById('signUp')
 let loginBtn = document.getElementById('loginBtn')
 let signOutBtn = document.getElementById('signOut')
 let listRoomie = document.getElementById('listRoomie')
+let listProperty = document.getElementById('listProperty')
 
 function createRoomie(){
     
@@ -66,17 +67,83 @@ function createRoomie(){
             })
             alert('roomie listed')
         }
+}
 
-    
+function createProperty(){
+    const title = document.getElementById("title").value
+    const bathroomquantity = document.getElementById("bathroomquantity").value
+    const bathroomshared = document.getElementById("bathroomshared").value
+    const bedroomquantity = document.getElementById("bedroomquantity").value
+    const bedroomshared = document.getElementById("bedroomshared").value
+    const internet = document.getElementById("internet").value
+    const rent = document.getElementById("rent").value
+    const bills = document.getElementById("bills").value
+    const deposit = document.getElementById("deposit").value
+    const property = document.getElementById("property").value
+    const furnishing = document.getElementById("furnishing").value
+    const gender = document.getElementById("gender").value
+    const date = document.getElementById("date").value
+    const duration = document.getElementById("duration").value
+    const accommodation = document.getElementById("accommodation").value
 
+    const place = document.getElementById("place").value
+    const roomies = document.getElementById("roomies").value
+
+    const phone = document.getElementById("phone").value
+    const email = document.getElementById("email").value
+    const tele = document.getElementById("tele").value
+
+    if(title!="" && bathroomquantity!="" && bathroomshared!="" && bedroomquantity!="" && bedroomshared!="" && internet!=""
+        && rent!="" && bills!="" && deposit!="" && property!="" && furnishing!="" && gender!="" && date!="" && duration!=""
+        && accommodation!="" && place!=""){
+            set(ref(database, 'property/' + title),{
+                internet: internet,
+                accommodation: accommodation,
+                property: property,
+                furnishing: furnishing,
+                gender: gender,
+                date: date,
+                duration: duration,
+                place: place,
+                roomies: roomies,
+            })
+        
+            set(ref(database, `property/${title}/bathroom`),{
+                bathroomquantity: bathroomquantity,
+                bathroomshared: bathroomshared,
+            })
+
+            set(ref(database, `property/${title}/bedroom`),{
+                bedroomquantity: bedroomquantity,
+                bedroomshared: bedroomshared,
+            })
+
+            set(ref(database, `property/${title}/financial`),{
+                rent: rent,
+                bills: bills,
+                deposit: deposit,
+            })
+
+            set(ref(database, `roomie/${title}/contact`),{
+                phone: phone,
+                email: email,
+                tele: tele,
+            })
+
+            alert('property listed')
+        }
 
 }
 
-if(listRoomie != ""){
+if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
-        
         createRoomie()
-    
+    })
+}
+
+if(listProperty != null){
+    listProperty.addEventListener("click", (e)=>{
+        createProperty()
     })
 }
 
@@ -84,7 +151,7 @@ if(listRoomie != ""){
 
 
 
-if (signUp != "") {
+if (signUp != null) {
     signUp.addEventListener("click", (e) => {
 
         const username = document.getElementById("username").value;
@@ -129,7 +196,7 @@ if (signUp != "") {
 }
 
 
-if (loginBtn != "") {
+if (loginBtn != null) {
     loginBtn.addEventListener("click", (e) => {
         const inputEmail = document.getElementById('inputEmail').value
         const inputPassword = document.getElementById('inputPassword').value
@@ -159,7 +226,7 @@ if (loginBtn != "") {
     })
 }
 
-if (signOutBtn != "") {
+if (signOutBtn != null) {
     signOutBtn.addEventListener("click", (e) => {
         signOut(auth).then(() => {
             // Sign-out successful.
