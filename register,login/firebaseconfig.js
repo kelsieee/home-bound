@@ -142,7 +142,7 @@ if(listRoomie != null){
 }
 
 if(listProperty != null){
-    listRoomie.addEventListener("click", (e)=>{
+    listProperty.addEventListener("click", (e)=>{
         createProperty()
     })
 }
