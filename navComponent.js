@@ -23,7 +23,7 @@ main.component("nav-component", {
             home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mx-4">
-            <a class="nav-link" href="/roomiecreation.html">
+            <a class="nav-link" href="/roomieCreation.html">
             
           
           <br>
