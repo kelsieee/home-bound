@@ -28,7 +28,7 @@
   #search-container12 button {
     padding: 1em 2em;
     margin-left: 1em;
-    background-color: #6759ff;
+    background-color: #67aa94;
     color: #ffffff;
     border-radius: 5px;
     margin-top: 0.5em;
@@ -55,11 +55,8 @@
   .image-container {
     text-align: center;
   }
-  img {
-    max-width: 100%;
-    object-fit: contain;
-    height: 15em;
-  }
+  
+  
   .container {
     padding-top: 1em;
     color: #110f29;

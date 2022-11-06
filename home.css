@@ -19,7 +19,7 @@ input[type="checkbox"] + label {
 }
 
 input[type="checkbox"] + label:before {
-  content: '\1F5A4';
+  content: '\2661';
   top: -11px;
   left: -8px;
   border: 1px solid transparent;    
