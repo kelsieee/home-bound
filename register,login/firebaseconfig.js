@@ -116,9 +116,9 @@ function uploadimage(){
 function createProperty(){
     const title = document.getElementById("title").value
     const bathroomquantity = document.getElementById("bathroomquantity").value
-    const bathroomshared = document.getElementById("bathroomshared").value
+    const bathroomshared = document.getElementById("bathroomshared").checked
     const bedroomquantity = document.getElementById("bedroomquantity").value
-    const bedroomshared = document.getElementById("bedroomshared").value
+    const bedroomshared = document.getElementById("bedroomshared").checked
     const internet = document.getElementById("internet").value
     const rent = document.getElementById("rent").value
     const bills = document.getElementById("bills").value
@@ -137,7 +137,8 @@ function createProperty(){
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
 
-    if(title!="" && bathroomquantity!="" && bathroomshared!="" && bedroomquantity!="" && bedroomshared!="" && internet!=""
+
+    if(title!="" && bathroomquantity!="" && bathroomshared!=null && bedroomquantity!="" && bedroomshared!=null && internet!=""
         && rent!="" && bills!="" && deposit!="" && property!="" && furnishing!="" && gender!="" && date!="" && duration!=""
         && accommodation!="" && place!=""){
             set(ref(database, 'property/' + title),{
