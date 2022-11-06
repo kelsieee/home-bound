@@ -3,6 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
 import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+import { getStorage, ref as sRef, uploadBytes } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
 
 
 
@@ -24,6 +25,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
+const storage = getStorage()
+const storageref = sRef(storage);
+console.log(storage)
 
 
 let signUp = document.getElementById('signUp')
@@ -71,32 +75,36 @@ function createRoomie(){
 
 function uploadimage(){
 
-    var storage = firebase.storage();
+    // var storage = firebase.storage();
     const roomieimage = document.getElementById("imgPreview").value;
-    var storageref = storage.ref();
-    var thisref = storageref.child(this.name).put(roomieimage);
-    thisref.on('state_changed',function(snapshot) {
+    var thisref = sRef(storage, roomieimage)
+    console.log(thisref)
 
-    }, function(error) {
-    
-    }, function() {
-    // Uploaded completed successfully, now we can get the download URL
-        thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-        //getting url of image
-        document.getElementById("url") = downloadURL;
-        alert('uploaded successfully');
-        saveMessage(downloadURL);
-        });
-        });
-    // Get values
-    var url = getInputVal('url');
+    uploadBytes(thisref, file).then((snapshot) => {
+        console.log('Uploaded a blob or file!');
+      });
+      
+    // thisref.on('state_changed',function(snapshot) {
 
-    if(roomieimage !="") {
-        set(ref(database, 'roomie/' + this.name),{
-            image: url
+    // }, function(error) {
     
-        })
-    }
+    // }, function() {
+    // // Uploaded completed successfully, now we can get the download URL
+    //     thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    //     //getting url of image
+    //     document.getElementById("url") = downloadURL;
+    //     alert('uploaded successfully');
+    //     saveMessage(downloadURL);
+    //     });
+    //     });
+    // // Get values
+    // var url = getInputVal('url');
+
+    // if(roomieimage !="") {
+    //     update(ref(database, 'roomie/' + "test"),{
+    //         image: url
+    //     })
+    // }
 
     // // Get values
     // var url = getInputVal('url');
@@ -184,6 +192,7 @@ if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
         
         createRoomie()
+        uploadimage()
         // uploadimage()
         
     })
