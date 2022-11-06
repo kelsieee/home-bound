@@ -175,7 +175,7 @@ function createProperty(){
                 deposit: deposit,
             })
 
-            set(ref(database, `roomie/${title}/contact`),{
+            set(ref(database, `property/${title}/contact`),{
                 phone: phone,
                 email: email,
                 tele: tele,
