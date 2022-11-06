@@ -69,6 +69,50 @@ function createRoomie(){
         }
 }
 
+function uploadimage(){
+
+    var storage = firebase.storage();
+    const roomieimage = document.getElementById("imgPreview").value;
+    var storageref = storage.ref();
+    var thisref = storageref.child(this.name).put(roomieimage);
+    thisref.on('state_changed',function(snapshot) {
+
+    }, function(error) {
+    
+    }, function() {
+    // Uploaded completed successfully, now we can get the download URL
+        thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        //getting url of image
+        document.getElementById("url") = downloadURL;
+        alert('uploaded successfully');
+        saveMessage(downloadURL);
+        });
+        });
+    // Get values
+    var url = getInputVal('url');
+
+    if(roomieimage !="") {
+        set(ref(database, 'roomie/' + this.name),{
+            image: url
+    
+        })
+    }
+
+    // // Get values
+    // var url = getInputVal('url');
+    // // Save message
+    // // saveMessage(url);
+
+    // Save message to firebase database
+    // function saveMessage(url){
+    //     var newMessageRef = messagesRef.push();
+    //     newMessageRef.set({
+    //     imageurl:url,
+    //     });
+    // }
+}
+
+
 function createProperty(){
     const title = document.getElementById("title").value
     const bathroomquantity = document.getElementById("bathroomquantity").value
@@ -137,7 +181,8 @@ function createProperty(){
 
 if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
-        createRoomie()
+        createRoomie();
+        uploadimage();
     })
 }
 
@@ -146,8 +191,6 @@ if(listProperty != null){
         createProperty()
     })
 }
-
-
 
 
 
