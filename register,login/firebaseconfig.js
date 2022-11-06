@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+import { getDatabase, set, ref, update, get, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 import { getStorage, ref as sRef, uploadBytes } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
 
@@ -36,6 +36,20 @@ let signOutBtn = document.getElementById('signOut')
 let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
 
+function getAllDataOnce(){
+    const dbRef = ref(database)
+    // console.log(dbRef)
+    get(child(dbRef , "users")).then((snapshot)=>{
+        var users = []
+        snapshot.forEach(childSnapshot => {
+            users.push(childSnapshot.val())
+            
+        });
+        console.log(users)
+    })
+
+   
+}
 function createRoomie(){
     
     const firstname = document.getElementById("firstname").value
@@ -192,7 +206,7 @@ if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
         
         createRoomie()
-        uploadimage()
+        getAllDataOnce()
         // uploadimage()
         
     })
