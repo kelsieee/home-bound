@@ -181,8 +181,10 @@ function createProperty(){
 
 if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
-        createRoomie();
-        uploadimage();
+        
+        createRoomie()
+        // uploadimage()
+        
     })
 }
 
