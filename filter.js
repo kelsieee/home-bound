@@ -26,6 +26,85 @@ function show_one_dollar(){
 } 
 }
 
+function show_two_dollar(){  
+    var twodollars = document.querySelectorAll('.twodollar');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < twodollars.length; ++i) { 
+    twodollars[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_three_dollar(){  
+    var threedollars = document.querySelectorAll('.threedollar');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < threedollars.length; ++i) { 
+    threedollars[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_wifiavailable(){
+    var wifiavailable = document.querySelectorAll('.wifiavailable');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < wifiavailable.length; ++i) { 
+    wifiavailable[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_nowifi(){
+    var nowifi = document.querySelectorAll('.nowifi');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < nowifi.length; ++i) { 
+    nowifi[i].style.display = 'inline-block'; 
+} 
+}
+
+
+function show_one_room (){
+    var oneroom = document.querySelectorAll('.oneroom');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < oneroom.length; ++i) { 
+    oneroom[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_two_room (){
+    var tworoom = document.querySelectorAll('.tworoom');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < tworoom.length; ++i) { 
+    tworoom[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_three_room (){
+    var threeroom = document.querySelectorAll('.threeroom');
+    var alls = document.querySelectorAll('.project-container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < threeroom.length; ++i) { 
+    threeroom[i].style.display = 'inline-block'; 
+} 
+}
+
+
 function reset(){
     var alls = document.querySelectorAll('.project-container');
     for (var i = 0; i < alls.length; ++i) { 
