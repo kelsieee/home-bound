@@ -136,7 +136,6 @@ function createProperty(){
     const gender = document.getElementById("gender").value
     const date = document.getElementById("date").value
     const duration = document.getElementById("duration").value
-    const accommodation = document.getElementById("accommodation").value
 
     const place = document.getElementById("place").value
     const roomies = document.getElementById("roomies").value
@@ -148,10 +147,9 @@ function createProperty(){
 
     if(title!="" && bathroomquantity!="" && bathroomshared!=null && bedroomquantity!="" && bedroomshared!=null && internet!=""
         && rent!="" && bills!="" && deposit!="" && property!="" && furnishing!="" && gender!="" && date!="" && duration!=""
-        && accommodation!="" && place!=""){
+        && place!=""){
             set(ref(database, 'property/' + title),{
                 internet: internet,
-                accommodation: accommodation,
                 property: property,
                 furnishing: furnishing,
                 gender: gender,
