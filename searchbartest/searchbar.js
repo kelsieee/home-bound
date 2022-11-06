@@ -4,42 +4,43 @@ let products = {
         productName: "1 bedroom hostel",
         category: "Accommodation",
         price: "750 per month",
-        image: "../images/room/room1.jpg",
+        // image: "../images/room/room1.jpg",
         location: "37 Defu Lane (East)"
       },
       {
         productName: "2 bedroom HDB",
         category: "Accommodation",
-        price: "2100 per month",
-        image: "../images/room/room2.png",
-        location: "115 Edgefield Plains (North-East)"
+        price: "750 per month",
+        // image: "../images/room/room1.jpg",
+        location: "37 Defu Lane (East)"
       },
       {
-        productName: "Jamie Natalia",
-        category: "Roommate",
-        price: "1000 per month",
-        image: "../images/profile/profile1.jpg",
-        location: "Central, South, West"
-      },
-      {
-        productName: "Oliver Simpson",
-        category: "Roommate",
-        price: "1400 per month",
-        image: "../images/profile/profile2.jpg",        location: "West, North"
-      },
-      {
-        productName: "2 room HDB flat",
+        productName: "Jamie",
         category: "Accommodation",
-        price: "2200 per month",
-        image: "../images/room/room3.jpg",
-        location: "810 Geylang Road, #01-86 (South-East)"
+        price: "750 per month",
+        // image: "../images/room/room1.jpg",
+        location: "37 Defu Lane (East)"
       },
       {
-        productName: "Sophie Hong",
-        category: "Roommate",
-        price: "800 per month",
-        image: "../images/profile/profile10.jpg",
-        location: "Central, West"
+        productName: "1 bedroom hostel",
+        category: "Accommodation",
+        price: "750 per month",
+        // image: "../images/room/room1.jpg",
+        location: "37 Defu Lane (East)"
+      },
+      {
+        productName: "1 bedroom hostel",
+        category: "Accommodation",
+        price: "750 per month",
+        // image: "../images/room/room1.jpg",
+        location: "37 Defu Lane (East)"
+      },
+      {
+        productName: "1 bedroom hostel",
+        category: "Accommodation",
+        price: "750 per month",
+        // image: "../images/room/room1.jpg",
+        location: "37 Defu Lane (East)"
       }
     ],
   };
@@ -76,16 +77,7 @@ let products = {
   
   //parameter passed from button (Parameter same as category)
   function filterProduct(value) {
-    //Button class code
-    let buttons = document.querySelectorAll(".button-value");
-    buttons.forEach((button) => {
-      //check if value equals innerText
-      if (value.toUpperCase() == button.innerText.toUpperCase()) {
-        button.classList.add("active");
-      } else {
-        button.classList.remove("active");
-      }
-    });
+
   
     //select all cards
     let elements = document.querySelectorAll(".card");
