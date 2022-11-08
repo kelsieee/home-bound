@@ -832,114 +832,45 @@ ul.navbar-nav > li > a {
   padding-right: 15px;
   padding-left: 15px;
 }
-.shuffle-btn-group {
-  display: inline-block;
-  margin: 20px 0 50px;
-  width: 100%;
-  border-bottom: 3px solid #67AB94;
+
+.tab {
+  overflow:hidden;
+  /* border: 1px solid #ccc; */
+  background-color: #dbe6da;
+  text-align: center;
+  margin: auto;
+  width: 16%;
 }
-.shuffle-btn-group label {
-  display: inline-block;
-  color: #212121;
-  font-size: 14px;
-  padding: 6px 25px;
-  padding-top: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.3s;
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
   cursor: pointer;
-  margin: 0;
+  padding: 14px 16px;
+  transition: 0.3s;
 }
-.shuffle-btn-group label.active {
-  color: #212121;
-  background: #67AB94;
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #67AB94;
 }
-.shuffle-btn-group label input {
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #67AB94;
+}
+
+/* Style the tab content */
+.tabcontent {
   display: none;
+  padding: 6px 12px;
+  /* border: 1px solid #ccc; */
+  border-top: none;
 }
 
-/* Project shuffle Item */
-.shuffle-item {
-  /* padding: 0px; */
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 20px;
-}
-.shuffle-item .project-container {
-  height: 300px;
-  margin-top:15px;
-}
-.shuffle-item .project-img-container {
-  position: relative;
-  overflow: hidden;
-  max-height: 210px;
-  /* margin-bottom: 10px; */
-}
-.shuffle-item .project-img-container img {
-  transform: perspective(1px) scale3d(1.1, 1.1, 1);
-  transition: all 400ms;
-}
-.shuffle-item .project-img-container:hover img {
-  transform: perspective(1px) scale3d(1.15, 1.15, 1);
-}
-.shuffle-item .project-img-container:after {
-  opacity: 0;
-  position: absolute;
-  content: "";
-  top: 0;
-  right: auto;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  transition: all 400ms;
-}
-.shuffle-item .project-img-container:hover:after {
-  opacity: 1;
-}
-.shuffle-item .project-img-container .gallery-popup .gallery-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  padding: 5px 12px;
-  color: #fff;
-  opacity: 0;
-  transform: perspective(1px) scale3d(0, 0, 0);
-  transition: all 400ms;
-  
-}
-.shuffle-item .project-img-container:hover .gallery-popup .gallery-icon {
-  opacity: 1;
-  transform: perspective(1px) scale3d(1, 1, 1);
-  
-}
-.shuffle-item .project-img-container .project-item-info {
-  position: absolute;
-  top: 50%;
-
-  margin-top: -10%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 30px;
-  z-index: 1;
-}
-.shuffle-item .project-img-container .project-item-info-content {
-  opacity: 0;
-  transform: perspective(1px) translate3d(0, 15px, 0);
-  /* transition: all 400ms; */
-}
-.shuffle-item .project-img-container .project-item-info-content .project-item-title {
-  font-size: 18px;
-}
-.shuffle-item .project-img-container .project-item-info-content .project-item-title a {
-  color: #fff;
-  font-weight: bold;
-}
-.shuffle-item .project-img-container .project-item-info-content .project-item-title a:hover {
-  color:#67AB94;
-}
 .project-container .project-desc  {
   max-height:160px;
   /* position: absolute; */
