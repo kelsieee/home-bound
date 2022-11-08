@@ -43,7 +43,7 @@
   </div>
   
     <!-- <div class="d-flex align-items-center justify-content-center"> -->
-    <div class="row mx-auto w-75 mt-5"> 
+    <div class="row mx-auto w-75 mt-5 mx-auto"> 
       <div class="col">
 
         <div class="holder image-upload mb-5">
@@ -76,18 +76,22 @@
             </div>
 
             <h3 class="fw-bold mt-5 mb-4">Lodging details</h3>
-            <div class="row d-flex mb-4 w-75">
+            <div class="row d-flex mb-3">
               <div class=" d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end ">Budget</label>
-                  <span class="ms-5 me-2 fs-5 mt-2">$</span>
+                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50">Budget</label>
+                  <span class="ms-5 ps-4 me-3 fs-5 mt-2">$</span>
                   <input type="text" class="form-control form-control-sm bg-light" style="border-radius: 10px" id="budget" required>
                   <span class="mx-3 fs-5 mt-2">per</span>
-                  <select class="form-select form-control form-control-sm bg-light w-100" style="border-radius: 10px" aria-label="accommodation" id="time" required>
-                      <option selected>Select Time Frame</option>
-                      <option value="1">week</option>
-                      <option value="2">month</option>
-                      <option value="3">year</option>
-                  </select>
+                  <div class="dropdown-center">
+                    <button class="btn btn-light border dropdown-toggle h-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="time" required>
+                      Select Time Frame
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item">Week</a></li>
+                      <li><a class="dropdown-item">Month</a></li>
+                      <li><a class="dropdown-item">Year</a></li>
+                    </ul>
+                  </div>
                   <span class="error" aria-live="polite"></span>
               </div>
           </div>
@@ -95,45 +99,63 @@
 
           
           
-          <div class="row d-flex mb-4 w-75">
+          <div class="row d-flex mb-4">
 
-            <div class="row mb-5 d-flex mb-4 w-75"> 
+            <div class="row mb-3 d-flex mb-3"> 
               <div class="col-sm-10 d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end " style="white-space:nowrap">Age</label>
-                  <input type="number" class="form-control form-control-lg bg-light h-75 mx-4 ms-5" style="border-radius: 10px" id="age" required>
+                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Age</label>
+                  <input type="number" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px" id="age" required>
                   <span class="error" aria-live="polite"></span>
               </div>
           </div>
 
-          <div class="row mb-5 d-flex mb-4 w-75"> 
+          <div class="row d-flex mb-3"> 
             <div class="col-sm-10 d-flex">
-                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end " style="white-space:nowrap">Location</label>
-                <input type="text" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px" id="location" required>
+                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Location</label>
+                <div class="dropdown-center">
+                  <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="location" required>
+                    Select Location
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Central</a></li>
+                    <li><a class="dropdown-item">North</a></li>
+                    <li><a class="dropdown-item">South</a></li>
+                    <li><a class="dropdown-item">East</a></li>
+                    <li><a class="dropdown-item">West</a></li>
+                  </ul>
+                </div>
+                
                 <span class="error" aria-live="polite"></span>
             </div>
         </div>
 
-              <div class="d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end w-75">No. of Rooms</label>
-                  <select class="form-select form-control form-control-sm bg-light mx-4" style="border-radius: 10px" aria-label="accommodation" id="rooms" required>
-                      <option selected>Select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                  </select>
+              <div class="col-sm-10 d-flex">
+                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">No. of Rooms</label>
+                  <div class="dropdown-center">
+                    <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="rooms" required>
+                      Select No. of Rooms
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item">1</a></li>
+                      <li><a class="dropdown-item">2</a></li>
+                      <li><a class="dropdown-item">3</a></li>
+                      <li><a class="dropdown-item">4</a></li>
+                      <li><a class="dropdown-item">5</a></li>
+                    </ul>
+                  </div>
               </div>
           </div>
-          <div class="row mb-2 d-flex mb-4 w-75">
+          <div class="row mb-2 d-flex mb-4">
               <div class="col-sm-10 d-flex">
-                  <label for="movedate" class="col-form-label col-form-label-lg fw-semibold text-end" style="white-space:nowrap">Ready to Move On</label>
-                  <input type="date" class="form-control form-control-lg bg-light mx-4 " style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
+                  <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Ready to Move On</label>
+                  <input type="date" class="form-control form-control-lg bg-light mx-4 ms-2 w-50" style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
                   <span class="error" aria-live="polite"></span>
               </div>
           </div>
-          <div class="row mb-5 d-flex mb-4 w-75"> 
+          <div class="row mb-5 d-flex mb-4"> 
               <div class="col-sm-10 d-flex">
                   <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end " style="white-space:nowrap">Stay Duration</label>
-                  <input type="text" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px" id="duration" required>
+                  <input type="text" class="form-control form-control-lg bg-light h-75 w-50 ms-5" style="border-radius: 10px" id="duration" required>
                   <span class="error" aria-live="polite"></span>
               </div>
           </div>
@@ -141,12 +163,6 @@
         </div>
               </div>
             </div>
-          <div class="d-flex justify-content-center p-5  mx-lg-5  row p-5 mx-auto mt-5">
-      
-        
-      
-        
-      </div>      
 
     </div>
 
@@ -205,9 +221,9 @@
 
 
 
-    <div class="px-5 mx-auto mx-lg-5">
+    <div class="px-5 mx-auto mx-lg-5 mb-5">
 
-      <h3 class="fw-bold">
+      <h3 class="fw-bold ms-3">
        
        Introduction</h3>
 
@@ -223,11 +239,11 @@
           <div class="px-2">
             
             </div>
-      </div>
-      <div class="mt-4"></div>
-      <div class="px-5 mx-auto mx-lg-5">
+    </div>
 
-        <h3 class="fw-bold">
+      <div class="px-5 mx-auto mx-lg-5 mb-5">
+
+        <h3 class="fw-bold ms-3">
          
          Your hobbies</h3>
   
@@ -246,7 +262,7 @@
         </div>
 
 
-    <div class="p-5 mx-auto w-75">
+    <div class="px-5 mx-5">
       
       <h3 class="fw-bold">
         
