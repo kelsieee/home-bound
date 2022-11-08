@@ -1,119 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Roomie Listing</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script type = "module"  src = "/register,login/firebaseconfig.js"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- <script src="js/scripts.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
-    <!-- Animation -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css">
-    <!-- slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-    <!-- Colorbox -->
-    <!-- <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> -->
-    <!-- Template styles-->
-    <link rel="stylesheet" href="home.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roomie Listing</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="module" src="/register,login/firebaseconfig.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <!-- <script src="js/scripts.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
-    <!-- <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-    <script type = "module"  src = "/register,login/firebaseconfig.js"></script>
-    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <!-- <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> -->
+  <!-- Template styles-->
+  <link rel="stylesheet" href="home.css">
+
+  <!-- <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+  <script type="module" src="/register,login/firebaseconfig.js"></script>
 
 
 
-  </head>
-  <body class="mx-auto">
 
-    <div id="main">
-      <nav-component></nav-component>
+</head>
+
+<body class="mx-auto">
+
+  <div id="main">
+    <nav-component></nav-component>
   </div>
-  
-    <!-- <div class="d-flex align-items-center justify-content-center"> -->
-    <div class="row mx-auto w-75 mt-5 mx-auto"> 
-      <div class="col">
 
-        <div class="holder image-upload mb-5">
-          <label for="photo">
-               <img id="imgPreview" src="add_profile.png" style="width:400px" alt="pic" 
-               style="border-radius:30px"/>
-          </label>
-          <!-- store url -->
-          <input type="hidden" name="url "id="url "> 
-          <input type="file" name="photograph" id="photo" required="true" />
-        </div>
+  <!-- <div class="d-flex align-items-center justify-content-center"> -->
+  <div class="row mx-auto w-75 mt-5 mx-auto">
+    <div class="col">
+
+      <div class="mb-5">
+        <label for="photo">
+          <img id='preview' src="add_profile.png" style="width:400px" alt="pic" style="border-radius:30px" />
+          <input type="file" id="inputFile" accept="image/png, image/png">
+        </label>
       </div>
+    </div>
 
-      <div class="col">
-          <h3 class="fw-bold mb-4">What is your name?</h3>
-          <div class="d-flex justify-content-between">
-             
-          <div>
-       
-            <div class="d-flex w-100">
-                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-25 me-2">First Name</label>
-                <input type="text" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px" id="firstname" required>
-                <span class="error" aria-live="polite"></span>
-            </div>
-            
-            <div class="d-flex mt-3 w-100">
-                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-25 me-2">Last Name</label>
-                <input type="text" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px" id="lastname" required>
-                <span class="error" aria-live="polite"></span>
-            </div>
+    <div class="col">
+      <h3 class="fw-bold mb-4">What is your name?</h3>
+      <div class="d-flex justify-content-between">
 
-            <h3 class="fw-bold mt-5 mb-4">Lodging details</h3>
-            <div class="row d-flex mb-3">
-              <div class=" d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50">Budget</label>
-                  <span class="ms-5 ps-4 me-3 fs-5 mt-2">$</span>
-                  <input type="text" class="form-control form-control-sm bg-light" style="border-radius: 10px" id="budget" required>
-                  <span class="mx-3 fs-5 mt-2">per</span>
-                  <div class="dropdown-center">
-                    <button class="btn btn-light border dropdown-toggle h-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="time" required>
-                      Select Time Frame
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item">Week</a></li>
-                      <li><a class="dropdown-item">Month</a></li>
-                      <li><a class="dropdown-item">Year</a></li>
-                    </ul>
-                  </div>
-                  <span class="error" aria-live="polite"></span>
+        <div>
+
+          <div class="d-flex w-100">
+            <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-25 me-2">First Name</label>
+            <input type="text" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px"
+              id="firstname" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
+
+          <div class="d-flex mt-3 w-100">
+            <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-25 me-2">Last Name</label>
+            <input type="text" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px"
+              id="lastname" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
+
+          <h3 class="fw-bold mt-5 mb-4">Lodging details</h3>
+          <div class="row d-flex mb-3">
+            <div class=" d-flex">
+              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50">Budget</label>
+              <span class="ms-5 ps-4 me-3 fs-5 mt-2">$</span>
+              <input type="text" class="form-control form-control-sm bg-light" style="border-radius: 10px" id="budget"
+                required>
+              <span class="mx-3 fs-5 mt-2">per</span>
+              <div class="dropdown-center">
+                <button class="btn btn-light border dropdown-toggle h-100" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" id="time" required>
+                  Select Time Frame
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item">Week</a></li>
+                  <li><a class="dropdown-item">Month</a></li>
+                  <li><a class="dropdown-item">Year</a></li>
+                </ul>
               </div>
+              <span class="error" aria-live="polite"></span>
+            </div>
           </div>
 
 
-          
-          
+
+
           <div class="row d-flex mb-4">
 
-            <div class="row mb-3 d-flex mb-3"> 
+            <div class="row mb-3 d-flex mb-3">
               <div class="col-sm-10 d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Age</label>
-                  <input type="number" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px" id="age" required>
-                  <span class="error" aria-live="polite"></span>
+                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50"
+                  style="white-space:nowrap">Age</label>
+                <input type="number" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px"
+                  id="age" required>
+                <span class="error" aria-live="polite"></span>
               </div>
-          </div>
+            </div>
 
-          <div class="row d-flex mb-3"> 
-            <div class="col-sm-10 d-flex">
-                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Location</label>
+            <div class="row d-flex mb-3">
+              <div class="col-sm-10 d-flex">
+                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50"
+                  style="white-space:nowrap">Location</label>
                 <div class="dropdown-center">
-                  <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="location" required>
+                  <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" id="location" required>
                     Select Location
                   </button>
                   <ul class="dropdown-menu">
@@ -124,228 +131,247 @@
                     <li><a class="dropdown-item">West</a></li>
                   </ul>
                 </div>
-                
-                <span class="error" aria-live="polite"></span>
-            </div>
-        </div>
 
-              <div class="col-sm-10 d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">No. of Rooms</label>
-                  <div class="dropdown-center">
-                    <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="rooms" required>
-                      Select No. of Rooms
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item">1</a></li>
-                      <li><a class="dropdown-item">2</a></li>
-                      <li><a class="dropdown-item">3</a></li>
-                      <li><a class="dropdown-item">4</a></li>
-                      <li><a class="dropdown-item">5</a></li>
-                    </ul>
-                  </div>
+                <span class="error" aria-live="polite"></span>
               </div>
+            </div>
+
+            <div class="col-sm-10 d-flex">
+              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50"
+                style="white-space:nowrap">No. of Rooms</label>
+              <div class="dropdown-center">
+                <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" id="rooms" required>
+                  Select No. of Rooms
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item">1</a></li>
+                  <li><a class="dropdown-item">2</a></li>
+                  <li><a class="dropdown-item">3</a></li>
+                  <li><a class="dropdown-item">4</a></li>
+                  <li><a class="dropdown-item">5</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="row mb-2 d-flex mb-4">
-              <div class="col-sm-10 d-flex">
-                  <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50" style="white-space:nowrap">Ready to Move On</label>
-                  <input type="date" class="form-control form-control-lg bg-light mx-4 ms-2 w-50" style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
-                  <span class="error" aria-live="polite"></span>
-              </div>
-          </div>
-          <div class="row mb-5 d-flex mb-4"> 
-              <div class="col-sm-10 d-flex">
-                  <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end " style="white-space:nowrap">Stay Duration</label>
-                  <input type="text" class="form-control form-control-lg bg-light h-75 w-50 ms-5" style="border-radius: 10px" id="duration" required>
-                  <span class="error" aria-live="polite"></span>
-              </div>
-          </div>
+            <div class="col-sm-10 d-flex">
+              <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50"
+                style="white-space:nowrap">Ready to Move On</label>
+              <input type="date" class="form-control form-control-lg bg-light mx-4 ms-2 w-50"
+                style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
+              <span class="error" aria-live="polite"></span>
             </div>
+          </div>
+          <div class="row mb-5 d-flex mb-4">
+            <div class="col-sm-10 d-flex">
+              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end "
+                style="white-space:nowrap">Stay Duration</label>
+              <input type="text" class="form-control form-control-lg bg-light h-75 w-50 ms-5"
+                style="border-radius: 10px" id="duration" required>
+              <span class="error" aria-live="polite"></span>
+            </div>
+          </div>
         </div>
-              </div>
-            </div>
-
-    </div>
-
-        <style>
-          
-          
-          input[type="file"] {
-              margin-top: 5px;
-          }
-          .heading {
-              font-family: Montserrat;
-              font-size: 45px;
-              color: green;
-          }
-          .image-upload>input {
-           display: none;
-            }
-        </style>
-
-        <script>
-          $(document).ready(() => {
-              $("#photo").change(function () {
-                  const file = this.files[0];
-                  if (file) {
-                      let reader = new FileReader();
-                      reader.onload = function (event) {
-                          $("#imgPreview")
-                            .attr("src", event.target.result);
-                      };
-                      reader.readAsDataURL(file);
-                  }
-              });
-          });
-        </script>
-    </div>
-
-    <div class="row">
-
-    </div>
-
-    
-
-
-      
-    
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <style>
+    input[type="file"] {
+      margin-top: 5px;
+    }
+
+    .heading {
+      font-family: Montserrat;
+      font-size: 45px;
+      color: green;
+    }
+
+    .image-upload>input {
+      display: none;
+    }
+  </style>
+
+  <script>
+    // $(document).ready(() => {
+    //     $("#photo").change(function () {
+    //         const file = this.files[0];
+    //         if (file) {
+    //             let reader = new FileReader();
+    //             reader.onload = function (event) {
+    //                 $("#imgPreview")
+    //                   .attr("src", event.target.result);
+    //             };
+    //             reader.readAsDataURL(file);
+    //         }
+    //     });
+    // });
+
+    var file = document.getElementById('inputFile')
+    console.log(file)
+    var preview = document.getElementById('preview')
+    file.addEventListener("change", function () {
+      const reader = new FileReader()
+      reader.addEventListener("load", () => {
+        let uploaded_image = reader.result
+        preview.src = uploaded_image
+      })
+      reader.readAsDataURL(this.files[0])
+
+    })
+  </script>
+  </div>
+
+  <div class="row">
+
   </div>
 
 
-    <
 
 
 
 
+  </div>
+  </div>
+  </div>
+  </div>
 
+
+  < <div class="px-5 mx-auto mx-lg-5 mb-5">
+
+    <h3 class="fw-bold ms-3">
+
+      Introduction</h3>
+
+    <div class="p-2">
+      <div class="d-flex justify-content-between">
+
+      </div>
+      <div>
+        <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5"
+          placeholder="You can talk about yourself here."></textarea>
+      </div>
+    </div>
+
+    <div class="px-2">
+
+    </div>
+    </div>
 
     <div class="px-5 mx-auto mx-lg-5 mb-5">
 
       <h3 class="fw-bold ms-3">
-       
-       Introduction</h3>
 
-          <div class="p-2">
-            <div class="d-flex justify-content-between">
-              
-            </div>
-            <div>
-              <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5" placeholder="You can talk about yourself here." 
-              ></textarea>            </div>
-          </div>
-          
-          <div class="px-2">
-            
-            </div>
-    </div>
+        Your hobbies</h3>
 
-      <div class="px-5 mx-auto mx-lg-5 mb-5">
+      <div class="p-2">
+        <div class="d-flex justify-content-between">
 
-        <h3 class="fw-bold ms-3">
-         
-         Your hobbies</h3>
-  
-            <div class="p-2">
-              <div class="d-flex justify-content-between">
-                
-              </div>
-              <div>
-                <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5" placeholder="Share more about your hobbies here." 
-                ></textarea>            </div>
-            </div>
-            
-            <div class="px-2">
-              
-              </div>
         </div>
+        <div>
+          <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5"
+            placeholder="Share more about your hobbies here."></textarea>
+        </div>
+      </div>
+
+      <div class="px-2">
+
+      </div>
+    </div>
 
 
     <div class="px-5 mx-5">
-      
+
       <h3 class="fw-bold">
-        
+
         Get in Touch</h3>
-      
-          <div class="p-2">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
             </svg> -->
-          <textarea class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1" placeholder="Enter phone number." 
-            ></textarea>            
-          </div>
-          
-          <div class="p-2">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+        <textarea class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
+          placeholder="Enter phone number."></textarea>
+      </div>
+
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
             </svg> -->
-            <textarea class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1" placeholder="Enter email." 
-            ></textarea>                      
-          </div>
+        <textarea class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
+          placeholder="Enter email."></textarea>
+      </div>
 
-          <div class="p-2">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
             </svg> -->
-            <textarea 
-              class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1" placeholder="Enter Telegram handle." 
-            ></textarea>            
-                
-          </div>
+        <textarea class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
+          placeholder="Enter Telegram handle."></textarea>
+
+      </div>
 
     </div>
 
-   
+
 
     <div class="d-block p-5 mx-auto justify-content-center">
       <div class="row">
-        
-        <button type="button" class=" mx-auto justify-content-center btn btn-secondary btn-lg w-25 rounded-pill" id="listRoomie" >
+
+        <button type="button" class=" mx-auto justify-content-center btn btn-secondary btn-lg w-25 rounded-pill"
+          id="listRoomie">
           <a href="/roomielisting/roomieListing.html" style="text-decoration:none; color:white; ">List as roommate </a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-right-circle ms-1" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+            class="bi bi-arrow-right-circle ms-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
           </svg>
         </button>
-      
+
       </div>
-        </div>
     </div>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script>
-  $( document ).ready(function() {
-    $('.dropdown').each(function (key, dropdown) {
-        var $dropdown = $(dropdown);
-        $dropdown.find('.dropdown-menu a').on('click', function () {
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+        $('.dropdown').each(function (key, dropdown) {
+          var $dropdown = $(dropdown);
+          $dropdown.find('.dropdown-menu a').on('click', function () {
             $dropdown.find('button').text($(this).text()).append(' <span class="caret"></span>');
+          });
         });
-    });
-});
+      });
 
-  </script>
-  <!-- Vue.js Version 3 CDN -->
-  <script src="plugins/jQuery/jquery.min.js"></script>
-  <!-- Bootstrap jQuery -->
-  <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
-  <!-- Slick Carousel -->
-  <script src="plugins/slick/slick.min.js"></script>
-  <script src="plugins/slick/slick-animation.min.js"></script>
-  
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </script>
+    <!-- Vue.js Version 3 CDN -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
 
-  <!-- Refer to my own external JS -->
-  <script src="navComponent.js"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-  crossorigin="anonymous"></script> 
+    <!-- Refer to my own external JS -->
+    <script src="navComponent.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"></script>
 
 
-  </body>
+
+</body>
+
 </html>
