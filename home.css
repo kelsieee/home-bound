@@ -840,6 +840,7 @@ ul.navbar-nav > li > a {
   text-align: center;
   margin: auto;
   width: 16%;
+  margin-bottom: 20px;
 }
 
 /* Style the buttons that are used to open the tab content */
