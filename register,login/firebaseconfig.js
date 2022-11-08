@@ -36,6 +36,8 @@ let signOutBtn = document.getElementById('signOut')
 let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
 let main = document.getElementById('main')
+let file = document.getElementById('inputFile')
+console.log(file.files)
 main.addEventListener("load" , getAllDataOnce())
 
 function getAllDataOnce(){
@@ -49,51 +51,6 @@ function getAllDataOnce(){
             
         });
         var smth = ""
-        for(var i=0; i<roomie.length; i++){
-            console.log(roomie[i])
-            
-            smth += `<div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
-            <div class="project-container">
-                <div class="project-img-container">
-                    <a class="gallery-popup"
-                        aria-label="project-img">
-                        <img class="img-fluid" src="images/profile/profile6.jpg" alt="project-img">
-                        <span class="gallery-icon"  >
-                            
-                            <div class="wrapper">
-                                <input type="checkbox" class="heart-checkbox15" id="heart-checkbox15" style="width:20px">
-                                <label class="heart" for="heart-checkbox15"></label>
-                              </div>
-                    </span>
-                    </a>
-                    <div class="project-item-info">
-                        <div class="project-item-info-content">
-                            <h3 class="project-item-title">
-                                <a href="Propertylisting/propertylisting.html">Kristy Alexandra</a>
-                            </h3>
-                            <p class="project-cat">Roomies</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-desc">
-                    <div class="project-item-price">$730 / month</div>
-                    <div class="address"><span><i class="bi bi-geo-alt-fill"></i></span>North, West</div>
-                    <div class="icon">
-                        <span><i class="fa fa-graduation-cap"></i>20</span>
-                        <span class="space"></span>
-                        <span><i class="fa fa-bed"></i><span class="space2"></span>Looking for 1 room</span>
-                    </div>
-                </div>
-            </div>
-        </div>`
-
-
-           
-
-           
-        }
-        console.log(document.getElementById('test1'))
-        document.getElementById('test1').innerHTML = smth
     })
 
    
