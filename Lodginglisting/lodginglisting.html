@@ -60,6 +60,21 @@
           .image-upload>input {
            display: none;
             }
+            input::file-selector-button {
+              background-color:   #67aa94;
+              border-radius: 30px;
+              border: 1px solid grey;
+              color:black;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-top: 5px;
+              margin-top: 5px;
+              padding-bottom: 5px;
+              margin-left:5px;
+              margin-right:5px
+            ;
+            }
+          
         </style>
  
     </div>
@@ -68,9 +83,9 @@
       <div class="col ">
         
       <div class="mb-5">
-        <label for="photo">
-          <img id='preview' src="/images/Screenshot 2022-11-09 at 12.33.50 AM.png" style="width:400px;height:100%;border-radius:30px"" alt="pic" style="border-radius:30px" />
-          <input type="file" id="inputFile" accept="image/png, image/png">
+        <label for="photo" class="custom-file-upload">
+          <img id='preview' src="/images/Screenshot 2022-11-09 at 12.33.50 AM.png" style="width:400px;height:100%;border-radius:30px" alt="pic" style="border-radius:30px" />
+          <input type="file" id="inputFile" accept="image/png, image/png" >
         </label>
         </div>
         </div>
