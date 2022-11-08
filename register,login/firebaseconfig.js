@@ -37,12 +37,13 @@ let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
 let main = document.getElementById('main')
 let file = document.getElementById('inputFile')
-console.log(file.files)
 main.addEventListener("load" , getAllDataOnce())
+let main_user = null
 
 function getAllDataOnce(){
     const dbRef = ref(database)
     // console.log(dbRef)
+
     console.log("test")
     get(child(dbRef , "roomie")).then((snapshot)=>{
         var roomie = []
@@ -97,50 +98,19 @@ function createRoomie(){
 }
 
 function uploadimage(){
-
-    // var storage = firebase.storage();
-    const roomieimage = document.getElementById("imgPreview").value;
-    var thisref = sRef(storage, roomieimage)
-    console.log(thisref)
-
-    uploadBytes(thisref, file).then((snapshot) => {
-        console.log('Uploaded a blob or file!');
-      });
-      
-    // thisref.on('state_changed',function(snapshot) {
-
-    // }, function(error) {
     
-    // }, function() {
-    // // Uploaded completed successfully, now we can get the download URL
-    //     thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-    //     //getting url of image
-    //     document.getElementById("url") = downloadURL;
-    //     alert('uploaded successfully');
-    //     saveMessage(downloadURL);
-    //     });
-    //     });
-    // // Get values
-    // var url = getInputVal('url');
-
-    // if(roomieimage !="") {
-    //     update(ref(database, 'roomie/' + "test"),{
-    //         image: url
-    //     })
+    if(file.files.length > 0){
+        var thisref = sRef(storage, "image/")
+        console.log(file.files[0])
+        uploadBytes(thisref, file.files[0]).then((snapshot) => {
+            console.log('Uploaded a blob or file!');
+          });
+        
+    }
+    // else{
+    //     alert("No files selected!")
     // }
-
-    // // Get values
-    // var url = getInputVal('url');
-    // // Save message
-    // // saveMessage(url);
-
-    // Save message to firebase database
-    // function saveMessage(url){
-    //     var newMessageRef = messagesRef.push();
-    //     newMessageRef.set({
-    //     imageurl:url,
-    //     });
-    // }
+   
 }
 
 
@@ -213,8 +183,7 @@ if(listRoomie != null){
     listRoomie.addEventListener("click", (e)=>{
         
         createRoomie()
-        getAllDataOnce()
-        // uploadimage()
+        uploadimage()
         
     })
 }
@@ -324,7 +293,8 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      console.log(user)
+      main_user = user
+      console.log(main_user)
       console.log("user logged in")
       // ...
     } else {

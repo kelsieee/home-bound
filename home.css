@@ -6,7 +6,7 @@ body {
   color: #555;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
 }
 
@@ -44,7 +44,7 @@ input[type="checkbox"]:checked + label:after {
   top: -1px;
   left: 1px;
   transition:  .5s ease;
-}
+} */
 /*                       */
 /*                       */
 
@@ -839,7 +839,8 @@ ul.navbar-nav > li > a {
   background-color: #dbe6da;
   text-align: center;
   margin: auto;
-  width: 16%;
+  width: 207px;
+  margin-bottom: 20px;
 }
 
 /* Style the buttons that are used to open the tab content */
