@@ -35,11 +35,14 @@ let loginBtn = document.getElementById('loginBtn')
 let signOutBtn = document.getElementById('signOut')
 let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
+let main = document.getElementById('main')
+main.addEventListener("load" , getAllDataOnce())
 
 function getAllDataOnce(){
     const dbRef = ref(database)
     // console.log(dbRef)
-    get(child(dbRef , "users")).then((snapshot)=>{
+    console.log("test")
+    get(child(dbRef , "roomie")).then((snapshot)=>{
         var users = []
         snapshot.forEach(childSnapshot => {
             users.push(childSnapshot.val())
