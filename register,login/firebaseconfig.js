@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
 import { getDatabase, set, ref, update, get, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-import { getStorage, ref as sRef, uploadBytes } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
 
 
 
@@ -37,27 +37,27 @@ let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
 let main = document.getElementById('main')
 let file = document.getElementById('inputFile')
-main.addEventListener("load" , getAllDataOnce())
+main.addEventListener("load", getAllDataOnce())
 let main_user = null
 
-function getAllDataOnce(){
+function getAllDataOnce() {
     const dbRef = ref(database)
     // console.log(dbRef)
 
     console.log("test")
-    get(child(dbRef , "roomie")).then((snapshot)=>{
+    get(child(dbRef, "roomie")).then((snapshot) => {
         var roomie = []
         snapshot.forEach(childSnapshot => {
             roomie.push(childSnapshot.val())
-            
+
         });
         var smth = ""
     })
 
-   
+
 }
-function createRoomie(){
-    
+function createRoomie() {
+
     const firstname = document.getElementById("firstname").value
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
@@ -74,47 +74,82 @@ function createRoomie(){
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
 
-    if(firstname!="" && lastname!="" && budget!="" && time!="" && age!= "" && location != "" && rooms != "" && date!=""
-        && duration!="" && introduction!="" && hobbies!="" && phone!="" && email!="" && tele!=""){
-            set(ref(database, 'roomie/' + name),{
-                budget: budget,
-                timeframe: time,
-                age: age,
-                location: location,
-                rooms: rooms,
-                movedate: date,
-                duration: duration,
-                intro: introduction,
-                hobbies: hobbies,
-            })
-        
-            set(ref(database, `roomie/${name}/contact`),{
-                phone: phone,
-                email: email,
-                tele: tele,
-            })
-            alert('roomie listed')
-        }
+    if (firstname != "" && lastname != "" && budget != "" && time != "" && age != "" && location != "" && rooms != "" && date != ""
+        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
+        set(ref(database, 'roomie/' + name), {
+            budget: budget,
+            timeframe: time,
+            age: age,
+            location: location,
+            rooms: rooms,
+            movedate: date,
+            duration: duration,
+            intro: introduction,
+            hobbies: hobbies,
+        })
+
+        set(ref(database, `roomie/${name}/contact`), {
+            phone: phone,
+            email: email,
+            tele: tele,
+        })
+        alert('roomie listed')
+    }
 }
 
-function uploadimage(){
-    
-    if(file.files.length > 0){
-        var thisref = sRef(storage, "image/")
+
+function uploadProfileImage() {
+
+    if (file.files.length > 0) {
+        var thisref = sRef(storage, `${main_user.uid}/profile/profileImg`)
         console.log(file.files[0])
         uploadBytes(thisref, file.files[0]).then((snapshot) => {
             console.log('Uploaded a blob or file!');
-          });
-        
+            getDownloadURL(thisref)
+                .then((url) => {
+                    // Insert url into an <img> tag to "download"
+                    console.log(url)
+                    update(ref(database, 'users/' + main_user.uid), {
+                        profileImage: url
+                    })
+                })
+                .catch((error) => {
+                    // A full list of error codes is available at
+                    // https://firebase.google.com/docs/storage/web/handle-errors
+                    switch (error.code) {
+                        case 'storage/object-not-found':
+                            // File doesn't exist
+                            break;
+                        case 'storage/unauthorized':
+                            // User doesn't have permission to access the object
+                            break;
+                        case 'storage/canceled':
+                            // User canceled the upload
+                            break;
+
+                        // ...
+
+                        case 'storage/unknown':
+                            // Unknown error occurred, inspect the server response
+                            break;
+                    }
+                })
+
+        });
+
+
+
     }
+
+
     // else{
     //     alert("No files selected!")
     // }
-   
+
 }
 
 
-function createProperty(){
+function createProperty() {
     const title = document.getElementById("title").value
     const bathroomquantity = document.getElementById("bathroomquantity").value
     const bathroomshared = document.getElementById("bathroomshared").checked
@@ -138,58 +173,58 @@ function createProperty(){
     const tele = document.getElementById("tele").value
 
 
-    if(title!="" && bathroomquantity!="" && bathroomshared!=null && bedroomquantity!="" && bedroomshared!=null && internet!=""
-        && rent!="" && bills!="" && deposit!="" && property!="" && furnishing!="" && gender!="" && date!="" && duration!=""
-        && place!=""){
-            set(ref(database, 'property/' + title),{
-                internet: internet,
-                property: property,
-                furnishing: furnishing,
-                gender: gender,
-                date: date,
-                duration: duration,
-                place: place,
-                roomies: roomies,
-            })
-        
-            set(ref(database, `property/${title}/bathroom`),{
-                bathroomquantity: bathroomquantity,
-                bathroomshared: bathroomshared,
-            })
+    if (title != "" && bathroomquantity != "" && bathroomshared != null && bedroomquantity != "" && bedroomshared != null && internet != ""
+        && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
+        && place != "") {
+        set(ref(database, 'property/' + title), {
+            internet: internet,
+            property: property,
+            furnishing: furnishing,
+            gender: gender,
+            date: date,
+            duration: duration,
+            place: place,
+            roomies: roomies,
+        })
 
-            set(ref(database, `property/${title}/bedroom`),{
-                bedroomquantity: bedroomquantity,
-                bedroomshared: bedroomshared,
-            })
+        set(ref(database, `property/${title}/bathroom`), {
+            bathroomquantity: bathroomquantity,
+            bathroomshared: bathroomshared,
+        })
 
-            set(ref(database, `property/${title}/financial`),{
-                rent: rent,
-                bills: bills,
-                deposit: deposit,
-            })
+        set(ref(database, `property/${title}/bedroom`), {
+            bedroomquantity: bedroomquantity,
+            bedroomshared: bedroomshared,
+        })
 
-            set(ref(database, `property/${title}/contact`),{
-                phone: phone,
-                email: email,
-                tele: tele,
-            })
+        set(ref(database, `property/${title}/financial`), {
+            rent: rent,
+            bills: bills,
+            deposit: deposit,
+        })
 
-            alert('property listed')
-        }
+        set(ref(database, `property/${title}/contact`), {
+            phone: phone,
+            email: email,
+            tele: tele,
+        })
+
+        alert('property listed')
+    }
 
 }
 
-if(listRoomie != null){
-    listRoomie.addEventListener("click", (e)=>{
-        
+if (listRoomie != null) {
+    listRoomie.addEventListener("click", (e) => {
+
         createRoomie()
-        uploadimage()
-        
+        uploadProfileImage()
+
     })
 }
 
-if(listProperty != null){
-    listProperty.addEventListener("click", (e)=>{
+if (listProperty != null) {
+    listProperty.addEventListener("click", (e) => {
         createProperty()
     })
 }
@@ -227,7 +262,7 @@ if (signUp != null) {
                     type: type
                 })
 
-                
+
                 alert('Succesfully Registered!')
                 window.location.href = "login.html"
 
@@ -261,7 +296,7 @@ if (loginBtn != null) {
 
                 )
                 alert("Successfully logged in!")
-                window.location.href="/home.html";
+                window.location.href = "/home.html";
                 // ...
             })
             .catch((error) => {
@@ -291,16 +326,16 @@ if (signOutBtn != null) {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      main_user = user
-      console.log(main_user)
-      console.log("user logged in")
-      // ...
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        main_user = user
+        console.log(main_user)
+        console.log("user logged in")
+        // ...
     } else {
-      // User is signed out
-      // ...
-      console.log("user signed out")
+        // User is signed out
+        // ...
+        console.log("user signed out")
     }
-  });
+});
 
