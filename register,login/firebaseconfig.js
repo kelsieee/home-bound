@@ -249,8 +249,10 @@ if (signUp != null) {
                     type: type
                 })
 
+                
+                alert('Succesfully Registered!')
+                window.location.href = "login.html"
 
-                alert('user created')
                 // ...
             })
             .catch((error) => {
@@ -280,7 +282,8 @@ if (loginBtn != null) {
                 }
 
                 )
-                alert("User Logged in!")
+                alert("Successfully logged in!")
+                window.location.href="/home.html";
                 // ...
             })
             .catch((error) => {
