@@ -62,7 +62,6 @@ function createRoomie() {
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
     const budget = document.getElementById("budget").value
-    const time = document.getElementById("time").value
     const age = document.getElementById("age").value
     const location = document.getElementById("location").value
     const rooms = document.getElementById("rooms").value
@@ -73,12 +72,13 @@ function createRoomie() {
     const phone = document.getElementById("phone").value
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
+    const gender = document.getElementById("gender").value
 
-    if (firstname != "" && lastname != "" && budget != "" && time != "" && age != "" && location != "" && rooms != "" && date != ""
-        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
+    if (firstname != "" && lastname != "" && budget != "" &&  age != "" && location != "" && rooms != "" && date != ""
+        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "" && gender != "") {
         set(ref(database, 'roomie/' + name), {
             budget: budget,
-            timeframe: time,
+            gender: gender,
             age: age,
             location: location,
             rooms: rooms,
