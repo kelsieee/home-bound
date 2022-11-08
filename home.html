@@ -78,10 +78,46 @@
 
 <!-- lodging -->
             <div id="lodging" class="tabcontent">
+                <div class="mt-0 mb-3">
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    $
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
+                        <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
+                        <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
+                    </ul>
+                </div>
 
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-wifi"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
+                    <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
+                    </ul>
+                </div>
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    No. of rooms
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
+                    <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
+                    <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
+                    </ul>
+                </div>
+                <!-- reset button -->
+                <input class="btn btn-primary" type="reset" onclick='reset()' value="Reset">
+</div>
+            
+
+                
                 <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-                    <div class="col">
-                        <div class="card">
+                    <div class="col project_container onedollar wifiavailable tworoom">
+                        <div class="card ">
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">Listing Title</h5>
@@ -112,15 +148,15 @@
                         </div>
                     </div>
     
-                    <div class="col">
-                        <div class="card">
+                    <div class="col project_container onedollar wifiavailable oneroom">
+                        <div class="card ">
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">Listing Title</h5>
                                 <div>
                                     <span class="badge bg-danger m-1">$</span>
                                     <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
-                                    <span class="badge bg-info text-dark m-1">2 rooms</span>
+                                    <span class="badge bg-info text-dark m-1">1 room</span>
                                 </div>
                                 <div class="card-text d-flex pb-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
@@ -144,8 +180,8 @@
                         </div>
                     </div>
     
-                    <div class="col">
-                        <div class="card">
+                    <div class="col project_container onedollar wifiavailable tworoom">
+                        <div class="card ">
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">Listing Title</h5>
@@ -176,7 +212,7 @@
                         </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col project_container onedollar wifiavailable tworoom">
                         <div class="card">
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
                             <div class="card-body">
