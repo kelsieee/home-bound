@@ -29,7 +29,7 @@ main.component("nav-component", {
           <br>
           List as a roommate <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-4">
               <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
          
             <br>
