@@ -6,7 +6,7 @@ body {
   color: #555;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
 }
 
@@ -44,7 +44,7 @@ input[type="checkbox"]:checked + label:after {
   top: -1px;
   left: 1px;
   transition:  .5s ease;
-}
+} */
 /*                       */
 /*                       */
 
