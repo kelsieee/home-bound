@@ -10,11 +10,11 @@ main.component("nav-component", {
         <a class="navbar-brand" href="#">
         <img  class='mx-4 mt-3'src='/images/Screenshot 2022-11-07 at 12.40.27 AM.png' style='width : 220px; margin-left:10px'>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
           <ul class="navbar-nav ">
             <li class="nav-item active mx-4">
               <a class="nav-link" href="/home.html#project-area">
@@ -29,7 +29,7 @@ main.component("nav-component", {
           <br>
           List as a roommate <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item mx-4">
+            <li class="nav-item">
               <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
          
             <br>
