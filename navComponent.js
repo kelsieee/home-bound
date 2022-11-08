@@ -20,33 +20,37 @@ main.component("nav-component", {
               <a class="nav-link" href="/home.html#project-area">
             
             <br>
-            home <span class="sr-only">(current)</span></a>
+            <h1 class="fs-5 fw-bold">home <span class="sr-only">(current)</span></a></h1>
+            
             </li>
             <li class="nav-item mx-4">
             <a class="nav-link" href="/roomieCreation.html">
             
           
           <br>
-          List as a roommate <span class="sr-only">(current)</span></a>
+          <h1 class="fs-5 fw-bold">List as a roommate <span class="sr-only">(current)</span></a></h1>
+          
             </li>
             <li class="nav-item mx-4">
               <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
          
             <br>
-            list a property <span class="sr-only">(current)</span></a>
+            <h1 class="fs-5 fw-bold">list a property <span class="sr-only">(current)</span></a></h1>
+            
             </li>
             </li>
             <li class="nav-item mx-4">
             <a class="nav-link" href="/saved_listings.html">
            
             <br>
-            Saved listings <span class="sr-only">(current)</span></a>
+            <h1 class="fs-5 fw-bold">Saved listings <span class="sr-only">(current)</span></a></h1>
+            
           </li>
             <li class="nav-item mx-4">
             <a class="nav-link" href="/register,login/login.html">
            
             <br>
-            login <span class="sr-only">(current)</span></a>
+            <h1 class="fs-5 fw-bold">login <span class="sr-only">(current)</span></a></h1>
             </li>
               
             </li>
