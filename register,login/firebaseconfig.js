@@ -38,6 +38,7 @@ let listProperty = document.getElementById('listProperty')
 let main = document.getElementById('main')
 let file = document.getElementById('inputFile')
 main.addEventListener("load" , getAllDataOnce())
+let main_user = null
 
 function getAllDataOnce(){
     const dbRef = ref(database)
@@ -99,7 +100,7 @@ function createRoomie(){
 function uploadimage(){
     
     if(file.files.length > 0){
-        var thisref = sRef(storage, "image")
+        var thisref = sRef(storage, "image/")
         console.log(file.files[0])
         uploadBytes(thisref, file.files[0]).then((snapshot) => {
             console.log('Uploaded a blob or file!');
@@ -292,7 +293,8 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      console.log(user)
+      main_user = user
+      console.log(main_user)
       console.log("user logged in")
       // ...
     } else {
