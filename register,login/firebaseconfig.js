@@ -59,7 +59,7 @@ function getAllDataOnce() {
 
         var roomieDiv = document.getElementById("roommates")
         for(var i =0; i<roomie.length; i++){
-            console.log(roomie[i])
+            // console.log(roomie[i])
             const rName = roomie[i].name
             const rAge = roomie[i].age
             var pLoc = ""
@@ -102,8 +102,110 @@ function getAllDataOnce() {
 
         smth += `</div>`
         roomieDiv.innerHTML=smth
-        console.log(roomieDiv)
+        // console.log(roomieDiv)
 
+    })
+
+    get(child(dbRef,"property")).then((snapshot)=>{
+        var property = []
+        snapshot.forEach(childSnapshot=>{
+            property.push(childSnapshot.val())
+        });
+        var str = 
+        `
+        <div class="mt-0 mb-3">
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    $
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
+                        <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
+                        <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-wifi"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
+                    <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
+                    </ul>
+                </div>
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    No. of rooms
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
+                    <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
+                    <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
+                    </ul>
+                </div>
+                <!-- reset button -->
+                
+                <input class="btn btn-primary mx-2 my-2" type="reset" onclick='reset()' value="Reset">
+        </div>
+            
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        `
+
+        console.log(property)
+        var propertyDiv = document.getElementById("lodging")
+        for(var i = 0; i<property.length; i++){
+            console.log(property[i])
+
+            const pTitle = property[i].title
+            const pAdd = property[i].address
+            const pRent = property[i].financial.rent
+            const pBedroom = property[i].bedroomquantity
+            const pBathroom = property[i].bathroomquantity
+
+            str +=
+            `
+            <div class="col project_container onedollar wifiavailable tworoom" id="card1">
+            <div class="card "style='position:relative'>
+                <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
+                <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
+                <div class="card-body">
+                    <h5 class="card-title text-success fw-bolder">${pTitle}</h5>
+
+                    <div>
+                        <span class="badge bg-danger m-1">$</span>
+                        <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
+                        <span class="badge bg-info text-dark m-1">${pBedroom} rooms</span>
+                    </div>
+                    <div class="card-text d-flex pb-2 mt-2">
+                        <span><i class="bi bi-geo-alt-fill" ></i></span>
+                        <div class="fw-light fs-6 px-2">${pAdd}</div>
+                    </div>
+                    <div class="card-text d-flex pb-2">
+                        <span><i class="bi bi-currency-dollar"></i></span>
+                        <div class="fw-light fs-6 px-2">${pRent} / month</div>
+                    </div>
+                    <div class="card-text d-flex pb-2">
+                        <div class="d-flex px-2">
+                            <span><i class="fa fa-bed"></i></span>
+                            <div class="fw-bolder fs-6">&nbsp;${pBedroom}</div>
+                        </div>
+                        <div class="d-flex px-2">
+                            <span><i class="fa fa-bath"></i></span>
+                            <div class="fw-bolder fs-6">&nbsp;${pBathroom}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            `
+        }
+
+        str+="</div>"
+        console.log(propertyDiv)
+
+        propertyDiv.innerHTML=str
     })
 
 
@@ -239,6 +341,7 @@ function createProperty() {
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
         && place != "" && phone!="" && email!="" && tele!="" && main_user != null) {
         set(ref(database, 'property/' + title), {
+            title: title,
             address: address,
             bedroomquantity: bedroomquantity,
             bathroomquantity: bathroomquantity,
@@ -266,6 +369,7 @@ function createProperty() {
         })
 
         alert('property listed')
+        window.location.href = "../home.html#project-area"
     }
 
 }
