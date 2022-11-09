@@ -59,14 +59,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-1. Start MAMP/WAMP/XAMP on your machine.
-
-2. Clone the repository.
-  ```sh
-    git clone https://github.com/kelsieee/home-bound.git
-  ```
-
-3. Open in Visual Studio Code. 
+You don't have to do anything! Just visit this <a href="https://home-bound.vercel.app/home.html">link</a>.
 
 <br><br>
 
