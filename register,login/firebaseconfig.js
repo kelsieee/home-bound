@@ -51,8 +51,60 @@ function getAllDataOnce() {
             roomie.push(childSnapshot.val())
 
         });
-        var smth = ""
+        var smth = 
+        `
+        <div id="roommates" class="tabcontent">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        `
         console.log(roomie)
+
+        var roomieDiv = document.getElementById("roommates")
+        for(var i =0; i<roomie.length; i++){
+            console.log(roomie[i])
+            const rName = roomie[i].name
+            const rAge = roomie[i].age
+            var pLoc = ""
+            for(var j=0;j<roomie[i].location.length; j++){
+                pLoc += `${roomie[i].location[j]}, `
+            }
+            pLoc = pLoc.slice(0,-2)
+            // console.log(pLoc.slice(0,-2))
+            const rBudget = roomie[i].budget
+            const rDuration = roomie[i].duration
+            smth += 
+            `
+            <div class="col">
+                        <div class="card "style='position:relative'  id="card5">
+                            <input type="checkbox" id="heart5" onchange="passValues(this)"><label  for="heart5" >&#9829</label></input>
+                            <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
+                            <div class="card-body">
+                                <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
+                                <div class="card-text d-flex pb-2">
+                                    <span><i class="bi bi-geo-alt-fill" ></i></span>
+                                    <div class="fw-light fs-6 px-2">${pLoc}</div>
+                                </div>
+                                <div class="card-text d-flex pb-2">
+                                    <span><i class="bi bi-currency-dollar"></i></span>
+                                    <div class="fw-light fs-6 px-2">${rBudget} / month</div>
+                                </div>
+                                <div class="card-text d-flex pb-2">
+                                    <span>              
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-clock-fill mb-1 me-1" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        </svg>
+                                    </span>
+                                    <div class="fw-light fs-6 px-2">${rDuration} months</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            `     
+        }
+
+        smth += `</div></div>`
+        roomieDiv.innerHTML=smth
+        console.log(roomieDiv)
+
     })
 
 
@@ -87,6 +139,7 @@ function createRoomie() {
     if (firstname != "" && lastname != "" && age!="" && gender!="" && budget != "" && locations != null && rooms != "" && date != ""
         && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
         set(ref(database, 'roomie/' + name), {
+            name: name,
             age: age,
             gender: gender,
             budget: budget,

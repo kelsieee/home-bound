@@ -871,6 +871,7 @@ ul.navbar-nav > li > a {
   /* border: 1px solid #ccc; */
   border-top: none;
 }
+/* need fix */
 
 .project-container .project-desc  {
   max-height:160px;
