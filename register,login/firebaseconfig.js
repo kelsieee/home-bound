@@ -52,6 +52,7 @@ function getAllDataOnce() {
 
         });
         var smth = ""
+        console.log(roomie)
     })
 
 
