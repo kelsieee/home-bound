@@ -82,7 +82,6 @@ function createRoomie() {
     const phone = document.getElementById("phone").value
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
-    const gender = document.getElementById("gender").value
 
     if (firstname != "" && lastname != "" && age!="" && gender!="" && budget != "" && locations != null && rooms != "" && date != ""
         && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
