@@ -17,7 +17,7 @@
 
 function show_one_dollar(){  
     var onedollars = document.querySelectorAll('.onedollar');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -28,7 +28,7 @@ function show_one_dollar(){
 
 function show_two_dollar(){  
     var twodollars = document.querySelectorAll('.twodollar');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -39,7 +39,7 @@ function show_two_dollar(){
 
 function show_three_dollar(){  
     var threedollars = document.querySelectorAll('.threedollar');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -50,7 +50,7 @@ function show_three_dollar(){
 
 function show_wifiavailable(){
     var wifiavailable = document.querySelectorAll('.wifiavailable');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -61,7 +61,7 @@ function show_wifiavailable(){
 
 function show_nowifi(){
     var nowifi = document.querySelectorAll('.nowifi');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -73,7 +73,7 @@ function show_nowifi(){
 
 function show_one_room (){
     var oneroom = document.querySelectorAll('.oneroom');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -84,7 +84,7 @@ function show_one_room (){
 
 function show_two_room (){
     var tworoom = document.querySelectorAll('.tworoom');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -95,7 +95,7 @@ function show_two_room (){
 
 function show_three_room (){
     var threeroom = document.querySelectorAll('.threeroom');
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
     }
@@ -106,7 +106,7 @@ function show_three_room (){
 
 
 function reset(){
-    var alls = document.querySelectorAll('.project-container');
+    var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
          alls[i].style.display = 'inline-block'; 
     } 

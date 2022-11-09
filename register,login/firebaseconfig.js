@@ -61,9 +61,19 @@ function createRoomie() {
     const firstname = document.getElementById("firstname").value
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
-    const budget = document.getElementById("budget").value
     const age = document.getElementById("age").value
-    const location = document.getElementById("location").value
+    const gender = document.getElementById("gender").value
+    const budget = document.getElementById("budget").value
+
+    const locations = []
+    const location = document.getElementsByName("location")
+    for(var checkedLoc of location){
+        if(checkedLoc.checked){
+            locations.push(checkedLoc.value)
+        }
+    }
+    // console.log(locations)
+
     const rooms = document.getElementById("rooms").value
     const date = document.getElementById("movedate").value
     const duration = document.getElementById("duration").value
@@ -74,13 +84,13 @@ function createRoomie() {
     const tele = document.getElementById("tele").value
     const gender = document.getElementById("gender").value
 
-    if (firstname != "" && lastname != "" && budget != "" &&  age != "" && location != "" && rooms != "" && date != ""
-        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "" && gender != "") {
+    if (firstname != "" && lastname != "" && age!="" && gender!="" && budget != "" && locations != null && rooms != "" && date != ""
+        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
         set(ref(database, 'roomie/' + name), {
-            budget: budget,
-            gender: gender,
             age: age,
-            location: location,
+            gender: gender,
+            budget: budget,
+            location: locations,         
             rooms: rooms,
             movedate: date,
             duration: duration,

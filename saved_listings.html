@@ -26,117 +26,50 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
     <script type = "module"  src = "/register,login/firebaseconfig.js"></script>
+    <style>
 
+      input {
+      display: none;
+      }
+      /* changes the color when selected */
+      input:checked ~ label {
+      color: red;
+      }
+      label {
+      font-size: 2em;
+      position:absolute;
+      right: 5px;;
+      top:0px
+      }
+
+  </style>
   </head>
   <body>
     <div id="main">
     <nav-component></nav-component>
     </div>
-
+    <div class="container">
     <div class="d-flex mt-5 justify-content-center">
         <h1 class="fw-bold text-center">Your Favourites</h1>
     </div>
-    
+  
     <section  class="mt-0 mb-0" >
-      <div class="container">
-          <div class="row">
-          <div class="col-12">
-      
-              <div class="row shuffle-wrapper">
-              <!-- <div class="col-1 shuffle-sizer"></div> -->
-      
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
-                  <div class="project-container">
-                      <div class="project-img-container">
-                          <a class="gallery-popup" 
-                              aria-label="project-img">
-                              <img class="img-fluid" src="images/room/room1.jpg" alt="project-img">
-                              <span class="gallery-icon"  ><i class="bi bi-heart"  id='heart1' onclick="changeImage()"></i>
-                          </span>
-                          </a>
-                          <div class="project-item-info">
-                              <div class="project-item-info-content">
-                                  <h3 class="project-item-title">
-                                      <a href="Propertylisting/index.html">1 Bedroom Hostel</a>
-                                  </h3>
-                                  <p class="project-cat">Accommodation</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="project-desc">
-                          <div class="project-item-price">$750 / month</div>
-                          <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>37 Defu Lane (East)</div>
-                          <div class="icon">
-                              <span><i class="fa fa-bed"></i>2</span>
-                              <span><i class="fa fa-bath"></i>1</span>
-                          </div>
-                      </div>
-                  </div>
-              </div><!-- shuffle item 1 end -->
-      
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;commercial&quot;]">
-                  <div class="project-container">
-                      <div class="project-img-container">
-                          <a class="gallery-popup"
-                              aria-label="project-img">
-                              <img class="img-fluid" src="images/room/room2.png" alt="project-img">
-                              <span class="gallery-icon"><i class="bi bi-heart" id='heart2' onclick="changeImage()" ></i>
-</span>
-                          </a>
-                          <div class="project-item-info">
-                              <div class="project-item-info-content">
-                                  <h3 class="project-item-title">
-                                      <a href="Propertylisting/propertylisting.html">2 BedroomS in HDB</a>
-                                  </h3>
-                                  <p class="project-cat">Accommodation</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="project-desc">
-                          <div class="project-item-price">$2,100 / month</div>
-                          <div class="address"><span><i class="bi bi-geo-alt-fill"></i></span>115 Edgefield Plains (North-East)</div>
-                          <div class="icon">
-                              <span><i class="fa fa-bed"></i>2</span>
-                              <span><i class="fa fa-bath"></i>1</span>
-                          </div>
-                      </div>
-                  </div>
-              </div><!-- shuffle item 2 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;apartment&quot;]">
-                  <div class="project-container">
-                      <div class="project-img-container">
-                          <a class="gallery-popup" 
-                              aria-label="project-img">
-                              <img class="img-fluid" src="images/profile/profile1.jpg" alt="project-img">
-                              <span class="gallery-icon"><i class="bi bi-heart" id='heart3' onclick="changeImage()" ></i>
-</span>
-                          </a>
-                          <div class="project-item-info">
-                              <div class="project-item-info-content">
-                                  <h3 class="project-item-title">
-                                      <a href="roomielisting/roomieListing.html">Jamie Natalia</a>
-                                  </h3>
-                                  <p class="project-cat">Roomies</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="project-desc">
-                          <div class="project-item-price">$1,000 / month</div>
-                          <div class="address"><span><i class="bi bi-geo-alt-fill" ></i></span>Central, South, West</div>
-                          <div class="icon">
-                              <span><i class="fa fa-graduation-cap"></i>22</span>
-                              <span class="space"></span>
-                              <span><i class="fa fa-bed" ></i><span class="space2"></span>Looking for 1 room</span>
-                          </div>
-                      </div>
-                  </div>
-              </div><!-- shuffle item 3 end -->
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2" id="result">
           
-          </div><!-- Content row end -->
-      </div><!--/ Container end -->
-      </section>
+         
+        </div>
 
+    </section>
+  </div>
+        <script>
+            document.getElementById('result').innerHTML= localStorage.getItem('thecard')
+            localStorage.clear();
+        </script>
+
+
+            
+
+    <script src="/home.js"></script>
   <!-- Vue.js Version 3 CDN -->
   <script src="plugins/jQuery/jquery.min.js"></script>
   <!-- Bootstrap jQuery -->

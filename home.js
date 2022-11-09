@@ -21,3 +21,28 @@ function openTab(evt, name) {
 
 
 document.getElementById("defaultOpen").click();
+
+
+function passValues(obj){
+	var cardElementString = ''
+	console.log(obj)
+	var checkboxes = document.querySelectorAll("input[type=checkbox]");
+	console.log(checkboxes)
+	for (checkbox of checkboxes){
+		if ($(checkbox).is(":checked")){
+			var parentObj = checkbox.parentNode
+			var likedCard = parentObj;		
+			cardElementString += likedCard.outerHTML
+			localStorage.setItem('thecard', cardElementString);
+		}
+	}
+	}
+	
+
+	// var parentObj = obj.parentNode
+	// if($(obj).is(":checked")){
+	// 	var likedCard = parentObj;		
+	// 	var cardElementString = likedCard.outerHTML
+	// 	localStorage.setItem('thecard', cardElementString);
+	//   }	  
+	

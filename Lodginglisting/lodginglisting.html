@@ -60,28 +60,36 @@
           .image-upload>input {
            display: none;
             }
+            input::file-selector-button {
+              background-color:   #67aa94;
+              border-radius: 30px;
+              border: 1px solid grey;
+              color:black;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-top: 5px;
+              margin-top: 5px;
+              padding-bottom: 5px;
+              margin-left:5px;
+              margin-right:5px
+            ;
+            }
+          
         </style>
  
-        <script>
-          $(document).ready(() => {
-              $("#photo").change(function () {
-                  const file = this.files[0];
-                  if (file) {
-                      let reader = new FileReader();
-                      reader.onload = function (event) {
-                          $("#imgPreview")
-                            .attr("src", event.target.result);
-                      };
-                      reader.readAsDataURL(file);
-                  }
-              });
-          });
-        </script>
     </div>
 
     <div class="row w-75 mx-auto mt-5 mb-5">
-      <div class="col w-50">
-        <form>
+      <div class="col ">
+        
+      <div class="mb-5">
+        <label for="photo" class="custom-file-upload">
+          <img id='preview' src="/images/Screenshot 2022-11-09 at 12.33.50 AM.png" style="width:400px;height:100%;border-radius:30px" alt="pic" style="border-radius:30px" />
+          <input type="file" id="inputFile" accept="image/png, image/png" >
+        </label>
+        </div>
+        </div>
+      <!-- </div>
           <div class="row w-75 mb-5">
             <div class="holder image-upload">
               <label for="photo">
@@ -92,11 +100,11 @@
               id="photo" required="true" />
             </div>
           </div>
-          </div>
+          </div> -->
 
           <div class="col">
             <div class=" mt-0 pt-0 pb-0">
-              <h3 class="fw-bold mt-0 mb-3 text-start">
+              <h3 class="fw-bold mt-0  text-start">
             
                 Listing title</h3>
 
@@ -376,7 +384,6 @@
       
           </div>
   
-        </form>
         
           </div>
         
@@ -400,6 +407,22 @@
         </div>
     </div>
     
+
+    <script>
+        
+    var file = document.getElementById('inputFile')
+    var preview = document.getElementById('preview')
+    file.addEventListener("change", function () {
+      const reader = new FileReader()
+      reader.addEventListener("load", () => {
+        let uploaded_image = reader.result
+        preview.src = uploaded_image
+      })
+      reader.readAsDataURL(this.files[0])
+
+    })
+  </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script>
   $( document ).ready(function() {
