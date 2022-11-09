@@ -183,7 +183,7 @@ function createProperty() {
 
     if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
-        && place != "" && phone!="" && email!="" && tele!="") {
+        && place != "" && phone!="" && email!="" && tele!="" && main_user != null) {
         set(ref(database, 'property/' + title), {
             address: address,
             bedroomquantity: bedroomquantity,
@@ -196,6 +196,7 @@ function createProperty() {
             duration: duration,
             place: place,
             roomies: roomies,
+            uid: main_user.uid
         })
 
         set(ref(database, `property/${title}/financial`), {
@@ -336,6 +337,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
         // User is signed out
         // ...
+        main_user = null
         console.log("user signed out")
     }
 });
