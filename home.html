@@ -46,6 +46,10 @@
         top:0px
         }
 
+        .tab {
+            white-space: nowrap;
+        }
+
     </style>
 <body>
 
@@ -80,18 +84,21 @@
     <section class="mt-0 mb-0" >
         <div class="container">
             <div class="row text-center">
-            <div class="col-lg-12">
-                <!-- <h2 class="section-title">WELCOME!</h2> -->
-                <h3 class="section-sub-title">Available listings</h3>
-            </div>
+                <div class="col-lg-12">
+                    <!-- <h2 class="section-title">WELCOME!</h2> -->
+                    <h3 class="section-sub-title">Available listings</h3>
+                </div>
             </div>
             <!--/ Title row end -->
 
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'lodging')" id="defaultOpen">Lodging</button>
-                <button class="tablinks" onclick="openTab(event, 'roommates')">Roommates</button>
+            <div class="col d-flex justify-content-center align-items-center mb-5">
+                <h5 class="me-3 my-2">Choose between...</h5>
+                <button class="tablinks btn btn-success btn-lg" onclick="openTab(event, 'lodging')" id="defaultOpen">Lodgings</button>
+                <button class="tablinks btn btn-success btn-lg ms-3" onclick="openTab(event, 'roommates')">Roommates</button>
+
             </div>
 
+            
             <div id="lodging" class="tabcontent">
                 <div class="mt-0 mb-3">
                 <div class="btn-group mx-2">
