@@ -53,7 +53,6 @@ function getAllDataOnce() {
         });
         var smth = 
         `
-        <div id="roommates" class="tabcontent">
         <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
         `
         console.log(roomie)
@@ -101,7 +100,7 @@ function getAllDataOnce() {
             `     
         }
 
-        smth += `</div></div>`
+        smth += `</div>`
         roomieDiv.innerHTML=smth
         console.log(roomieDiv)
 
@@ -157,6 +156,7 @@ function createRoomie() {
             tele: tele,
         })
         alert('roomie listed')
+        window.location.href = "../home.html#project-area"
     }
 }
 
