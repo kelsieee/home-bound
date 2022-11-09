@@ -46,6 +46,10 @@
         top:0px
         }
 
+        .tab {
+            white-space: nowrap;
+        }
+
     </style>
 <body>
 
@@ -80,19 +84,23 @@
     <section class="mt-0 mb-0" >
         <div class="container">
             <div class="row text-center">
-            <div class="col-lg-12">
-                <!-- <h2 class="section-title">WELCOME!</h2> -->
-                <h3 class="section-sub-title">Available listings</h3>
-            </div>
+                <div class="col-lg-12">
+                    <!-- <h2 class="section-title">WELCOME!</h2> -->
+                    <h3 class="section-sub-title">Available listings</h3>
+                </div>
             </div>
             <!--/ Title row end -->
 
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'lodging')" id="defaultOpen">Lodging</button>
-                <button class="tablinks" onclick="openTab(event, 'roommates')">Roommates</button>
+            <div class="col d-flex justify-content-center align-items-center mb-5">
+                <h5 class="me-3 my-2">Choose between...</h5>
+                <button class="tablinks btn btn-success btn-lg" onclick="openTab(event, 'lodging')" id="defaultOpen">Lodgings</button>
+                <button class="tablinks btn btn-success btn-lg ms-3" onclick="openTab(event, 'roommates')">Roommates</button>
+
             </div>
 
             <!-- need fix -->
+
+            
 
             <div id="lodging" class="tabcontent">
                 <div class="mt-0 mb-3">
@@ -147,7 +155,7 @@
                                     <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
                                     <span class="badge bg-info text-dark m-1">2 rooms</span>
                                 </div>
-                                <div class="card-text d-flex pb-2">
+                                <div class="card-text d-flex pb-2 mt-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
                                     <div class="fw-light fs-6 px-2">37 Defu Lane (East)</div>
                                 </div>
@@ -180,7 +188,7 @@
                                     <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
                                     <span class="badge bg-info text-dark m-1">1 room</span>
                                 </div>
-                                <div class="card-text d-flex pb-2">
+                                <div class="card-text d-flex pb-2 mt-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
                                     <div class="fw-light fs-6 px-2">37 Defu Lane (East)</div>
                                 </div>
@@ -213,7 +221,7 @@
                                     <span class="badge bg-warning text-dark mx-1"><i class="bi bi-wifi"></i></span>
                                     <span class="badge bg-info text-dark mx-1">2 rooms</span>
                                 </div>
-                                <div class="card-text d-flex pb-2">
+                                <div class="card-text d-flex pb-2 mt-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
                                     <div class="fw-light fs-6 px-2">37 Defu Lane (East)</div>
                                 </div>
@@ -235,7 +243,7 @@
                         </div>
                     </div>
 
-                    <div class="col project_container onedollar wifiavailable tworoom"  id="card4">
+                    <div class="col project_container onedollar wifiavailable tworoom mt-5"  id="card4">
                         <div class="card "style='position:relative'>
                             <input type="checkbox" id="heart4" onchange="passValues(this)" ><label  for="heart4" >&#9829</label></input>
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
@@ -246,7 +254,7 @@
                                     <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
                                     <span class="badge bg-info text-dark m-1">2 rooms</span>
                                 </div>
-                                <div class="card-text d-flex pb-2">
+                                <div class="card-text d-flex pb-2 mt-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
                                     <div class="fw-light fs-6 px-2">37 Defu Lane (East)</div>
                                 </div>

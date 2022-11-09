@@ -48,11 +48,14 @@
   <div class="row mx-auto w-75 mt-5 mx-auto">
     <div class="col">
 
-      <div class="mb-5">
+      <div class="row">
         <label for="photo">
           <img id='preview' src="add_profile.png" style="width:400px" alt="pic" style="border-radius:30px" />
-          <input type="file" id="inputFile" accept="image/png, image/png">
         </label>
+      </div>
+
+      <div class="row mb-5">
+        <input type="file" id="inputFile" accept="image/png, image/png">
       </div>
     </div>
 
@@ -101,80 +104,79 @@
           </div>
 
           <h3 class="fw-bold mt-4 mb-4">Lodging details</h3>
+          
+      
+
+
+          
           <div class="d-flex w-100 mt-3">
               <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50 me-2">Budget per month</label>
-              <!-- <span class="ms- ps-4 me-3 fs-5 mt-2">$</span> -->
-              <input type="text" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px" id="budget"
+              <input type="text" class="form-control form-control-lg bg-light h-75 w-50" style="border-radius: 10px" id="budget"
                 required>
-
-            <!-- </div> -->
           </div>
 
-          <div class="row d-flex mb-4">
+          
 
-            <div class="row d-flex mb-3">
-              <div class="col-sm-10 d-flex">
-                <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50"
-                  style="white-space:nowrap">Preferred Location</label>
-                  <!-- <input type="text" class="form-control form-control-lg bg-light h-75 mx-4" style="border-radius: 10px" id="location" required> -->
-                  <div class="dropdown">
-                    <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Location
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="location">
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="north" id="north" name="location" />
-                                    <label class="form-check-label" for="north">North</label>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="south" id="south" name="location" checked />
-                                    <label class="form-check-label" for="south">South</label>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="east" id="east" name="location"/>
-                                    <label class="form-check-label" for="east">East</label>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="west" id="west" name="location" checked />
-                                    <label class="form-check-label" for="west">West</label>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="central" id="central" name="location" checked />
-                                  <label class="form-check-label" for="central">Central</label>
-                              </div>
-                          </a>
-                      </li>
-                    </ul>
-                </div>
-                
-                <span class="error" aria-live="polite"></span>
-              </div>
-            </div>
+          <div class="d-flex w-100 mt-4">
+            <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50 me-2"
+            style="white-space:nowrap">Preferred Location</label>
+            <div class="dropdown h-100 w-50">
+              <button class="btn btn-light border dropdown-toggle h-100 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Location
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="location">
+                  <li>
+                      <a class="dropdown-item" href="#">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="north" id="north" name="location" />
+                              <label class="form-check-label" for="north">North</label>
+                          </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="#">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="south" id="south" name="location" checked />
+                              <label class="form-check-label" for="south">South</label>
+                          </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="#">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="east" id="east" name="location"/>
+                              <label class="form-check-label" for="east">East</label>
+                          </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="#">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="west" id="west" name="location" checked />
+                              <label class="form-check-label" for="west">West</label>
+                          </div>
+                      </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="central" id="central" name="location" checked />
+                            <label class="form-check-label" for="central">Central</label>
+                        </div>
+                    </a>
+                </li>
+              </ul>
+          </div>
+          
+          <span class="error" aria-live="polite"></span>
+        
+          </div>
 
-            <div class="col-sm-10 d-flex">
-              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50"
+          <div class="d-flex mt-3 w-100">
+              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50 me-2"
                 style="white-space:nowrap">No. of Rooms</label>
-     
 
-              <select class="form-select bg-light" style="color:rgb(110, 110, 110) ;width: 175px" aria-label="Default select example" id="rooms">
+              <select class="form-select bg-light h-100 w-50" style="color:rgb(110, 110, 110) ;width: 175px" aria-label="Default select example" id="rooms">
                 <option selected>No. of Rooms</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -183,28 +185,50 @@
                 <option value="5">5</option>
               </select>
               <span class="error" aria-live="polite"></span>
-            </div>
-          </div>
-          <div class="row mb-2 d-flex mb-4">
-            <div class="col-sm-10 d-flex">
-              <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50"
-                style="white-space:nowrap">Ready to Move On</label>
-              <input type="date" class="form-control form-control-lg bg-light mx-4 ms-2 w-50"
-                style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
-              <span class="error" aria-live="polite"></span>
-            </div>
-          </div>
-          <div class="row mb-5 d-flex mb-4">
-            <div class="col-sm-10 d-flex">
-              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold text-end "
-                style="white-space:nowrap">Stay Duration</label>
-              <input type="number" class="form-control form-control-lg bg-light h-75 w-50 ms-5"
-                style="border-radius: 10px" id="duration" required>
-                <span class="mx-3 fs-5 mt-2">month(s)</span>
 
-              <span class="error" aria-live="polite"></span>
-            </div>
+
+            
           </div>
+
+          <div class="d-flex mt-3 w-100">
+  
+              <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50 me-2"
+              style="white-space:nowrap">Ready to Move On</label>
+
+              <input type="date" class="form-control form-control-lg bg-light  h-100 w-50"
+              style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
+              <span class="error" aria-live="polite"></span>
+            
+            </div>
+      
+            <div class="d-flex mt-4 w-100">
+  
+              <!-- <label for="movedate" class="col-form-label col-form-label-lg fw-semibold w-50 me-2"
+              style="white-space:nowrap">Ready to Move On</label>
+
+              <input type="date" class="form-control form-control-lg bg-light  h-100 w-50""
+              style="border-radius: 10px;" id="movedate" placeholder="DD  /  MM  /  YYYY" required>
+              <span class="error" aria-live="polite"></span> -->
+
+              <label for="inputName" class="col-form-label col-form-label-lg fw-semibold w-50 me-2"
+              style="white-space:nowrap">Stay Duration</label>
+            <input type="number" class="form-control form-control-lg bg-light  h-100 w-25"
+              style="border-radius: 10px" id="duration" required>
+              <span class="mx-3 fs-5 mt-2">month(s)</span>
+
+            <span class="error" aria-live="polite"></span>
+            
+            </div>
+          
+          
+  
+
+
+          
+
+
+
+
         </div>
       </div>
     </div>
@@ -245,18 +269,7 @@
 
   <script>
     // $(document).ready(() => {
-    //     $("#photo").change(function () {
-    //         const file = this.files[0];
-    //         if (file) {
-    //             let reader = new FileReader();
-    //             reader.onload = function (event) {
-    //                 $("#imgPreview")
-    //                   .attr("src", event.target.result);
-    //             };
-    //             reader.readAsDataURL(file);
-    //         }
-    //     });
-    // });
+
     
     var file = document.getElementById('inputFile')
     var preview = document.getElementById('preview')
@@ -287,9 +300,9 @@
   </div>
 
 
- <div class="w-75 mx-auto  mb-5">
+ <div class="w-75 mx-auto  mb-5 mt-1">
 
-    <h3 class="fw-bold ms-3">
+    <h3 class="fw-bold ms-3 mt-5">
 
       Introduction</h3>
 
@@ -332,7 +345,7 @@
 
     <div class="w-75 mx-auto  mb-5">
 
-      <h3 class="fw-bold">
+      <h3 class="fw-bold ms-3 ">
 
         Get in Touch</h3>
 
@@ -340,7 +353,7 @@
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
             </svg> -->
-        <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
+        <input type="text" class="form-control bg-light ps-3 mt-3 " style="border-radius: 10px; height: 50px;" id="phone" rows="1"
           placeholder="Enter phone number."></input>
       </div>
 
@@ -348,7 +361,7 @@
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
             </svg> -->
-        <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
+        <input type="text" class="form-control bg-light ps-3 mt-3" style="border-radius: 10px;height: 50px;" id="email" rows="1"
           placeholder="Enter email."></input>
       </div>
 
@@ -356,7 +369,7 @@
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
             </svg> -->
-        <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
+        <input type="text" class="form-control bg-light ps-3 mt-3" style="border-radius: 10px;height: 50px;" id="tele" rows="1"
           placeholder="Enter Telegram handle."></input>
 
       </div>
