@@ -160,10 +160,9 @@ function uploadProfileImage() {
 
 function createProperty() {
     const title = document.getElementById("title").value
+    const address = document.getElementById("address").value
     const bathroomquantity = document.getElementById("bathroomquantity").value
-    const bathroomshared = document.getElementById("bathroomshared").checked
     const bedroomquantity = document.getElementById("bedroomquantity").value
-    const bedroomshared = document.getElementById("bedroomshared").checked
     const internet = document.getElementById("internet").value
     const rent = document.getElementById("rent").value
     const bills = document.getElementById("bills").value
@@ -182,10 +181,13 @@ function createProperty() {
     const tele = document.getElementById("tele").value
 
 
-    if (title != "" && bathroomquantity != "" && bathroomshared != null && bedroomquantity != "" && bedroomshared != null && internet != ""
+    if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
-        && place != "") {
+        && place != "" && phone!="" && email!="" && tele!="") {
         set(ref(database, 'property/' + title), {
+            address: address,
+            bedroomquantity: bedroomquantity,
+            bathroomquantity: bathroomquantity,
             internet: internet,
             property: property,
             furnishing: furnishing,
@@ -194,16 +196,6 @@ function createProperty() {
             duration: duration,
             place: place,
             roomies: roomies,
-        })
-
-        set(ref(database, `property/${title}/bathroom`), {
-            bathroomquantity: bathroomquantity,
-            bathroomshared: bathroomshared,
-        })
-
-        set(ref(database, `property/${title}/bedroom`), {
-            bedroomquantity: bedroomquantity,
-            bedroomshared: bedroomshared,
         })
 
         set(ref(database, `property/${title}/financial`), {
