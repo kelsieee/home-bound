@@ -59,7 +59,7 @@ function getAllDataOnce() {
 
         var roomieDiv = document.getElementById("roommates")
         for(var i =0; i<roomie.length; i++){
-            // console.log(roomie[i])
+            console.log(roomie[i])
             const rName = roomie[i].name
             const rAge = roomie[i].age
             var pLoc = ""
@@ -70,12 +70,20 @@ function getAllDataOnce() {
             // console.log(pLoc.slice(0,-2))
             const rBudget = roomie[i].budget
             const rDuration = roomie[i].duration
+            let url = "images/profile/noimage.jpg"
+            if(roomie[i].roomieImg){
+                url = roomie[i].roomieImg
+            }
+            
+            
+
+            
             smth += 
             `
             <div class="col">
-                        <div class="card "style='position:relative'  id="card5">
+                        <div class="card "style='position:relative'  id="card${i}">
                             <input type="checkbox" id="heart5" onchange="passValues(this)"><label  for="heart5" >&#9829</label></input>
-                            <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
+                            <img class="img-fluid card-img-top" src=${url} alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
                                 <div class="card-text d-flex pb-2">
@@ -210,8 +218,9 @@ function getAllDataOnce() {
 
 
 }
-function createRoomie() {
 
+function createRoomie() {
+    
     const firstname = document.getElementById("firstname").value
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
@@ -238,8 +247,8 @@ function createRoomie() {
     const tele = document.getElementById("tele").value
 
     if (firstname != "" && lastname != "" && age!="" && gender!="" && budget != "" && locations != null && rooms != "" && date != ""
-        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "") {
-        set(ref(database, 'roomie/' + name), {
+        && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "" && main_user != null) {
+        set(ref(database, 'roomie/' + main_user.uid), {
             name: name,
             age: age,
             gender: gender,
@@ -252,16 +261,21 @@ function createRoomie() {
             hobbies: hobbies,
         })
 
-        set(ref(database, `roomie/${name}/contact`), {
+        set(ref(database, `roomie/${main_user.uid}/contact`), {
             phone: phone,
             email: email,
             tele: tele,
         })
+
         alert('roomie listed')
-        window.location.href = "../home.html#project-area"
+        uploadProfileImage()
+        setTimeout(function(){
+            window.location.href = "../home.html#project-area";
+         }, 2000);
+        alert("Loading...")
+         
     }
 }
-
 
 function uploadProfileImage() {
 
@@ -276,6 +290,9 @@ function uploadProfileImage() {
                     console.log(url)
                     update(ref(database, 'users/' + main_user.uid), {
                         profileImage: url
+                    })
+                    update(ref(database, 'roomie/' + main_user.uid), {
+                        roomieImg: url
                     })
                 })
                 .catch((error) => {
@@ -378,7 +395,8 @@ if (listRoomie != null) {
     listRoomie.addEventListener("click", (e) => {
 
         createRoomie()
-        uploadProfileImage()
+        
+
 
     })
 }
