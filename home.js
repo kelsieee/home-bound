@@ -21,3 +21,25 @@ function openTab(evt, name) {
 
 
 document.getElementById("defaultOpen").click();
+
+
+function passValues(obj){
+
+	if($(obj).is(":checked")){
+		alert('checked')
+		var likedCard = document.getElementById('card1');
+		// console.log(likedCard.parentElement)
+		
+		var cardElement = likedCard.parentElement
+		var cardElementString = cardElement.outerHTML
+		// console.log(cardElementString)
+		// console.log(stringify(cardElement))
+		localStorage.setItem('thecard', cardElementString);
+		// console.log((localStorage.getItem('thecard')))
+		// return cardElement
+		// localStorage.setItem("thecard", likedCard);
+		// return false;
+		// var like
+	  }	  
+	
+	}

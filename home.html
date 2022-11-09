@@ -130,11 +130,12 @@
             </div>
             
 
-                
                 <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-                    <div class="col project_container onedollar wifiavailable tworoom">
+                    <form action='/saved_listings.html'>
+
+                    <div class="col project_container onedollar wifiavailable tworoom" id="card1">
                         <div class="card "style='position:relative'>
-                            <input type="checkbox" id="heart1" ><label  for="heart1" >&#9829</label></input>
+                            <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
                             <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">Listing Title</h5>
@@ -165,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-    
+                </form>
                     <div class="col project_container onedollar wifiavailable oneroom">
                         <div class="card "style='position:relative'>
                             <input type="checkbox" id="heart2" ><label  for="heart2" >&#9829</label></input>
