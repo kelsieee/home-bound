@@ -24,18 +24,26 @@ document.getElementById("defaultOpen").click();
 
 
 function passValues(obj){
-
+	console.log(obj.parentNode)
+	var parentObj = obj.parentNode
+	// <input type="checkbox" id="heart1" onchange="passValues(this)">
+	
 	if($(obj).is(":checked")){
-		alert('checked')
-		var likedCard = document.getElementById('card1');		
-		var cardElement = likedCard.parentElement
-		var cardElementString = cardElement.outerHTML
+		// alert('checked')
+		
+
+		var likedCard = parentObj;		
+		
+		var cardElementString = likedCard.outerHTML
 		localStorage.setItem('thecard', cardElementString);
-		// console.log((localStorage.getItem('thecard')))
-		// return cardElement
-		// localStorage.setItem("thecard", likedCard);
-		// return false;
-		// var like
+
+		
+		// var likedCard = document.getElementById('card1');		
+		// var cardElementString = likedCard.outerHTML
+		// localStorage.setItem('thecard', cardElementString);
+		
+		
+		
 	  }	  
 	
 	}
