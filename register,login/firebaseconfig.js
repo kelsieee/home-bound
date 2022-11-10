@@ -56,7 +56,7 @@ function getAllDataOnce() {
         });
         var smth = 
         `
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
         `
         console.log(roomie)
 
@@ -83,10 +83,10 @@ function getAllDataOnce() {
             
             smth += 
             `
-            <div class="col">
-                        <div class="card "style='position:relative'  id="card${i}">
+            <div class="col mb-3">
+                        <div class="card h-100" style='position:relative'  id="card${i}">
                             <input type="checkbox" id="heart${i}" onchange="passValues(this)"><label  for="heart${i}" >&#9829</label></input>
-                            <img class="img-fluid card-img-top" src=${url} alt="project-img">
+                            <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
                                 <div class="card-text d-flex pb-2">
@@ -161,7 +161,7 @@ function getAllDataOnce() {
         </div>
             
 
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
         `
 
         console.log(property)
@@ -180,10 +180,10 @@ function getAllDataOnce() {
             }
             str +=
             `
-            <div class="col project_container onedollar wifiavailable tworoom" id="card1">
-            <div class="card "style='position:relative'>
+            <div class="col project_container onedollar wifiavailable tworoom mb-3" id="card1">
+            <div class="card h-100" style='position:relative'>
                 <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
-                <img class="img-fluid card-img-top" src=${url} alt="project-img">
+                <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
                 <div class="card-body">
                     <h5 class="card-title text-success fw-bolder">${pTitle}</h5>
 
