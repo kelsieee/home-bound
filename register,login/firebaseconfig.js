@@ -41,6 +41,7 @@ function GenerateId() {
     return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
   };
 main.addEventListener("load", getAllDataOnce())
+
 let main_user = null
 
 function getAllDataOnce() {
@@ -180,11 +181,14 @@ function getAllDataOnce() {
             str +=
             `
             <div class="col project_container onedollar wifiavailable tworoom mb-3" >
-            <div class="card h-100" style='position:relative'>
+            <div class="card h-100" style='position:relative' >
                 <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
                 <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
                 <div class="card-body">
-                    <h5 class="card-title text-success fw-bolder"><button onclick = ${populateP(listId)}> ${pTitle}</button></h5>
+                <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
+                    <h5 class="card-title text-success fw-bolder" >${pTitle}</h5>
+                </a>
+                    
 
                     <div>
                         <span class="badge bg-danger m-1">$</span>
@@ -224,11 +228,13 @@ function getAllDataOnce() {
 
 }
 
-function populateP(clicked_id)
-  {
-    console.log(clicked_id)
+// function populateP()
+//   {
+//     console.log("HI")
+//     let test = document.getElementById('1x6ri0dzaxqormf1')
+//     test.setAttribute("href", "https://www.w3schools.com")
     
-  }
+//   }
 
 function createRoomie() {
     
