@@ -27,7 +27,7 @@ const database = getDatabase(app);
 const auth = getAuth();
 const storage = getStorage()
 const storageref = sRef(storage);
-console.log(storage)
+console.log(storageref)
 
 
 let signUp = document.getElementById('signUp')
@@ -37,6 +37,9 @@ let listRoomie = document.getElementById('listRoomie')
 let listProperty = document.getElementById('listProperty')
 let main = document.getElementById('main')
 let file = document.getElementById('inputFile')
+function GenerateId() {
+    return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
+  };
 main.addEventListener("load", getAllDataOnce())
 let main_user = null
 
@@ -82,7 +85,7 @@ function getAllDataOnce() {
             `
             <div class="col">
                         <div class="card "style='position:relative'  id="card${i}">
-                            <input type="checkbox" id="heart5" onchange="passValues(this)"><label  for="heart5" >&#9829</label></input>
+                            <input type="checkbox" id="heart${i}" onchange="passValues(this)"><label  for="heart${i}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" src=${url} alt="project-img">
                             <div class="card-body">
                                 <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
@@ -171,13 +174,16 @@ function getAllDataOnce() {
             const pRent = property[i].financial.rent
             const pBedroom = property[i].bedroomquantity
             const pBathroom = property[i].bathroomquantity
-
+            let url = "images/room/no-property-photo.jpg"
+            if(property[i].propertyImg){
+                url = property[i].propertyImg
+            }
             str +=
             `
             <div class="col project_container onedollar wifiavailable tworoom" id="card1">
             <div class="card "style='position:relative'>
                 <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
-                <img class="img-fluid card-img-top" src="images/room/room1.jpg" alt="project-img">
+                <img class="img-fluid card-img-top" src=${url} alt="project-img">
                 <div class="card-body">
                     <h5 class="card-title text-success fw-bolder">${pTitle}</h5>
 
@@ -269,10 +275,10 @@ function createRoomie() {
 
         alert('roomie listed')
         uploadProfileImage()
-        setTimeout(function(){
-            window.location.href = "../home.html#project-area";
-         }, 2000);
-        alert("Loading...")
+        // setTimeout(function(){
+        //     window.location.href = "../home.html#project-area";
+        //  }, 2000);
+        // alert("Loading...")
          
     }
 }
@@ -293,6 +299,56 @@ function uploadProfileImage() {
                     })
                     update(ref(database, 'roomie/' + main_user.uid), {
                         roomieImg: url
+                    })
+                })
+                .catch((error) => {
+                    // A full list of error codes is available at
+                    // https://firebase.google.com/docs/storage/web/handle-errors
+                    switch (error.code) {
+                        case 'storage/object-not-found':
+                            // File doesn't exist
+                            break;
+                        case 'storage/unauthorized':
+                            // User doesn't have permission to access the object
+                            break;
+                        case 'storage/canceled':
+                            // User canceled the upload
+                            break;
+
+                        // ...
+
+                        case 'storage/unknown':
+                            // Unknown error occurred, inspect the server response
+                            break;
+                    }
+                })
+
+        });
+
+
+
+    }
+
+
+    // else{
+    //     alert("No files selected!")
+    // }
+
+}
+
+function uploadListingImage(id) {
+
+    if (file.files.length > 0) {
+        var thisref = sRef(storage, `${main_user.uid}/Listing/${id}`)
+        console.log(file.files[0])
+        uploadBytes(thisref, file.files[0]).then((snapshot) => {
+            console.log('Uploaded a blob or file!');
+            getDownloadURL(thisref)
+                .then((url) => {
+                    // Insert url into an <img> tag to "download"
+                    console.log(url)
+                    update(ref(database, 'property/' + id), {
+                        propertyImg: url
                     })
                 })
                 .catch((error) => {
@@ -357,7 +413,8 @@ function createProperty() {
     if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
         && place != "" && phone!="" && email!="" && tele!="" && main_user != null) {
-        set(ref(database, 'property/' + title), {
+        let id = GenerateId()
+        set(ref(database, 'property/' + id), {
             title: title,
             address: address,
             bedroomquantity: bedroomquantity,
@@ -373,27 +430,30 @@ function createProperty() {
             uid: main_user.uid
         })
 
-        set(ref(database, `property/${title}/financial`), {
+        set(ref(database, `property/${id}/financial`), {
             rent: rent,
             bills: bills,
             deposit: deposit,
         })
 
-        set(ref(database, `property/${title}/contact`), {
+        set(ref(database, `property/${id}/contact`), {
             phone: phone,
             email: email,
             tele: tele,
         })
 
         alert('property listed')
-        window.location.href = "../home.html#project-area"
+        uploadListingImage(id)
+        setTimeout(function(){
+            window.location.href = "../home.html#project-area";
+         }, 2000);
+        alert("Loading...")
     }
 
 }
 
 if (listRoomie != null) {
     listRoomie.addEventListener("click", (e) => {
-
         createRoomie()
         
 
@@ -508,6 +568,8 @@ onAuthStateChanged(auth, (user) => {
         // https://firebase.google.com/docs/reference/js/firebase.User
         main_user = user
         console.log(main_user)
+        var testing1 = sRef(storage, `${main_user.uid}/profile/profileImg`)
+        console.log(testing1)
         console.log("user logged in")
         // ...
     } else {
