@@ -67,7 +67,7 @@ li:nth-child(odd) {
   background-color: #fcfcfc;
 } */
 
-button {
+/* button {
   width: 100%;
   padding: 1rem;
   flex-grow: 0;
@@ -76,7 +76,7 @@ button {
   font-size: 1.5rem;
   color: white;
   border: none;
-}
+} */
 
 button:hover {
   color: #c5d4f0;
