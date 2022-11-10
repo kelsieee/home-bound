@@ -536,6 +536,7 @@ function getAllDataOnce() {
             const rName = roomie[i].name
             const rAge = roomie[i].age
             var pLoc = ""
+            const listId = roomie[i].listId
             for(var j=0;j<roomie[i].location.length; j++){
                 pLoc += `${roomie[i].location[j]}, `
             }
@@ -558,7 +559,9 @@ function getAllDataOnce() {
                             <input type="checkbox" id="heart${i}" onchange="passValues(this)"><label  for="heart${i}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
-                                <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
+                                <a href="/roomieListing/roomieListing.html?listId=${listId}" id = "${listId}">
+                                    <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
+                                </a>
                                 <div class="card-text d-flex pb-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
                                     <div class="fw-light fs-6 px-2">${pLoc}</div>
@@ -738,6 +741,7 @@ function createRoomie() {
             duration: duration,
             intro: introduction,
             hobbies: hobbies,
+            listId: id
         })
 
         set(ref(database, `roomie/${main_user.uid}/contact`), {
@@ -747,11 +751,12 @@ function createRoomie() {
         })
 
         alert('roomie listed')
+        console.log("listed")
         uploadProfileImage()
         // setTimeout(function(){
         //     window.location.href = "../home.html#project-area";
         //  }, 2000);
-        // alert("Loading...")
+        // alert("Loading...") 
          
     }
 }
@@ -882,7 +887,7 @@ function createProperty() {
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
     
-    console.log("bye")
+    // console.log("bye")
 
     if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
