@@ -39,10 +39,142 @@ let main = document.getElementById('main')
 let file = document.getElementById('inputFile')
 let mainproperty = document.getElementById("mainproperty")
 
+let main_user = null
+
 function GenerateId() {
     return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
   };
 main.addEventListener("load", getAllDataOnce())
+
+
+if (listRoomie != null) {
+    listRoomie.addEventListener("click", (e) => {
+        createRoomie()
+        
+
+
+    })
+}
+
+if (listProperty != null) {
+    console.log("HI")
+    listProperty.addEventListener("click", (e) => {
+        createProperty()
+    })
+}
+
+
+
+if (signUp != null) {
+    signUp.addEventListener("click", (e) => {
+
+        const username = document.getElementById("username").value;
+        const dob = document.getElementById("dob").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById('password1').value;
+        const roommate = document.getElementById('inputRoommate').checked;
+        const landlord = document.getElementById('inputLandlord').checked;
+        var type = "Not Selected"
+        if (roommate == true) {
+            type = "Roommate";
+        }
+        else {
+            type = "Landlord";
+        }
+
+
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user.uid)
+                set(ref(database, 'users/' + user.uid), {
+                    username: username,
+                    dob: dob,
+                    email: email,
+                    type: type
+                })
+
+
+                alert('Succesfully Registered!')
+                window.location.href = "login.html"
+
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // ..
+            });
+    })
+}
+
+
+if (loginBtn != null) {
+    loginBtn.addEventListener("click", (e) => {
+        const inputEmail = document.getElementById('inputEmail').value
+        const inputPassword = document.getElementById('inputPassword').value
+        signInWithEmailAndPassword(auth, inputEmail, inputPassword)
+            .then((userCredential) => {
+                var currentdate = new Date()
+                var datetime = "Last Login: " + currentdate.getDay() + "/" + currentdate.getMonth()
+                    + "/" + currentdate.getFullYear() + " @ "
+                    + currentdate.getHours() + ":"
+                    + currentdate.getMinutes()
+                const user = userCredential.user;
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: datetime
+                }
+
+                )
+                alert("Successfully logged in!")
+                window.location.href = "/home.html";
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage)
+            });
+
+    })
+}
+
+if (signOutBtn != null) {
+    signOutBtn.addEventListener("click", (e) => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            alert("Successfully Signed Out!")
+        }).catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage)
+
+        });
+    })
+}
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        main_user = user
+        console.log(main_user)
+        var testing1 = sRef(storage, `${main_user.uid}/profile/profileImg`)
+        console.log(testing1)
+        console.log("user logged in")
+        // ...
+    } else {
+        // User is signed out
+        // ...
+        main_user = null
+        console.log("user signed out")
+    }
+});
 
 function populateP()
   {
@@ -379,7 +511,7 @@ mainproperty.addEventListener("load", populateP())
 
 console.log(mainproperty)
 
-let main_user = null
+
 
 function getAllDataOnce() {
     const dbRef = ref(database)
@@ -749,7 +881,8 @@ function createProperty() {
     const phone = document.getElementById("phone").value
     const email = document.getElementById("email").value
     const tele = document.getElementById("tele").value
-
+    
+    console.log("bye")
 
     if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
         && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
@@ -794,131 +927,5 @@ function createProperty() {
 
 }
 
-if (listRoomie != null) {
-    listRoomie.addEventListener("click", (e) => {
-        createRoomie()
-        
 
-
-    })
-}
-
-if (listProperty != null) {
-    listProperty.addEventListener("click", (e) => {
-        createProperty()
-    })
-}
-
-
-
-if (signUp != null) {
-    signUp.addEventListener("click", (e) => {
-
-        const username = document.getElementById("username").value;
-        const dob = document.getElementById("dob").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById('password1').value;
-        const roommate = document.getElementById('inputRoommate').checked;
-        const landlord = document.getElementById('inputLandlord').checked;
-        var type = "Not Selected"
-        if (roommate == true) {
-            type = "Roommate";
-        }
-        else {
-            type = "Landlord";
-        }
-
-
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                console.log(user.uid)
-                set(ref(database, 'users/' + user.uid), {
-                    username: username,
-                    dob: dob,
-                    email: email,
-                    type: type
-                })
-
-
-                alert('Succesfully Registered!')
-                window.location.href = "login.html"
-
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage);
-                // ..
-            });
-    })
-}
-
-
-if (loginBtn != null) {
-    loginBtn.addEventListener("click", (e) => {
-        const inputEmail = document.getElementById('inputEmail').value
-        const inputPassword = document.getElementById('inputPassword').value
-        signInWithEmailAndPassword(auth, inputEmail, inputPassword)
-            .then((userCredential) => {
-                var currentdate = new Date()
-                var datetime = "Last Login: " + currentdate.getDay() + "/" + currentdate.getMonth()
-                    + "/" + currentdate.getFullYear() + " @ "
-                    + currentdate.getHours() + ":"
-                    + currentdate.getMinutes()
-                const user = userCredential.user;
-                update(ref(database, 'users/' + user.uid), {
-                    last_login: datetime
-                }
-
-                )
-                alert("Successfully logged in!")
-                window.location.href = "/home.html";
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-
-                alert(errorMessage)
-            });
-
-    })
-}
-
-if (signOutBtn != null) {
-    signOutBtn.addEventListener("click", (e) => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            alert("Successfully Signed Out!")
-        }).catch((error) => {
-            // An error happened.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage)
-
-        });
-    })
-}
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        main_user = user
-        console.log(main_user)
-        var testing1 = sRef(storage, `${main_user.uid}/profile/profileImg`)
-        console.log(testing1)
-        console.log("user logged in")
-        // ...
-    } else {
-        // User is signed out
-        // ...
-        main_user = null
-        console.log("user signed out")
-    }
-});
 
