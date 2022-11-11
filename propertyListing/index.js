@@ -95,11 +95,11 @@ function populateP()
           </div>
           <div class="p-4 col-3">
             <img src="images/water-closet.png" style='width:40px;height: 40px;' alt="">
-            <div><p class="  mt-2" style="white-space: nowrap;"> <br>${pToiletNo} toilet </p></div>  
+            <div><p class="  mt-2" style="white-space: nowrap;"> <br>${pToiletNo} Toilet(s) </p></div>  
             </div>
             <div class=" p-4 col-3">
               <img src="images/bed.png" style='width:40px;height: 40px;' alt="">
-              <div><p class=" mt-2" style="white-space: nowrap;"> <br> ${pBedNo} bedrooms </p></div>  
+              <div><p class=" mt-2" style="white-space: nowrap;"> <br> ${pBedNo} Bedroom(s) </p></div>  
             </div>
 
       </div>
