@@ -94,283 +94,289 @@
       border-collapse: separate; 
       border-spacing: 0 10px;
      }
-     table, th, td{
+     /* table, th, td{
       border: 1px solid;
-     }
+     } */
   </style>
+  <div class="container-fluid mx-auto w-75 align-items-center">
+    <div class="row">
+      <div class="col-lg-6 mt-5 justify-content-center">
+        <!-- <div class="row"> -->
+          <label for="photo" class="custom-file-upload">
+            <img id='preview' src="/images/Screenshot 2022-11-09 at 12.33.50 AM.png"
+              style="width:280px;height:100%;border-radius:30px" alt="pic" style="border-radius:30px" />
+          </label>
+        <!-- </div> -->
   
-  <div class="row w-75 mx-auto mt-5">
-    <div class="col justify-content-center">
-      <!-- <div class="row"> -->
-        <label for="photo" class="custom-file-upload">
-          <img id='preview' src="/images/Screenshot 2022-11-09 at 12.33.50 AM.png"
-            style="width:280px;height:100%;border-radius:30px" alt="pic" style="border-radius:30px" />
-        </label>
-      <!-- </div> -->
-
-      <div class="row mb-5">
-        <input type="file" id="inputFile" accept="image/png, image/jpeg">
+        <div class="row mb-3">
+          <input type="file" id="inputFile" accept="image/png, image/jpeg">
+        </div>
       </div>
-    </div>
 
-    <div class="col justify-content-center">
-      <div class=" mt-0 pt-0 pb-0">
-        <table>
-          <th colspan="2">
-            <h3 class="fw-bold mt-0  text-start">Listing title</h3>
-          </th>
-          <tr>
-            <td colspan="2">
-              <input type="text" class="form-control bg-light mx-auto" style="border-radius: 10px; width:500px;" id="title" rows="1"
-              placeholder="Enter listing title.">
-            </td>
-          </tr>
-
-          <th colspan="2">
-            <h3 class="fw-bold mt-0 mb-3 text-start">Address</h3>    
-          </th>
-          <tr>
-            <td colspan="2">
-              <input type="text" class="form-control bg-light mx-auto" style="border-radius: 10px; width:500px;" id="address" rows="1"
-              placeholder="Enter listing title.">
-            </td>
-          </tr>
-
-          <th colspan="2">
-            <h3 class="fw-bold">Facilities</h3>
-          </th>
-
-          <tr>
-            <td>
-              <h6 class="p-2">Bathroom</h6>
-            </td>
-            <td>
-              <select class="form-select bg-light" style="color:rgb(110, 110, 110) ;width:180px"
-                aria-label="Default select example" id="bathroomquantity">
-                <option selected>Choose quantity</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">Bedroom</h6>
-            </td>
-            <td>
-              <select class="form-select bg-light ms-1" style="color:rgb(110, 110, 110) ;width: 180px"
-                aria-label="Default select example" id="bedroomquantity">
-                <option selected>Choose quantity</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">Internet</h6>
-            </td>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="included" id="internet" name="internet" checked>
-                Included
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="not included" id="internet" name="internet"> Not
-                Included
-              </div>
-            </td>
-          </tr>
-          
-          <th colspan="2">
-            <h3 class="fw-bold">Financial Information</h3>
-          </th>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-piggy-bank-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path
-                    d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Zm7.173 3.876a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199Zm-8.999-.65a.5.5 0 1 1-.276-.96A7.613 7.613 0 0 1 7.964 3.5c.763 0 1.497.11 2.18.315a.5.5 0 1 1-.287.958A6.602 6.602 0 0 0 7.964 4.5c-.64 0-1.255.09-1.826.254ZM5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>
-                Rent per month
-              </h6>
-            </td>
-            <td>
-              <input type="number" style="width:180px" class="form-control bg-light" id="rent" style="border-radius: 30px;"
-              rows="1" placeholder=$>
-            </td>
-          </tr>
-
+      <div class="col-lg-6 mt-4 justify-content-center mx-auto">
+        <div style="overflow-x:auto;">
+          <table>
+            <th colspan="2">
+              <h3 class="fw-bold mt-0 text-start">Listing title</h3>
+            </th>
             <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-lightbulb-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path
-                    d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
-                </svg>
-                Utility Bills
-              </h6>
-            </td>
-            <td>
-              <div class="form-check ">
-                <input class="form-check-input" type="radio" value="Included" id="bills">
-                Included
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="Not Included" id="bills">
-                Not included
-                </label>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-shield-shaded mb-1 me-1" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 14.933a.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067v13.866zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
-                </svg>
-                Security Deposit
-              </h6>
-            </td>
-            <td>
-              <input type="number" style="width:180px" id="deposit" class="form-control bg-light"
-            style="border-radius: 30px;" rows="1" placeholder=$>
-            </td>
-          </tr>
-
-          <th colspan="2">
-            <h3 class="fw-bold">Property Details</h3>
-          </th>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-house-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                  <path fill-rule="evenodd"
-                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                </svg>
-                Property Type
-              </h6>
-            </td>
-            <td> 
-              <select id="property" class="form-select bg-light" style="color:rgb(110, 110, 110) ;width: 180px"
+              <td colspan="2">
+                <input type="text" class="form-control bg-light mx-auto" style="border-radius: 10px;" id="title" rows="1"
+                placeholder="Enter listing title.">
+              </td>
+            </tr>
+  
+            <th colspan="2">
+              <h3 class="fw-bold mt-0 mb-3 text-start">Address</h3>    
+            </th>
+            <tr>
+              <td colspan="2">
+                <input type="text" class="form-control bg-light mx-auto" style="border-radius: 10px;" id="address" rows="1"
+                placeholder="Enter listing title.">
+              </td>
+            </tr>
+  
+            <th colspan="2">
+              <h3 class="fw-bold">Facilities</h3>
+            </th>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">Bathroom</h6>
+              </td>
+              <td>
+                <select class="form-select bg-light" style="color:rgb(110, 110, 110) ;"
+                  aria-label="Default select example" id="bathroomquantity">
+                  <option selected>Choose quantity</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">Bedroom</h6>
+              </td>
+              <td>
+                <select class="form-select bg-light ms-1" style="color:rgb(110, 110, 110) ;"
+                  aria-label="Default select example" id="bedroomquantity">
+                  <option selected>Choose quantity</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">Internet</h6>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="included" id="internet" name="internet" checked>
+                  Included
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="not included" id="internet" name="internet"> Not
+                  Included
+                </div>
+              </td>
+            </tr>
+            
+            <th colspan="2">
+              <h3 class="fw-bold">Financial Information</h3>
+            </th>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-piggy-bank-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Zm7.173 3.876a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199Zm-8.999-.65a.5.5 0 1 1-.276-.96A7.613 7.613 0 0 1 7.964 3.5c.763 0 1.497.11 2.18.315a.5.5 0 1 1-.287.958A6.602 6.602 0 0 0 7.964 4.5c-.64 0-1.255.09-1.826.254ZM5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                  </svg>
+                  Rent per month
+                </h6>
+              </td>
+              <td>
+                <input type="number" style="width:180px" class="form-control bg-light" id="rent" style="border-radius: 30px;"
+                rows="1" placeholder=$>
+              </td>
+            </tr>
+  
+              <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-lightbulb-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
+                  </svg>
+                  Utility Bills
+                </h6>
+              </td>
+              <td>
+                <div class="form-check ">
+                  <input class="form-check-input" type="radio" value="Included" id="bills">
+                  Included
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="Not Included" id="bills">
+                  Not included
+                  </label>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-shield-shaded mb-1 me-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 14.933a.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067v13.866zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
+                  </svg>
+                  Security Deposit
+                </h6>
+              </td>
+              <td>
+                <input type="number" style="width:180px" id="deposit" class="form-control bg-light"
+              style="border-radius: 30px;" rows="1" placeholder=$>
+              </td>
+            </tr>
+  
+            <th colspan="2">
+              <h3 class="fw-bold">Property Details</h3>
+            </th>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-house-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                    <path fill-rule="evenodd"
+                      d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                  </svg>
+                  Property Type
+                </h6>
+              </td>
+              <td> 
+                <select id="property" class="form-select bg-light" style="color:rgb(110, 110, 110) ;"
+                  aria-label="Default select example">
+                  <option selected>Choose property type</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Room">Room</option>
+                </select>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-lamp-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M5.04.303A.5.5 0 0 1 5.5 0h5c.2 0 .38.12.46.303l3 7a.5.5 0 0 1-.363.687h-.002c-.15.03-.3.056-.45.081a32.731 32.731 0 0 1-4.645.425V13.5a.5.5 0 1 1-1 0V8.495a32.753 32.753 0 0 1-4.645-.425c-.15-.025-.3-.05-.45-.08h-.003a.5.5 0 0 1-.362-.688l3-7Z" />
+                    <path
+                      d="M6.493 12.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.052.075l-.001.004-.004.01V14l.002.008a.147.147 0 0 0 .016.033.62.62 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.62.62 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411Z" />
+                  </svg>
+                  Room Furnishing
+                </h6>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="Included" id="furnishing" name="furnishing">
+                  Included
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="Not Included" id="furnishing" name="furnishing">
+                  Not included
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-person-heart mb-1 me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z" />
+                  </svg>
+                  Preferred Gender
+                </h6>
+              </td>
+              <td>
+                <select id="gender" class="form-select bg-light" style="color:rgb(110, 110, 110) ;"
                 aria-label="Default select example">
-                <option selected>Choose property type</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Room">Room</option>
+                <option selected>Choose preferred gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Any">Any</option>
               </select>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-lamp-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M5.04.303A.5.5 0 0 1 5.5 0h5c.2 0 .38.12.46.303l3 7a.5.5 0 0 1-.363.687h-.002c-.15.03-.3.056-.45.081a32.731 32.731 0 0 1-4.645.425V13.5a.5.5 0 1 1-1 0V8.495a32.753 32.753 0 0 1-4.645-.425c-.15-.025-.3-.05-.45-.08h-.003a.5.5 0 0 1-.362-.688l3-7Z" />
-                  <path
-                    d="M6.493 12.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.052.075l-.001.004-.004.01V14l.002.008a.147.147 0 0 0 .016.033.62.62 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.62.62 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411Z" />
-                </svg>
-                Room Furnishing
-              </h6>
-            </td>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="Included" id="furnishing" name="furnishing">
-                Included
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" value="Not Included" id="furnishing" name="furnishing">
-                Not included
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-person-heart mb-1 me-1" viewBox="0 0 16 16">
-                  <path
-                    d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z" />
-                </svg>
-                Preferred Gender
-              </h6>
-            </td>
-            <td>
-              <select id="gender" class="form-select bg-light" style="color:rgb(110, 110, 110) ;width: 180px"
-              aria-label="Default select example">
-              <option selected>Choose preferred gender</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Any">Any</option>
-            </select>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-calendar-week-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path
-                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
-                </svg>
-                Available On
-              </h6>
-            </td>
-            <td>
-              <input type="date" id="date" style="width:180px" class="form-control bg-light" style="border-radius: 30px;"
-                rows="1" placeholder="DD/MM/YY"></input>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                  class="bi bi-clock-fill mb-1 me-1" viewBox="0 0 16 16">
-                  <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-                </svg>
-                Stay Duration
-              </h6>
-            </td>
-            <td>
-              <select id="duration" class="form-select bg-light" style="color:rgb(110, 110, 110) ;width: 180px"
-                aria-label="Default select example">
-                <option selected>Choose stay duration</option>
-                <option value="1-3">1-3 months</option>
-                <option value="3-6">3-6 months</option>
-                <option value="6-12">6-12 months</option>
-                <option value=">>12">>12 months</option>
-              </select>
-            </td>
-          </tr>
-      
-        </table>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-calendar-week-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+                  </svg>
+                  Available On
+                </h6>
+              </td>
+              <td>
+                <input type="date" id="date" style="width:180px" class="form-control bg-light" style="border-radius: 30px;"
+                  rows="1" placeholder="DD/MM/YY"></input>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-clock-fill mb-1 me-1" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                  </svg>
+                  Stay Duration
+                </h6>
+              </td>
+              <td>
+                <select id="duration" class="form-select bg-light" style="color:rgb(110, 110, 110) ;"
+                  aria-label="Default select example">
+                  <option selected>Choose stay duration</option>
+                  <option value="1-3">1-3 months</option>
+                  <option value="3-6">3-6 months</option>
+                  <option value="6-12">6-12 months</option>
+                  <option value=">>12">>12 months</option>
+                </select>
+              </td>
+            </tr>
+        
+          </table>
+        </div>
       </div>
     </div>
   </div>
+  
+
+    <div class="col justify-content-center">
+      <div class=" mt-0 pt-0 pb-0">
+        
   <div class="w-75 mx-auto mt-4 mb-4">
     <h3 class="fw-bold ms-3">
 
