@@ -25,6 +25,7 @@ function openTab(evt, name) {
 document.getElementById("defaultOpen").click();
 
 
+
 function passValues(obj){
 	var cardElementString = ''
 	console.log(obj)
@@ -32,11 +33,14 @@ function passValues(obj){
 	console.log(checkboxes)
 	for (checkbox of checkboxes){
 		if ($(checkbox).is(":checked")){
-			var parentObj = checkbox.parentNode
+			console.log(checkbox)
+			var parentObj = checkbox.parentNode.children[3].childNodes[1].id
+			console.log(parentObj)
 			var likedCard = parentObj;		
 			cardElementString += likedCard.outerHTML
-			localStorage.setItem('thecard', cardElementString);
+			localStorage.setItem('thecard', cardElementString)
 		}
+
 	}
 	}
 	
