@@ -126,12 +126,12 @@ onAuthStateChanged(auth, (user) => {
                 tele: tele,
             })
     
-            alert('property listed')
+            // alert('property listed')
             uploadListingImage(id)
             setTimeout(function(){
                 window.location.href = "../home.html#project-area";
              }, 2000);
-            alert("Loading...")
+            // alert("Loading...")
         }
     
     }
