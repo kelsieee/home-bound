@@ -104,7 +104,7 @@ function createRoomie(user) {
             locations.push(checkedLoc.value)
         }
     }
-    // console.log(locations)
+    console.log(locations)
 
     const rooms = document.getElementById("rooms").value
     const date = document.getElementById("movedate").value
