@@ -58,7 +58,27 @@
     <div class="body-inner" id="main">
      
     <!-- home container id starts -->
-   
+    <div id="home-container">
+        <!-- inner sub id starts -->
+        <div id="inner">
+            <img src="images/logo.png" alt="" id="logo">
+            <p class="subtitle">Let’s find your new home together.</p>
+            <a href="#project-area" class="start" style="text-decoration:none">Get Started</a>
+        </div>
+        <!-- inner sub id ends -->
+
+        <!-- illustration sub id starts -->
+        <div id="illustration">
+            <img src="images/boy.png" alt="" id="boy" class="crypto-icons">
+            <!-- <img src="images/boy.png" alt="iota img" id="iota" class="crypto-icons"> -->
+            <img src="images/girl.png" alt="" id="girl" class="crypto-icons">
+            <img src="images/house.png" alt="" id="house">
+        </div>
+        <!-- illustration sub id ends -->
+    </div>
+    <!-- home container id ends -->
+
+    <div id="project-area"></div>
 
     <nav-component></nav-component>
     
@@ -164,11 +184,14 @@
         
     
     <footer id="footer" class="footer bg-overlay">
-            <div class="container pb-4">
+        <div class="footer-main">
+            <div class="container">
                 <div class="row justify-content-between">
-                        <h4 class=" pt-5 " style="color:#dbe6da; font-family: Arial, Helvetica, sans-serif;">About Us</h4>
-    
-                        <p>Find your affordable, clean and safe room to rent. Our mission is to simplify the process of connecting international students in Singapore with and allow everyone to list their home easily.</p>
+                    <div class="col-lg-4 col-md-6 ps-5 footer-widget footer-about">
+                        <h3 class="widget-title">About Us</h3>
+                        <img loading="lazy" width="200px" class="footer-logo" src="images/homebound-graphics.png"
+                            alt="Constra">
+                        <p>Find your affordable, clean and safe room to rent. Our mission is to simplify the process of connecting with people and allow people to create fantastic shared homes.</p>
                         <div class="footer-social">
                             <ul>
                                 <li><a href="https://facebook.com/homebound" aria-label="Facebook"><i
@@ -179,6 +202,7 @@
                                 <li><a href="https://instagram.com/homebound" aria-label="Instagram"><i
                                             class="fab fa-instagram"></i></a></li>
                             </ul>
+                        </div><!-- Footer social end -->
                     </div><!-- Col end -->
             </div><!-- Container end -->
         </div><!-- Footer main end -->
