@@ -41,9 +41,9 @@ let mainproperty = document.getElementById("mainproperty")
 
 let main_user = null
 
-function GenerateId() {
-    return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
-  };
+// function GenerateId() {
+//     return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
+//   };
 // main.addEventListener("load", getAllDataOnce())
 
 
