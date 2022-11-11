@@ -7,7 +7,7 @@ main.component("nav-component", {
 
 
         <nav class="navbar navbar-expand-lg navbar-light " style='background-color:#dbe6da'>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../home.html">
         <img  class='mx-4 mt-3'src='/images/Screenshot 2022-11-07 at 12.40.27 AM.png' style='width : 220px; margin-left:10px'>
         </a>
         <button class="navbar-toggler mx-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
