@@ -25,33 +25,30 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Preliminary Installation
-
 <br>
 
 1. Install MAMP/WAMP/XAMP on your machine using the links below.
-    * MAMP: https://www.mamp.info/en/downloads/.
-    * WAMP: https://www.w3resource.com/php/installation/install-wamp.php. 
-    * XAMP: https://www.apachefriends.org/download.html.  
+    * MAMP: 
+      ```
+      $ npm install -g mamp
+      ```
 
-2. Download and install Github Desktop at https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop.
+    * WAMP: 
+      ```
+      npm install -g wamp
+      ```
+
+    * XAMP:
+      ```
+      npm install -g xampp-windows-cli
+      ```
+
+2. Download and install Github Desktop.
+  ```
+  npm install -g git
+  ```
 
 <br>
-
-## Firebase Installation
-
-<br>
-
-1. Set up Firebase hosting.
-  ```sh
-    firebase init hosting 
-  ``` 
-2. Set up the Github Action part of Hosting.
-  ```sh
-    firebase init hosting:github
-  ``` 
-
-<br><br>
 
 <a id="running"></a>
 
@@ -59,7 +56,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to do anything! Just visit this <a href="https://home-bound.vercel.app/home.html">link</a>.
+You don't have to do anything! Just visit this <a href="https://home-bound.vercel.app/newlanding.html">link</a>.
 
 <br><br>
 
