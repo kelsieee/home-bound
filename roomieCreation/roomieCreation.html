@@ -125,34 +125,35 @@
 
 </head>
 
-<body class="mx-auto">
+<body>
+<div class="container-fluid mx-auto">
 
   <div id="main">
     <nav-component></nav-component>
   </div>
 
   <!-- <div class="d-flex align-items-center justify-content-center"> -->
-  <div class="row mx-auto w-75 mt-5 ">
-    <div class="col">
+  <div class="row mx-auto w-75 mt-5">
+    <div class="col justify-content-center">
 
-      <div class="row">
-        <label for="photo">
+      <!-- <div class="row"> -->
+        <label for="photo" >
           <img id='preview' src="/add_profile.png" style="width:280px" alt="pic" style="border-radius:10px" />
         </label>
-      </div>
+      <!-- </div> -->
 
-      <div class="row mb-5">
+      <div class="mb-5">
         <input type="file" id="inputFile" accept="image/png, image/jpeg">
       </div>
     </div>
 
-    <div class="col">
+    <div class="col justify-content-center">
       <div class="mx-auto mt-0 pt-0 pb-0">
         <table>
           <th colspan="2">
             <h3 class="fw-bold mb-3">Personal Details</h3>
           </th>
-          <tr class="justify-content-between mt-4">
+          <tr>
             <td><h6 class="p-2 text-align-left">First Name</h6></td>
             <td><input type="text" class="form-control form-control-lg bg-light h-75"
               style="border-radius: 10px; width:200px;" id="firstname" required>
@@ -305,7 +306,7 @@
     </div>
   </div>
 
-  <div class="w-75 mx-auto  mb-5 mt-0">
+  <div class="w-75 mx-auto mb-5 mt-0">
     <h3 class="fw-bold ms-3 mt-3">
       Introduction</h3>
     <div class="p-2">
@@ -368,6 +369,7 @@
       </button>
     </div>
   </div>
+</div>
 
         <!-- <div class="mx-auto mt-5 mb-5">
           <h3 class="fw-bold">Personal Details</h3>
@@ -584,6 +586,6 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
 
-</body>
 
+  </body>
 </html>
