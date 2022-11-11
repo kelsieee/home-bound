@@ -19,7 +19,7 @@ body{
     width: 0px;
     height: 10px;
     border-radius: 1000px;
-    animation: progres 4s infinite linear;    
+    animation: progres 2s infinite linear;    
 }
 @keyframes progres{
     0%{
