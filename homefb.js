@@ -9,7 +9,9 @@ const storage = getStorage()
 const storageref = sRef(storage);
 // console.log(database)
 let main = document.getElementById('main')
+let count = 1
 main.addEventListener("load", getAllDataOnce())
+
 function getAllDataOnce() {
     const dbRef = ref(database)
     // console.log(dbRef)
@@ -30,6 +32,7 @@ function getAllDataOnce() {
         var roomieDiv = document.getElementById("roommates")
         for(var i =0; i<roomie.length; i++){
             // console.log(roomie[i])
+            count +=1
             const rName = roomie[i].name
             const rAge = roomie[i].age
             var pLoc = ""
@@ -52,7 +55,7 @@ function getAllDataOnce() {
             smth += 
             `
             <div class="col mb-3">
-                        <div class="card h-100" style='position:relative'  id="card${i}">
+                        <div class="card h-100" style='position:relative'  id="${listId}">
                             <input type="checkbox" id="heart${i}" onchange="passValues(this)"><label  for="heart${i}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
@@ -151,7 +154,7 @@ function getAllDataOnce() {
             `
             <div class="col project_container onedollar wifiavailable tworoom mb-3" >
             <div class="card h-100" style='position:relative' >
-                <input type="checkbox" id="heart1" onchange="passValues(this)" ><label  for="heart1" >&#9829</label></input>
+                <input type="checkbox" id="heart${count + i}" onchange="passValues(this)" ><label  for="heart${count + i}" >&#9829</label></input>
                 <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
                 <div class="card-body">
                 <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
@@ -212,6 +215,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
+      
       console.log("user is signed in")
     //   console.log(user)
       // ...
