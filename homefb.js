@@ -35,12 +35,12 @@ function getAllDataOnce() {
             count +=1
             const rName = roomie[i].name
             const rAge = roomie[i].age
-            var pLoc = ""
+            var rLoc = ""
             const listId = roomie[i].listId
             for(var j=0;j<roomie[i].location.length; j++){
-                pLoc += `${roomie[i].location[j]}, `
+                rLoc += `${roomie[i].location[j]}, `
             }
-            pLoc = pLoc.slice(0,-2)
+            rLoc = rLoc.slice(0,-2)
             // console.log(pLoc.slice(0,-2))
             const rBudget = roomie[i].budget
             const rDuration = roomie[i].duration
@@ -64,7 +64,7 @@ function getAllDataOnce() {
                                 </a>
                                 <div class="card-text d-flex pb-2">
                                     <span><i class="bi bi-geo-alt-fill" ></i></span>
-                                    <div class="fw-light fs-6 px-2">${pLoc}</div>
+                                    <div class="fw-light fs-6 px-2">${rLoc}</div>
                                 </div>
                                 <div class="card-text d-flex pb-2">
                                     <span><i class="bi bi-currency-dollar"></i></span>
@@ -76,7 +76,7 @@ function getAllDataOnce() {
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                                         </svg>
                                     </span>
-                                    <div class="fw-light fs-6 px-2">${rDuration} months</div>
+                                    <div class="fw-light fs-6 px-2">${rDuration} month(s)</div>
                                 </div>
                             </div>
                         </div>
@@ -95,49 +95,51 @@ function getAllDataOnce() {
         snapshot.forEach(childSnapshot=>{
             property.push(childSnapshot.val())
         });
-        var str = 
-        `
-        <div class="mt-0 mb-3">
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    $
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
-                        <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
-                        <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
-                    </ul>
-                </div>
+        // var str = 
+        // `
+        // <div class="mt-0 mb-3">
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             $
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //                 <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
+        //                 <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
+        //                 <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
+        //             </ul>
+        //         </div>
 
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-wifi"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
-                    <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
-                    </ul>
-                </div>
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    No. of rooms
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
-                    <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
-                    <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
-                    </ul>
-                </div>
-                <!-- reset button -->
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             <i class="bi bi-wifi"></i>
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //             <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
+        //             <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
+        //             </ul>
+        //         </div>
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             No. of rooms
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //             <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
+        //             <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
+        //             <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
+        //             </ul>
+        //         </div>
+        //         <!-- reset button -->
                 
-                <input class="btn btn-primary mx-2 my-2" type="reset" onclick='reset()' value="Reset">
-        </div>
+        //         <input class="btn btn-primary mx-2 my-2" type="reset" onclick='reset()' value="Reset">
+        // </div>
             
 
-        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
-        `
+        // <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+        // `
 
-        var propertyDiv = document.getElementById("lodging")
+        var propertyDiv = document.getElementById("lodgingDiv")
+        var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
+
         for(var i = 0; i<property.length; i++){
             // console.log(property[i])
             const pTitle = property[i].title
@@ -192,7 +194,7 @@ function getAllDataOnce() {
         }
 
         str+="</div>"
-        // console.log(propertyDiv)
+        console.log(propertyDiv)
 
         propertyDiv.innerHTML=str
     })

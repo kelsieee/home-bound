@@ -94,7 +94,8 @@ function createRoomie(user) {
     const lastname = document.getElementById("lastname").value
     const name = firstname + ' ' + lastname
     const age = document.getElementById("age").value
-    const gender = document.getElementById("gender").value
+    const gender = document.querySelector('input[name="gender"]:checked').value
+    // console.log(gender)
     const budget = document.getElementById("budget").value
 
     const locations = []

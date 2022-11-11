@@ -125,37 +125,32 @@
 
 </head>
 
-<body class="mx-auto">
-
+<body>
   <div id="main">
     <nav-component></nav-component>
   </div>
+<div class="container-fluid mx-auto w-75 align-items-center">
+  <div class="row">
+    <div class="col-lg-6 mt-5 justify-content-center mx-auto">
+      <label for="photo">
+        <img id='preview' src="/images/add_profile.png"  style="max-width: 270px;"class="img-fluid" alt="pic" style="border-radius:10px" />
+      </label>
 
-  <!-- <div class="d-flex align-items-center justify-content-center"> -->
-  <div class="row mx-auto w-75 mt-5 ">
-    <div class="col">
-
-      <div class="row">
-        <label for="photo">
-          <img id='preview' src="/add_profile.png" style="width:280px" alt="pic" style="border-radius:10px" />
-        </label>
-      </div>
-
-      <div class="row mb-5">
+      <div class="mb-3">
         <input type="file" id="inputFile" accept="image/png, image/jpeg">
       </div>
     </div>
-
-    <div class="col">
-      <div class="mx-auto mt-0 pt-0 pb-0">
+    <div class="col-lg-6 mt-4 justify-content-center mx-auto">
+      <!-- <div class="mx-auto mt-0 pt-0 pb-0"> -->
+        <div style="overflow-x:auto;">
         <table>
           <th colspan="2">
             <h3 class="fw-bold mb-3">Personal Details</h3>
           </th>
-          <tr class="justify-content-between mt-4">
+          <tr>
             <td><h6 class="p-2 text-align-left">First Name</h6></td>
             <td><input type="text" class="form-control form-control-lg bg-light h-75"
-              style="border-radius: 10px; width:200px;" id="firstname" required>
+              style="border-radius: 10px;" id="firstname" required>
             </td>
           </tr>
 
@@ -163,7 +158,7 @@
             <td height="35"><h6 class="p-2" >Last Name</h6></td>
             <td height="35">
               <input type="text" class="form-control form-control-lg bg-light h-75"
-              style="border-radius: 10px; width:200px;" id="lastname" required>
+              style="border-radius: 10px;" id="lastname" required>
             </td>
           </tr>
 
@@ -171,7 +166,7 @@
             <td><h6 class="p-2">Age</h6></td>
             <td>
               <input type="number" class="form-control form-control-lg bg-light h-75 "
-              style="border-radius: 10px; width:200px;" id="age" required>
+              style="border-radius: 10px;" id="age" required>
             </td>
           </tr>
 
@@ -179,11 +174,11 @@
             <td><h6 class="p-2">Gender</h6></td>
             <td>
               <div class="form-check px-4">
-                <input class="form-check-input"  type="radio" value="female" id="gender" name="gender">
+                <input class="form-check-input"  type="radio" value="Female" name="gender">
                 Female
               </div>
               <div class="form-check px-4" >
-                <input class="form-check-input"  type="radio" value="male" id="gender" name="gender">
+                <input class="form-check-input"  type="radio" value="Male" name="gender">
                 Male
               </div>
             </td>
@@ -205,7 +200,7 @@
               </h6>
             </td>
             <td>
-              <input type="number" id="budget" class="form-control form-control-lg bg-light" style="border-radius: 10px; width:200px;"
+              <input type="number" id="budget" class="form-control form-control-lg bg-light" style="border-radius: 10px;"
                 placeholder=$>
             </td>
           </tr>
@@ -221,7 +216,7 @@
               </h6>
             </td>
             <td>
-              <select class="form-select form-select-lg bg-light h-100 mb-0" style="width: 200px; border-radius: 10px;"
+              <select class="form-select form-select-lg bg-light h-100 mb-0" style=" border-radius: 10px;"
                 aria-label="Default select example" id="rooms">
                 <option selected>No. of Rooms</option>
                 <option value="1">1</option>
@@ -280,7 +275,7 @@
               </h6>
             </td>
             <td>
-              <input type="date" class="form-control form-control-lg bg-light h-75" style="width: 200px; border-radius: 10px;"
+              <input type="date" class="form-control form-control-lg bg-light h-75" style=" border-radius: 10px;"
               id="movedate" required>
             </td>
           </tr>
@@ -295,8 +290,7 @@
               </h6>
             </td>
             <td>
-              <!-- <div class="d-inline"> -->
-              <input type="number" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px; width: 200px;"
+              <input type="number" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px;"
                 id="duration" required> 
            </td>
           </tr>
@@ -305,69 +299,72 @@
     </div>
   </div>
 
-  <div class="w-75 mx-auto  mb-5 mt-0">
-    <h3 class="fw-bold ms-3 mt-3">
-      Introduction</h3>
-    <div class="p-2">
-      <div>
-        <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5"
-          placeholder="You can talk about yourself here."></textarea>
+  <div class="row">
+    <div class=" mb-5 mt-0">
+      <h3 class="fw-bold ms-3 mt-3">
+        Introduction</h3>
+      <div class="p-2">
+        <div>
+          <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5"
+            placeholder="You can talk about yourself here."></textarea>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mx-auto mb-5">
+      <h3 class="fw-bold ms-3">
+        Your hobbies</h3>
+      <div class="p-2">
+        <div>
+          <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5"
+            placeholder="Share more about your hobbies here."></textarea>
+        </div>
+      </div>
+    </div>
+        
+    <div class="mx-auto mb-5">
+      <h3 class="fw-bold ms-3">
+        Get in Touch</h3>
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+            </svg> -->
+        <input type="number" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
+          placeholder="Enter phone number.">
+      </div>
+  
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
+            </svg> -->
+        <input type="email" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
+          placeholder="Enter email.">
+      </div>
+  
+      <div class="p-2">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+            </svg> -->
+        <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
+          placeholder="Enter Telegram handle.">
+      </div>
+    </div>
+        
+    <div class="d-block p-5 mx-auto justify-content-center">
+      <div class="row">
+        <button type="button" id="listRoomie"
+          class=" mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" >
+          <a style="text-decoration:none; color:white; ">List as roommate </a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+            class="bi bi-arrow-right-circle ms-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
-
-  <div class="w-75 mx-auto  mb-5">
-    <h3 class="fw-bold ms-3">
-      Your hobbies</h3>
-    <div class="p-2">
-      <div>
-        <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5"
-          placeholder="Share more about your hobbies here."></textarea>
-      </div>
-    </div>
-  </div>
-      
-  <div class="w-75 mx-auto  mb-5">
-    <h3 class="fw-bold ms-3">
-      Get in Touch</h3>
-    <div class="p-2">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-          </svg> -->
-      <input type="number" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
-        placeholder="Enter phone number.">
-    </div>
-
-    <div class="p-2">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
-          </svg> -->
-      <input type="email" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
-        placeholder="Enter email.">
-    </div>
-
-    <div class="p-2">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
-          </svg> -->
-      <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
-        placeholder="Enter Telegram handle.">
-    </div>
-  </div>
-      
-  <div class="d-block p-5 mx-auto justify-content-center">
-    <div class="row">
-      <button type="button" id="listRoomie"
-        class=" mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" >
-        <a style="text-decoration:none; color:white; ">List as roommate </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-          class="bi bi-arrow-right-circle ms-1" viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-        </svg>
-      </button>
-    </div>
-  </div>
+</div>
 
         <!-- <div class="mx-auto mt-5 mb-5">
           <h3 class="fw-bold">Personal Details</h3>
@@ -584,6 +581,6 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
 
-</body>
 
+  </body>
 </html>

@@ -11,6 +11,36 @@ const storageref = sRef(storage);
 let mainproperty = document.getElementById("mainproperty")
 mainproperty.addEventListener("load", populateP())
 
+function getAddress(){
+  var url = document.URL
+  console.log(url)
+  var id = url.substring(url.lastIndexOf('=') + 1)
+  console.log(id)
+
+  const dbRef = ref(database)
+  let address = ""
+    get(child(dbRef,"property")).then((snapshot)=>{
+        var index = 0
+        var property = []
+        snapshot.forEach(childSnapshot=>{
+            property.push(childSnapshot.val())
+        });
+        for(var i =0; i<property.length; i++){
+          if(property[i].listId==id){
+              index = i
+          }
+        }
+        address = property[index].address
+
+        console.log(address)
+        
+        
+        initMap(address)
+        
+    })
+}
+
+getAddress()
 
 function populateP()
   {
@@ -95,11 +125,11 @@ function populateP()
           </div>
           <div class="p-4 col-3">
             <img src="images/water-closet.png" style='width:40px;height: 40px;' alt="">
-            <div><p class="  mt-2" style="white-space: nowrap;"> <br>${pToiletNo} toilet </p></div>  
+            <div><p class="  mt-2" style="white-space: nowrap;"> <br>${pToiletNo} Toilet(s) </p></div>  
             </div>
             <div class=" p-4 col-3">
               <img src="images/bed.png" style='width:40px;height: 40px;' alt="">
-              <div><p class=" mt-2" style="white-space: nowrap;"> <br> ${pBedNo} bedrooms </p></div>  
+              <div><p class=" mt-2" style="white-space: nowrap;"> <br> ${pBedNo} Bedroom(s) </p></div>  
             </div>
 
       </div>
@@ -350,97 +380,107 @@ function populateP()
 
 
 
+function initMap(address) {
+  var geocoder = new google.maps.Geocoder();
+
+  // var address = ""
+
+  var latitude = 0
+  var longitude = 0
+
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    console.log(status)
+    if (status == google.maps.GeocoderStatus.OK) {
+      latitude = results[0].geometry.location.lat();
+      longitude = results[0].geometry.location.lng();
+    } 
+    console.log(latitude)
 
 
 
-
-
-
-
-
-
-
-function initMap() {
     // Create the map.
-    const singapore = { lat: 1.300816, lng: 103.850562 };
+    const singapore = { lat: latitude, lng: longitude };
     const map = new google.maps.Map(document.getElementById("map"), {
       center: singapore,
       zoom: 17,
       mapId: "8d193001f940fde3",
     });
-    
-    
-    new google.maps.Marker({
-        position: singapore,
-        map,
-      });
-      
-    
-    // Create the places service.
-    const service = new google.maps.places.PlacesService(map);
-    let getNextPage;
-    const moreButton = document.getElementById("more");
   
-    moreButton.onclick = function () {
-      moreButton.disabled = true;
-      if (getNextPage) {
-        getNextPage();
-      }
-    };  
-    // Perform a nearby search.
-    service.nearbySearch(
-      { location: singapore, radius: 500, type: "subway_station"},
-      (results, status, pagination) => {
-        if (status !== "OK" || !results) return;
   
-        addPlaces(results, map);
-        moreButton.disabled = !pagination || !pagination.hasNextPage;
-        if (pagination && pagination.hasNextPage) {
-          getNextPage = () => {
-            // Note: nextPage will call the same handler function as the initial call
-            pagination.nextPage();
-          };
-        }
-      }
-    );
-  }
-
-
-
-  function addPlaces(places, map) {
-    const placesList = document.getElementById("places");
+  new google.maps.Marker({
+      position: singapore,
+      map,
+    });
+    
   
-    for (const place of places) {
-      if (place.geometry && place.geometry.location) {
-        const image = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25),
+  // Create the places service.
+  const service = new google.maps.places.PlacesService(map);
+  let getNextPage;
+  const moreButton = document.getElementById("more");
+
+  moreButton.onclick = function () {
+    moreButton.disabled = true;
+    if (getNextPage) {
+      getNextPage();
+    }
+  };  
+  // Perform a nearby search.
+  service.nearbySearch(
+    { location: singapore, radius: 500, type: "subway_station"},
+    (results, status, pagination) => {
+      if (status !== "OK" || !results) return;
+
+      addPlaces(results, map);
+      moreButton.disabled = !pagination || !pagination.hasNextPage;
+      if (pagination && pagination.hasNextPage) {
+        getNextPage = () => {
+          // Note: nextPage will call the same handler function as the initial call
+          pagination.nextPage();
         };
-  
-        new google.maps.Marker({
-          map,
-          icon: image,
-          title: place.name,
-          position: place.geometry.location,
-        });
-  
-        const li = document.createElement("li");
-  
-        li.textContent = place.name;
-        placesList.appendChild(li);
-        li.addEventListener("click", () => {
-          map.setCenter(place.geometry.location);
-        });
-
-
-          
-
-
       }
     }
+  );
+  })
+
+
+}
+
+
+
+function addPlaces(places, map) {
+  const placesList = document.getElementById("places");
+
+  for (const place of places) {
+    if (place.geometry && place.geometry.location) {
+      const image = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25),
+      };
+
+      new google.maps.Marker({
+        map,
+        icon: image,
+        title: place.name,
+        position: place.geometry.location,
+      });
+
+      const li = document.createElement("li");
+
+      li.textContent = place.name;
+      placesList.appendChild(li);
+      li.addEventListener("click", () => {
+        map.setCenter(place.geometry.location);
+      });
+
+
+        
+
+
+    }
+  }
   }
   
 
