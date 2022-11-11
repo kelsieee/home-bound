@@ -48,7 +48,7 @@
 
   <style>
 
-    #loader {
+    /* #loader {
       height: 100%;
       width: 100%;
 
@@ -61,7 +61,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         transition: all 0.5s ease;
-    }
+    } */
     /* .progress{
         position: relative;
         height: 10px;
@@ -96,7 +96,7 @@
         }
     };
  */
-    img.animated-gif{
+    /* img.animated-gif{
         margin-bottom: 40px;
         margin-left: auto;
         margin-right: auto;
@@ -104,15 +104,8 @@
 
         display: flex;
         justify-content: centerc;
-    }
+    } */
 
-    .loader-finish {
-      /* opacity: 0;
-      pointer-events: none;
-      background-color: none; */
-
-      display: ;
-    }
   </style>
 
 </head>
@@ -122,12 +115,12 @@
     <nav-component id="nav"></nav-component>
   </div>
 
-  <div id="loader">
+  <!-- <div id="loader">
     <div class="loader">
       <img class="animated-gif" src="../images/mover.gif" />
   
     </div>
-  </div>
+  </div> -->
  
   <script>
     
@@ -146,17 +139,17 @@
     // });
     // }
 
-    console.log(document.readyState)
+    // console.log(document.readyState)
     
-    if (document.readyState.value === "loading") {
-      document.getElementById("mainproperty").display = "none"
-      document.getElementById("loader").display = "block"
-    }
+    // if (document.readyState.value === "loading") {
+    //   document.getElementById("mainproperty").display = "none"
+    //   document.getElementById("loader").display = "block"
+    // }
 
-    else if (document.readyState === "complete") {
-      document.getElementById("mainproperty").display = "block"
-      document.getElementById("loader").display = "none"
-    }
+    // else if (document.readyState === "complete") {
+    //   document.getElementById("mainproperty").display = "block"
+    //   document.getElementById("loader").display = "none"
+    // }
     
  </script>
 
