@@ -158,7 +158,7 @@ function populateR(){
 
             <div class="w-75 mx-auto mb-5 mt-5">
 
-                <h3 class="fw-bold ms-3 ">Get to Know FirstName</h3>
+                <h3 class="fw-bold ms-3 ">Get to Know ${rName}</h3>
 
                 <div class="rounded-4 bg-light py-4 px-5">
 
