@@ -95,49 +95,51 @@ function getAllDataOnce() {
         snapshot.forEach(childSnapshot=>{
             property.push(childSnapshot.val())
         });
-        var str = 
-        `
-        <div class="mt-0 mb-3">
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    $
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
-                        <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
-                        <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
-                    </ul>
-                </div>
+        // var str = 
+        // `
+        // <div class="mt-0 mb-3">
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             $
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //                 <li><button class="dropdown-item text-center" onclick="show_one_dollar()" >$ (<750)</button></li>
+        //                 <li><button class="dropdown-item text-center" onclick="show_two_dollar()" >$$ (<2000)</button></li>
+        //                 <li><button class="dropdown-item text-center" onclick="show_three_dollar()" >$$$ (≥2000)</button></li>
+        //             </ul>
+        //         </div>
 
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-wifi"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
-                    <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
-                    </ul>
-                </div>
-                <div class="btn-group mx-2">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    No. of rooms
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
-                    <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
-                    <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
-                    </ul>
-                </div>
-                <!-- reset button -->
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             <i class="bi bi-wifi"></i>
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //             <li><button class="dropdown-item text-center" onclick="show_wifiavailable()" >Wifi included</button></li>
+        //             <li><button class="dropdown-item text-center" onclick="show_nowifi()" >Wifi not included</button></li>
+        //             </ul>
+        //         </div>
+        //         <div class="btn-group mx-2">
+        //             <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        //             No. of rooms
+        //             </button>
+        //             <ul class="dropdown-menu">
+        //             <li><button class="dropdown-item text-center" onclick="show_one_room()">1 room</button></li>
+        //             <li><button class="dropdown-item text-center" onclick="show_two_room()">2 rooms</button></li>
+        //             <li><button class="dropdown-item text-center"  onclick="show_three_room()">≥ 3 rooms</button></li>
+        //             </ul>
+        //         </div>
+        //         <!-- reset button -->
                 
-                <input class="btn btn-primary mx-2 my-2" type="reset" onclick='reset()' value="Reset">
-        </div>
+        //         <input class="btn btn-primary mx-2 my-2" type="reset" onclick='reset()' value="Reset">
+        // </div>
             
 
-        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
-        `
+        // <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+        // `
 
-        var propertyDiv = document.getElementById("lodging")
+        var propertyDiv = document.getElementById("lodgingDiv")
+        var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
+
         for(var i = 0; i<property.length; i++){
             // console.log(property[i])
             const pTitle = property[i].title
@@ -192,7 +194,7 @@ function getAllDataOnce() {
         }
 
         str+="</div>"
-        // console.log(propertyDiv)
+        console.log(propertyDiv)
 
         propertyDiv.innerHTML=str
     })
