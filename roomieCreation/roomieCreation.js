@@ -137,7 +137,7 @@ function createRoomie(user) {
             tele: tele,
         })
 
-        alert('roomie listed')
+        // alert('roomie listed')
         console.log("listed")
         uploadProfileImage(user)
         setTimeout(function(){
