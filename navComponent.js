@@ -24,7 +24,7 @@ main.component("nav-component", {
             
             </li>
             <li class="nav-item mx-4">
-            <a class="nav-link" href="/roomieCreation.html">
+            <a class="nav-link" href="/roomieCreation/roomieCreation.html">
             
           
           <br>
