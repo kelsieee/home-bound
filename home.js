@@ -25,23 +25,20 @@ function openTab(evt, name) {
 document.getElementById("defaultOpen").click();
 
 
-
 function passValues(obj){
-	var cardElementString = ''
+	array1 = []
 	console.log(obj)
 	var checkboxes = document.querySelectorAll("input[type=checkbox]");
 	console.log(checkboxes)
 	for (checkbox of checkboxes){
 		if ($(checkbox).is(":checked")){
 			console.log(checkbox)
-			var parentObj = checkbox.parentNode.children[3].childNodes[1].id
-			console.log(parentObj)
-			var likedCard = parentObj;		
-			cardElementString += likedCard.outerHTML
-			localStorage.setItem('thecard', cardElementString)
+			var id = checkbox.parentNode.children[3].childNodes[1].id
+			array1.push(id)
 		}
 
 	}
+	localStorage.setItem("favourites" , array1)
 	}
 	
 
@@ -51,4 +48,3 @@ function passValues(obj){
 	// 	var cardElementString = likedCard.outerHTML
 	// 	localStorage.setItem('thecard', cardElementString);
 	//   }	  
-	
