@@ -37,7 +37,12 @@ function populateR(){
         
         const rGender = roomie[index].gender
         const rAge = roomie[index].age 
-        const rLoc = roomie[index].location
+        var rLoc = ""
+        console.log(rLoc)
+        for(var j=0;j<roomie[index].location.length; j++){
+            rLoc += `${roomie[index].location[j]}, `
+        }
+        rLoc = rLoc.slice(0,-2)
 
         const rBudget = roomie[index].budget 
         const rRooms = roomie[index].rooms 
@@ -143,7 +148,7 @@ function populateR(){
                             Stay Duration
                         </h6>
                         <div>
-                          ${rDuration} months
+                          ${rDuration} month(s)
                         </div>
                     </div>
 
