@@ -39,7 +39,6 @@ if (loginBtn != null) {
                                 position: 'center',
                                 icon: 'success',
                                 title: 'Login Success',
-                                text: 'Find your dream home!',
                                 showConfirmButton: false,
                                 timer: 1500
                                 })
