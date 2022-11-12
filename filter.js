@@ -104,6 +104,27 @@ function show_three_room (){
 } 
 }
 
+function show_four_room (){
+    var fourroom = document.querySelectorAll('.room4');
+    var alls = document.querySelectorAll('.project_container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < fourroom.length; ++i) { 
+    fourroom[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_five_room (){
+    var fiveroom = document.querySelectorAll('.room5');
+    var alls = document.querySelectorAll('.project_container');
+    for (var i = 0; i < alls.length; ++i) { 
+        alls[i].style.display = 'none'
+    }
+   for (var i = 0; i < fiveroom.length; ++i) { 
+    fiveroom[i].style.display = 'inline-block'; 
+} 
+}
 
 function reset(){
     var alls = document.querySelectorAll('.project_container');
