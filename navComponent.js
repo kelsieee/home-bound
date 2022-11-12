@@ -47,10 +47,10 @@ main.component("nav-component", {
             
           </li>
             <li class="nav-item mx-4">
-            <a class="nav-link" href="/register,login/login.html">
+            <a class="nav-link" href="/Loading/loadingprofile.html">
            
             <br>
-            <h1 class="fs-5 fw-bold">login <span class="sr-only">(current)</span></a></h1>
+            <h1 class="fs-5 fw-bold">profile <span class="sr-only">(current)</span></a></h1>
             </li>
               
             </li>
