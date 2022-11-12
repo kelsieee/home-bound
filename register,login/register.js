@@ -16,16 +16,16 @@ if (signUp != null) {
         const email = document.getElementById("email").value;
         const password = document.getElementById('password1').value;
         const cfm_password = document.getElementById('password2').value;
-        const user = document.getElementsByName('usertype')
-        const roommate = document.getElementById('inputRoommate').checked;
-        const landlord = document.getElementById('inputLandlord').checked;
-        var type = "Not Selected"
-        if (roommate == true) {
-            type = "Roommate";
-        }
-        else {
-            type = "Landlord";
-        }
+        // const user = document.getElementsByName('usertype')
+        // const roommate = document.getElementById('inputRoommate').checked;
+        // const landlord = document.getElementById('inputLandlord').checked;
+        // var type = "Not Selected"
+        // if (roommate == true) {
+        //     type = "Roommate";
+        // }
+        // else {
+        //     type = "Landlord";
+        // }
 
         var dob_array = dob.split('-');
         var day = dob_array[2]
@@ -34,7 +34,7 @@ if (signUp != null) {
 
         var check_email = ['e.ntu.edu.sg', 'smu.edu.sg', 'nus.edu.sg'];
         var error = false;
-        if(username != '' && dob != '' && email != '' && password != '' && cfm_password != '' && user != ''){
+        if(username != '' && dob != '' && email != '' && password != '' && cfm_password != ''){
             if(day > 31 || month > 12){
                 document.getElementById("date_error").innerHTML = `
                 <div class="input-group mb-4 h-75">
@@ -130,11 +130,10 @@ if (signUp != null) {
                     set(ref(database, 'users/' + user.uid), {
                         username: username,
                         dob: dob,
-                        email: email,
-                        type: type
+                        email: email
                     })
 
-                    alert('Succesfully Registered!')
+                    // alert('Succesfully Registered!')
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
@@ -229,28 +228,28 @@ if (signUp != null) {
                     </div>
                 </div>`;
             }
-            if(roommate == false && landlord == false){
-                document.getElementById("user_error").innerHTML = `
-                <div class="input-group mb-4">
-                    <div class="d-flex justify-content-center col text-center">
-                        <h6 class="fs-5 mt-1 me-4 mt-3">
-                            I am a...
-                        </h6>
-                        <div class="form-check form-check-inline mt-3 ms-2">
-                            <input class="form-check-input is-invalid" type="radio" name="usertype"
-                                id="inputRoommate" value="Roommate">
-                            <label class="form-check-label form-check-label-lg" for="inputRoommate">Roommate</label>
-                        </div>
-                        <div class="form-check form-check-inline mt-3 ms-2">
-                            <input class="form-check-input is-invalid" type="radio" name="usertype"
-                                id="inputLandlord" value="Landlord">
-                            <label class="form-check-label form-check-label-lg" for="inputLandlord">Landlord</label>
+            // if(roommate == false && landlord == false){
+            //     document.getElementById("user_error").innerHTML = `
+            //     <div class="input-group mb-4">
+            //         <div class="d-flex justify-content-center col text-center">
+            //             <h6 class="fs-5 mt-1 me-4 mt-3">
+            //                 I am a...
+            //             </h6>
+            //             <div class="form-check form-check-inline mt-3 ms-2">
+            //                 <input class="form-check-input is-invalid" type="radio" name="usertype"
+            //                     id="inputRoommate" value="Roommate">
+            //                 <label class="form-check-label form-check-label-lg" for="inputRoommate">Roommate</label>
+            //             </div>
+            //             <div class="form-check form-check-inline mt-3 ms-2">
+            //                 <input class="form-check-input is-invalid" type="radio" name="usertype"
+            //                     id="inputLandlord" value="Landlord">
+            //                 <label class="form-check-label form-check-label-lg" for="inputLandlord">Landlord</label>
                             
-                        </div>
-                        <div class="invalid-feedback" style="font-family: Montserrat, sans-serif;">Please select user type.</div>
-                    </div>
-                </div>`;
-            }
+            //             </div>
+            //             <div class="invalid-feedback" style="font-family: Montserrat, sans-serif;">Please select user type.</div>
+            //         </div>
+            //     </div>`;
+            // }
             // document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Please fill in all the fields</div>`;
         }
         
