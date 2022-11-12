@@ -33,19 +33,33 @@ if (signUp != null) {
         var year = dob_array[0]
 
         var check_email = ['e.ntu.edu.sg', 'smu.edu.sg', 'nus.edu.sg'];
-
+        var error = false;
         if(username != '' && dob != '' && email != '' && password != '' && cfm_password != '' && user != ''){
-            if(day > 31 || month > 12 || year > 2004 || year < 1921){
+            if(day > 31 || month > 12){
                 document.getElementById("date_error").innerHTML = `
                 <div class="input-group mb-4 h-75">
                     <i class="bi bi-calendar-fill h-75  text-center"></i>
                     <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
                             type="date"  id="dob" required>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                        Please enter a valid date. You have to be at least 18 years old.
+                        Please enter a valid date. 
                     </div>
                 </div>`;
+                error = true;
             }
+            if(year > 2004 || year < 1921){
+                document.getElementById("date_error").innerHTML = `
+                <div class="input-group mb-4 h-75">
+                    <i class="bi bi-calendar-fill h-75  text-center"></i>
+                    <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
+                            type="date"  id="dob" required>
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                        You have to be at least 18 years old.
+                    </div>
+                </div>`;
+                error = true;
+            }
+
             if(email.includes('@')){
                 var email_parts = email.split('@');
                 console.log(email_parts[1])
@@ -60,6 +74,7 @@ if (signUp != null) {
                             Please enter a valid university email. 
                         </div>
                     </div>`;
+                    error = true;
                 }
             }
             else{
@@ -72,6 +87,7 @@ if (signUp != null) {
                             Please enter a valid university email. 
                         </div>
                     </div>`;
+                    error = true;
             }
             if(password != cfm_password){
                 document.getElementById("password_error").innerHTML = `
@@ -83,6 +99,7 @@ if (signUp != null) {
                         Passwords do not match.
                     </div>
                 </div>`;
+                error = true;
             }
             if(password.length < 6){
                 document.getElementById("password").innerHTML = `
@@ -98,33 +115,63 @@ if (signUp != null) {
                 <div class="input-group mb-4 h-75">
                     <i class="bi bi-key-fill"></i>
                     <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
-                        type="password" placeholder="Re-enter Password" id="password2" required style="font-family: Montserrat, sans-serif;">
+                        type="password" placeholder="Re-enter Password" id="password2" required">
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                    Password must be at least 6 characters.
                 </div>`;
+                error = true;
             }
-            createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                console.log(user.uid)
-                set(ref(database, 'users/' + user.uid), {
-                    username: username,
-                    dob: dob,
-                    email: email,
-                    type: type
+            if(!error){
+                createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log(user.uid)
+                    set(ref(database, 'users/' + user.uid), {
+                        username: username,
+                        dob: dob,
+                        email: email,
+                        type: type
+                    })
+
+                    alert('Succesfully Registered!')
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Registration Success',
+                            text: 'Your account has been created',
+                            showConfirmButton: false,
+                            timer: 1500
+                            })
+               
+                    setTimeout(function(){
+                        window.location.href = "login.html"
+                     }, 2000);
+                    
+
                 })
-
-
-                alert('Succesfully Registered!')
-                window.location.href = "login.html"
-
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage);
-                // ..
-            });
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // Firebase: Error (auth/email-already-in-use)
+                    console.log(errorMessage);
+                    if(errorMessage === 'Firebase: Error (auth/email-already-in-use).') {
+                        document.getElementById("email_error").innerHTML = `
+                        <div class="input-group mb-4 h-75">
+                            <i class="bi bi-envelope-fill"></i>
+                            <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
+                                type="email" placeholder="Email" id="email" required>
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                                This email is already in use. Please sign in.
+                            </div>
+                        </div>`;
+                        error = true;
+                        // alert(errorMessage);
+                    }
+                    // alert(errorMessage);
+                    // ..
+                });
+            }
         }
         else{
             if(username == ''){
@@ -145,7 +192,7 @@ if (signUp != null) {
                     <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
                             type="date"  id="dob" required>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                        You have to be at least 18 years old.
+                        Please enter a valid date.
                     </div>
                 </div>`;
             }
@@ -182,26 +229,27 @@ if (signUp != null) {
                     </div>
                 </div>`;
             }
-            if(user == ''){
-                document.getElementById("password_error").innerHTML = `
+            if(roommate == false && landlord == false){
+                document.getElementById("user_error").innerHTML = `
                 <div class="input-group mb-4">
-                        <div class="d-flex justify-content-center col text-center">
-                            <h6 class="fs-5 mt-1 me-4 mt-3">
-                                I am a...
-                            </h6>
-                            <div class="form-check form-check-inline mt-3 ms-2">
-                                <input class="form-check-input" type="radio" name="usertype"
-                                    id="inputRoommate" value="Roommate">
-                                <label class="form-check-label form-check-label-lg" for="inputRoommate">Roommate</label>
-                            </div>
-                            <div class="form-check form-check-inline mt-3 ms-2">
-                                <input class="form-check-input" type="radio" name="usertype"
-                                    id="inputLandlord" value="Landlord">
-                                <label class="form-check-label form-check-label-lg" for="inputLandlord">Landlord</label>
-                                <div class="invalid-feedback" style="font-family: Montserrat, sans-serif;">Please select user type.</div>
-                            </div>
+                    <div class="d-flex justify-content-center col text-center">
+                        <h6 class="fs-5 mt-1 me-4 mt-3">
+                            I am a...
+                        </h6>
+                        <div class="form-check form-check-inline mt-3 ms-2">
+                            <input class="form-check-input is-invalid" type="radio" name="usertype"
+                                id="inputRoommate" value="Roommate">
+                            <label class="form-check-label form-check-label-lg" for="inputRoommate">Roommate</label>
                         </div>
-                    </div>`;
+                        <div class="form-check form-check-inline mt-3 ms-2">
+                            <input class="form-check-input is-invalid" type="radio" name="usertype"
+                                id="inputLandlord" value="Landlord">
+                            <label class="form-check-label form-check-label-lg" for="inputLandlord">Landlord</label>
+                            
+                        </div>
+                        <div class="invalid-feedback" style="font-family: Montserrat, sans-serif;">Please select user type.</div>
+                    </div>
+                </div>`;
             }
             // document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Please fill in all the fields</div>`;
         }

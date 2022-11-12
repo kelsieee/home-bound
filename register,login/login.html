@@ -32,12 +32,14 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Vue -->
     <script src="https://unpkg.com/vue@next"></script>
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Login</title>
 
     <style>
       
-        ::placeholder {
+      input[type="email"], input[type="password"], ::placeholder {
             font-family: "Montserrat", sans-serif;
             font-size: 16px;
         }
@@ -52,13 +54,13 @@
         }
 
         .input-group .bi {
-            padding: 10px;
-            color: black;
+            padding: 7px;
+            color: white;
             min-width: 50px;
             text-align: center;
-            margin-bottom: 40px;
             font-size: 20px;
-            background-color: #67aa94;
+            /* max-height: 70px; */
+            background-color: black;
             border-radius: 10px;
    
         }
