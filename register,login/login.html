@@ -21,6 +21,8 @@
     <!-- <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> -->
     <!-- Template styles-->
     <link rel="stylesheet" href="/home.css">
+    <!-- head icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <!-- <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -81,6 +83,7 @@
     <nav-component></nav-component>
 </div>
 
+<div id="mainlogin">
     <div class="container justify-content-center" >
         <h1 class="fw-bold text-center mb-4 mt-5">Welcome back!</h1>
         <h3 class="fw-bold text-center mb-5">Log in to continue</h3>
@@ -94,14 +97,15 @@
                             type="email" placeholder="Email" id="inputEmail" v-model="inputEmail">
                     </div>
 
-                    <div class="input-group mb-4 h-75">
+                    <div class="input-group mb-5 h-75">
                         <i class="bi bi-envelope-fill"></i>
                         <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
                             type="password" placeholder="Password" id="inputPassword" v-model="inputPassword">
                     </div>
 
                     <div class="text-center">
-                        <div class="alert alert-danger p-30" v-if="show">{{error}}</div>
+                        <div id="error"></div>
+                        <!-- <div class="alert alert-danger p-30" v-if="show">{{error}}</div> -->
                         <button type="submit" class="mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" 
                             style="border-radius: 30px" id = "loginBtn">
                             <a style="text-decoration:none; color:white; font-family: Montserrat, sans-serif;">Let's go </a>
@@ -114,10 +118,12 @@
         </div>
             
         </div>
-    </div>
-    
+    </div> 
+</div>
+<script>
 
-    <script>
+</script>
+    <!-- <script>
         const app = Vue.createApp({
             data() {
                 return {
@@ -160,7 +166,7 @@
             }
         });
         const vm = app.mount('#form');
-    </script>
+    </script> -->
 
 
     <!-- Optional JavaScript -->
