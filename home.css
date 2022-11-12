@@ -370,6 +370,10 @@ ul.navbar-nav > li.active > a {
   color: #ffb600 !important;
 }
 
+.card-body{
+  background-color: #daf1ff;
+}
+
 /*-- Logo --*/
 .logo img {
   width: auto;
