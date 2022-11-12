@@ -98,7 +98,7 @@ function populateP()
         `
         <div id="listId">
     <div class="row w-75 mx-auto mt-5">
-      <img src="${pImage}" alt="">
+      <img src="${pImage}" class="mt-5 mb-5">
       <h1 class="fw-bolder mt-3">${pTitle}</h1>
       <h5 class="fw-bold">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-geo-alt-fill"
