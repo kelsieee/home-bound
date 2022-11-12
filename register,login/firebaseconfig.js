@@ -1,9 +1,9 @@
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getDatabase, set, ref, update, get, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+// import { getDatabase, set, ref, update, get, child } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+// import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
 
 
 
@@ -11,35 +11,35 @@ import { getStorage, ref as sRef, uploadBytes, getDownloadURL } from "https://ww
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBjHnf4J60cmRVPvRx60iB1HdtYDoFus-8",
-    authDomain: "wad2-login.firebaseapp.com",
-    projectId: "wad2-login",
-    storageBucket: "wad2-login.appspot.com",
-    messagingSenderId: "416797111775",
-    appId: "1:416797111775:web:f572cad671caf62a1a806a",
-    databaseURL: "https://wad2-login-default-rtdb.asia-southeast1.firebasedatabase.app/"
-};
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBjHnf4J60cmRVPvRx60iB1HdtYDoFus-8",
+//     authDomain: "wad2-login.firebaseapp.com",
+//     projectId: "wad2-login",
+//     storageBucket: "wad2-login.appspot.com",
+//     messagingSenderId: "416797111775",
+//     appId: "1:416797111775:web:f572cad671caf62a1a806a",
+//     databaseURL: "https://wad2-login-default-rtdb.asia-southeast1.firebasedatabase.app/"
+// };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const auth = getAuth();
-const storage = getStorage()
-const storageref = sRef(storage);
-console.log(storageref)
+// const app = initializeApp(firebaseConfig);
+// const database = getDatabase(app);
+// const auth = getAuth();
+// const storage = getStorage()
+// const storageref = sRef(storage);
+// console.log(storageref)
 
 
 // let signUp = document.getElementById('signUp')
 // let loginBtn = document.getElementById('loginBtn')
-let signOutBtn = document.getElementById('signOut')
+//let signOutBtn = document.getElementById('signOut')
 // let listRoomie = document.getElementById('listRoomie')
 // let listProperty = document.getElementById('listProperty')
 // let main = document.getElementById('main')
 // let file = document.getElementById('inputFile')
 // let mainproperty = document.getElementById("mainproperty")
 
-let main_user = null
+// let main_user = null
 
 // function GenerateId() {
 //     return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
@@ -140,20 +140,20 @@ let main_user = null
 //     })
 // }
 
-if (signOutBtn != null) {
-    signOutBtn.addEventListener("click", (e) => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            alert("Successfully Signed Out!")
-        }).catch((error) => {
-            // An error happened.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage)
+// if (signOutBtn != null) {
+//     signOutBtn.addEventListener("click", (e) => {
+//         signOut(auth).then(() => {
+//             // Sign-out successful.
+//             alert("Successfully Signed Out!")
+//         }).catch((error) => {
+//             // An error happened.
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             alert(errorMessage)
 
-        });
-    })
-}
+//         });
+//     })
+// }
 
 // onAuthStateChanged(auth, (user) => {
 //     if (user) {

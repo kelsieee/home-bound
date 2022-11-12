@@ -9,7 +9,7 @@ if (signOutBtn != null) {
   signOutBtn.addEventListener("click", (e) => {
       signOut(auth).then(() => {
           // Sign-out successful.
-        //   alert("Successfully Signed Out!")
+          alert("Successfully Signed Out!")
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -18,6 +18,10 @@ if (signOutBtn != null) {
             showConfirmButton: false,
             timer: 1500
             })
+
+            setTimeout(function(){
+              window.location.href = "/home.html";
+          }, 2000);
       }).catch((error) => {
           // An error happened.
           const errorCode = error.code;
