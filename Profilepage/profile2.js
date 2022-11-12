@@ -9,7 +9,7 @@ if (signOutBtn != null) {
   signOutBtn.addEventListener("click", (e) => {
       signOut(auth).then(() => {
           // Sign-out successful.
-          alert("Successfully Signed Out!")
+        //   alert("Successfully Signed Out!")
           Swal.fire({
             position: 'center',
             icon: 'success',
