@@ -31,12 +31,14 @@ onAuthStateChanged(auth, (user) => {
 
         get(child(dbRef, "users/" + uid)).then((snapshot) => {
             let userInfo = snapshot.val()
+            console.log(userInfo)
             if (userInfo.favourite) {
                 let str =""
                 for (var i = 0; i < userInfo.favourite.length; i++) {
                     get(child(dbRef, `property/${userInfo.favourite[i]}`)).then((snapshot) => {
                         if (snapshot.exists()) {
                             let property = snapshot.val();
+                            const pInternet = property.internet
                             const pTitle = property.title
                             const pAdd = property.address
                             const pRent = property.financial.rent
@@ -47,47 +49,73 @@ onAuthStateChanged(auth, (user) => {
                             if (property.propertyImg) {
                                 url = property.propertyImg
                             }
-                            str +=
-                                `
-            <div class="col project_container onedollar wifiavailable tworoom mb-3" >
-            <div class="card h-100" style='position:relative' >
-                <input type="checkbox" id="heart${i}" onchange="passValues(this)" ><label  for="heart${i}" >&#9829</label></input>
-                <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
-                <div class="card-body">
-                <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
-                    <h5 class="card-title text-success fw-bolder" >${pTitle}</h5>
-                </a>
-                    
 
-                    <div>
-                        <span class="badge bg-danger m-1">$</span>
-                        <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
-                        <span class="badge bg-info text-dark m-1">${pBedroom} rooms</span>
-                    </div>
-                    <div class="card-text d-flex pb-2 mt-2">
-                        <span><i class="bi bi-geo-alt-fill" ></i></span>
-                        <div class="fw-light fs-6 px-2">${pAdd}</div>
-                    </div>
-                    <div class="card-text d-flex pb-2">
-                        <span><i class="bi bi-currency-dollar"></i></span>
-                        <div class="fw-light fs-6 px-2">${pRent} / month</div>
-                    </div>
-                    <div class="card-text d-flex pb-2">
-                        <div class="d-flex px-2">
-                            <span><i class="fa fa-bed"></i></span>
-                            <div class="fw-bolder fs-6">&nbsp;${pBedroom}</div>
+                            if (parseInt(pRent) < 750) {
+                                var dNum = "one"
+                                var dSign = "$"
+                            }
+                            else if (parseInt(pRent) < 2000) {
+                                var dNum = "two"
+                                var dSign = "$$"
+                            }
+                            else{
+                                var dNum = "three"
+                                var dSign = "$$$"
+                            }
+    
+                            if (pInternet == "included") {
+                                var wificlass = "wifiavailable"
+                            }
+                            else {
+                                var wificlass = "nowifi"
+                            }
+                            
+                            console.log(dNum)
+                            console.log(pRent)
+                            console.log(wificlass)
+                            console.log(userInfo.favourite)
+                            
+                            str +=
+                            `
+                        <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
+                        <div class="card h-100" style='position:relative' >
+                            <input type="checkbox" id="heart${i}" onchange="passValues(this)" checked><label  for="heart${i}" >&#9829</label></input>
+                            <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
+                            <div class="card-body">
+                            <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
+                                <h5 class="card-title text-success fw-bolder" >${pTitle}</h5>
+                            </a>
+                                
+            
+                                <div>
+                                    <span class="badge bg-danger m-1">${dSign}</span>
+                                    <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
+                                    <span class="badge bg-info text-dark m-1">${pBedroom} room(s)</span>
+                                </div>
+                                <div class="card-text d-flex pb-2 mt-2">
+                                    <span><i class="bi bi-geo-alt-fill" ></i></span>
+                                    <div class="fw-light fs-6 px-2">${pAdd}</div>
+                                </div>
+                                <div class="card-text d-flex pb-2">
+                                    <span><i class="bi bi-currency-dollar"></i></span>
+                                    <div class="fw-light fs-6 px-2">${pRent} / month</div>
+                                </div>
+                                <div class="card-text d-flex pb-2">
+                                    <div class="d-flex px-2">
+                                        <span><i class="fa fa-bed"></i></span>
+                                        <div class="fw-bolder fs-6">&nbsp;${pBedroom}</div>
+                                    </div>
+                                    <div class="d-flex px-2">
+                                        <span><i class="fa fa-bath"></i></span>
+                                        <div class="fw-bolder fs-6">&nbsp;${pBathroom}</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex px-2">
-                            <span><i class="fa fa-bath"></i></span>
-                            <div class="fw-bolder fs-6">&nbsp;${pBathroom}</div>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-            `
+                        `
                         }
-                    })
+                })
                     get(child(dbRef, `roomie/${userInfo.favourite[i]}`)).then((snapshot) => {
                         if (snapshot.exists()) {
                             let roomie = snapshot.val();
@@ -111,7 +139,7 @@ onAuthStateChanged(auth, (user) => {
                             str += `
                             <div class="col mb-3">
                                         <div class="card h-100" style='position:relative'  id="${listId}">
-                                            <input type="checkbox" id="heart${i}" onchange="passValues(this)"><label  for="heart${i}" >&#9829</label></input>
+                                            <input type="checkbox" id="heart${i}" onchange="passValues(this)" checked><label  for="heart${i}" >&#9829</label></input>
                                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                                             <div class="card-body">
                                                 <a href="/roomieListing/roomieListing.html?listId=${listId}" id = "${listId}">

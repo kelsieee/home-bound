@@ -152,8 +152,6 @@ function getAllDataOnce(main_user) {
                         if (property[i].propertyImg) {
                             url = property[i].propertyImg
                         }
-
-                        console.log(parseInt(pRent))
                         if (parseInt(pRent) < 750) {
                             var dNum = "one"
                             var dSign = "$"
@@ -162,7 +160,7 @@ function getAllDataOnce(main_user) {
                             var dNum = "two"
                             var dSign = "$$"
                         }
-                        else if (parseInt(pRent) < 750) {
+                        else{
                             var dNum = "three"
                             var dSign = "$$$"
                         }
@@ -181,7 +179,7 @@ function getAllDataOnce(main_user) {
                         <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
                         <div class="card h-100" style='position:relative' >
                             <input type="checkbox" id="heart${count + i}" onchange="passValues(this)" ${isChecked2}><label  for="heart${count + i}" >&#9829</label></input>
-                            <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
+                            <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
                             <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
                                 <h5 class="card-title text-success fw-bolder" >${pTitle}</h5>
@@ -349,7 +347,7 @@ function getAllDataOnce(main_user) {
             <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
             <div class="card h-100" style='position:relative' >
                 <input type="checkbox" id="heart${count + i}" onchange="passValues(this)" ><label  for="heart${count + i}" >&#9829</label></input>
-                <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
+                <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                 <div class="card-body">
                 <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
                     <h5 class="card-title text-success fw-bolder" >${pTitle}</h5>
