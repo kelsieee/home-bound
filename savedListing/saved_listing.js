@@ -8,7 +8,7 @@ const auth = getAuth();
 const storage = getStorage()
 const storageref = sRef(storage);
 const dbRef = ref(database)
-
+let count = 0
 let tempArr = ""
 let currentLocal = ""
 if (localStorage.getItem('favourites') != null) {
@@ -33,6 +33,7 @@ onAuthStateChanged(auth, (user) => {
             let userInfo = snapshot.val()
             console.log(userInfo)
             if (userInfo.favourite) {
+                
                 let str =""
                 for (var i = 0; i < userInfo.favourite.length; i++) {
                     get(child(dbRef, `property/${userInfo.favourite[i]}`)).then((snapshot) => {
@@ -70,16 +71,11 @@ onAuthStateChanged(auth, (user) => {
                                 var wificlass = "nowifi"
                             }
                             
-                            console.log(dNum)
-                            console.log(pRent)
-                            console.log(wificlass)
-                            console.log(userInfo.favourite)
-                            
                             str +=
                             `
                         <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
                         <div class="card h-100" style='position:relative' >
-                            <input type="checkbox" id="heart${i}" onchange="passValues(this)" checked><label  for="heart${i}" >&#9829</label></input>
+                            <input type="checkbox" id="heart${listId}" onchange="passValues(this)" checked><label  for="heart${listId}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
                             <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
@@ -139,7 +135,7 @@ onAuthStateChanged(auth, (user) => {
                             str += `
                             <div class="col mb-3">
                                         <div class="card h-100" style='position:relative'  id="${listId}">
-                                            <input type="checkbox" id="heart${i}" onchange="passValues(this)" checked><label  for="heart${i}" >&#9829</label></input>
+                                            <input type="checkbox" id="heart${listId}" onchange="passValues(this)" checked><label  for="heart${listId}" >&#9829</label></input>
                                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                                             <div class="card-body">
                                                 <a href="/roomieListing/roomieListing.html?listId=${listId}" id = "${listId}">

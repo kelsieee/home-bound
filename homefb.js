@@ -90,7 +90,7 @@ function getAllDataOnce(main_user) {
                             `
                     <div class="col mb-3">
                                 <div class="card h-100" style='position:relative'  id="${listId}">
-                                    <input type="checkbox" id="heart${i}" onchange="passValues(this)" ${isChecked}><label  for="heart${i}" >&#9829</label></input>
+                                    <input type="checkbox" id="heart${listId}" onchange="passValues(this)" ${isChecked}><label  for="heart${listId}" >&#9829</label></input>
                                     <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                                     <div class="card-body">
                                         <a href="/roomieListing/roomieListing.html?listId=${listId}" id = "${listId}">
@@ -178,7 +178,7 @@ function getAllDataOnce(main_user) {
                             `
                         <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
                         <div class="card h-100" style='position:relative' >
-                            <input type="checkbox" id="heart${count + i}" onchange="passValues(this)" ${isChecked2}><label  for="heart${count + i}" >&#9829</label></input>
+                            <input type="checkbox" id="heart${listId}" onchange="passValues(this)" ${isChecked2}><label  for="heart${listId}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
                             <a href="/propertyListing/index.html?listId=${listId}" id = "${listId}">
@@ -333,7 +333,7 @@ function getAllDataOnce(main_user) {
                             var dSign = "$$$"
                         }
 
-                        if (pInternet == "included") {
+                        if (pInternet == "Included") {
                             var wificlass = "wifiavailable"
                         }
                         else {

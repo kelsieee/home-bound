@@ -38,7 +38,7 @@ function show_two_dollar(){
 }
 
 function show_three_dollar(){  
-    var threedollars = document.querySelectorAll('.threedollar3');
+    var threedollars = document.querySelectorAll('.threedollar');
     var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
