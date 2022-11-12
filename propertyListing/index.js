@@ -118,19 +118,23 @@ function populateP()
     <h3 class="fw-bold">Facilities</h3>
     <div class="bg-light px-2 mt-3 rounded-4">
 
-      <div class=" p-4 row ">
+      <div class=" p-4 row d-flex justify-content-evenly">
           <div class=" p-4 col-3">
-          <img src="images/wifi.png" style='width:40px;height: 40px;' alt="">
-          <div><p class="mt-2 pe-4"> <br>Wifi </p></div>  
+            <p class="text-center"><img src="images/wifi.png" style='width:40px;height: 40px;' alt=""></p>
+
+            <p class="text-center mt-2 text-wrap">Wifi</p>
+    
           </div>
           <div class="p-4 col-3">
-            <img src="images/water-closet.png" style='width:40px;height: 40px;' alt="">
-            <div><p class="  mt-2" style="white-space: nowrap;"> <br>${pToiletNo} Toilet(s) </p></div>  
-            </div>
-            <div class=" p-4 col-3">
-              <img src="images/bed.png" style='width:40px;height: 40px;' alt="">
-              <div><p class=" mt-2" style="white-space: nowrap;"> <br> ${pBedNo} Bedroom(s) </p></div>  
-            </div>
+            <p class="text-center"><img src="images/water-closet.png" style='width:40px;height: 40px;' alt=""></p>
+            
+            <p class="text-center mt-2 text-wrap">${pToiletNo} Toilet(s)</p>
+          </div>
+          <div class=" p-4 col-3">
+              <p class="text-center"><img src="images/bed.png" style='width:40px;height: 40px;' alt=""></p>
+              
+              <p class="text-center mt-2 text-wrap">${pBedNo} Room(s)</p> 
+          </div>
 
       </div>
     </div>
