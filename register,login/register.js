@@ -192,11 +192,7 @@ if (signUp != null) {
                     <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
                             type="date"  id="dob" required>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-<<<<<<< HEAD
                         Please enter a valid date.
-=======
-                        You have to be at least 18 years old.
->>>>>>> 8947bd1236ffbcda00caca245c01dab3bb2d1330
                     </div>
                 </div>`;
             }
