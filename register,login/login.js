@@ -33,9 +33,21 @@ if (loginBtn != null) {
                     if (user) {
                         // User is signed in, see docs for a list of available properties
                         // https://firebase.google.com/docs/reference/js/firebase.User
-                        alert("Successfully logged in!")
+                        // alert("Successfully logged in!")
                         console.log("user logged in")
-                        window.location.href = "/home.html";
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Login Success',
+                                text: 'Find your dream home!',
+                                showConfirmButton: false,
+                                timer: 1500
+                                })
+                
+                            setTimeout(function(){
+                                window.location.href = "/home.html";
+                            }, 2000);
+                        
                         // ...
                     } else {
                         // User is signed out

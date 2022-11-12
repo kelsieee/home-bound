@@ -166,7 +166,7 @@ if (signUp != null) {
                             </div>
                         </div>`;
                         error = true;
-                        alert(errorMessage);
+                        // alert(errorMessage);
                     }
                     // alert(errorMessage);
                     // ..

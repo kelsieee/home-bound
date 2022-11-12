@@ -19,16 +19,14 @@
         <link rel="stylesheet" href="/plugins/slick/slick-theme.css">
 
     <link rel="stylesheet" href="/home.css">
-
      <!-- head icon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
     <!-- Vue 3: development -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Vue -->
     <script src="https://unpkg.com/vue@next"></script>
-
+    <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 
@@ -36,7 +34,7 @@
 
     <style>
       
-        ::placeholder {
+        input[type="email"], input[type="password"], input[type="date"], input[type="username"], ::placeholder {
             color: black;
             font-family: "Montserrat", sans-serif;
             font-size: 16px;
@@ -63,30 +61,15 @@
         }
 
         .input-group .bi {
-            padding: 10px;
+            padding: 7px;
             color: white;
             min-width: 50px;
             text-align: center;
             max-height: 75px;
-            /* margin-bottom: 40px; */
             font-size: 20px;
             background-color: black;
             border-radius: 10px;
         }
-        /* .form-check-input {
-            justify-content: center;
-            align-items: center;
-            
-        }
-        .form-check-label {
-            font-size: 1.25rem;
-            padding-left: 5px;
-        } */
-
-        /* input[type=radio] {
-            width: 20px;
-            height: 20px;
-        } */
 
         .btn-secondary:hover {
             color: white;
@@ -170,7 +153,6 @@
 
                 <div class="text-center mt-2 h-75">
                     <div id="error"></div>
-                    <!-- <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div> -->
                     <button type = "submit" class="mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" 
                         style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">
                         <a style="text-decoration:none; color:white; font-family: Montserrat, sans-serif;">Join the community</a>
