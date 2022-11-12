@@ -28,6 +28,8 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Vue -->
     <script src="https://unpkg.com/vue@next"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 
     <title>Register Page</title>
@@ -62,13 +64,13 @@
 
         .input-group .bi {
             padding: 10px;
-            color: black;
+            color: white;
             min-width: 50px;
             text-align: center;
             max-height: 75px;
             /* margin-bottom: 40px; */
             font-size: 20px;
-            background-color: #67aa94;;
+            background-color: black;
             border-radius: 10px;
         }
         /* .form-check-input {
@@ -118,7 +120,7 @@
                 </div>
                 <div id="date_error">
                     <div class="input-group mb-4 h-75">
-                        <i class="bi bi-calendar-fill h-100 mb-6 text-center"></i>
+                        <i class="bi bi-calendar-fill h-100 text-center"></i>
                         <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
                             type="date"  id="dob" required>
                     </div>
@@ -146,7 +148,7 @@
                     </div>    
                 </div>     
                 
-                <div id="user">
+                <div id="user_error">
                     <div class="input-group mb-4">
                         <div class="d-flex justify-content-center col text-center">
                             <h6 class="fs-5 mt-1 me-4 mt-3">
@@ -182,37 +184,16 @@
     </body>
 
     <script>
-        // const app = Vue.createApp({
-        //     data() {
-        //         return {
-        //             users: [], // need to link to db
-        //             name: '',
-        //             dob: '',
-        //             email: '',
-        //             password: '',
-        //             cfm_password: '',
-        //             user_type: '',
-        //             show: false,
-        //             error: ''
-        //         };
-        //     },
-        //     methods: {
-        //         signup() {
-        //             console.log("in validate")
-        //             this.show = false;
+        // $('#listProperty').on('click', function () {
+        // Swal.fire({
+        //     position: 'center',
+        //     icon: 'success',
+        //     title: 'Property listed!',
+        //     showConfirmButton: false,
+        //     timer: 1500
+        //     })
+        // })
 
-        //             if (this.name == ''|| this.dob == '' || this.email == '' || this.password == '' || this.cfm_password == '' || this.user_type == '') { 
-        //                 this.error = "Please fill in all the fields!";
-        //                 this.show = true;
-        //             } 
-        //             if (this.password != this.cfm_password) {
-        //                     this.error = "Passwords must match!";
-        //                     this.show = true;
-        //             }
-        //         }
-        //     }
-        // });
-        // const vm = app.mount('#register');
     </script>
 
 <script src="/plugins/jQuery/jquery.min.js"></script>
