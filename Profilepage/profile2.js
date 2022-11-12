@@ -8,8 +8,6 @@ let signOutBtn = document.getElementById('signOut')
 if (signOutBtn != null) {
   signOutBtn.addEventListener("click", (e) => {
       signOut(auth).then(() => {
-          // Sign-out successful.
-          alert("Successfully Signed Out!")
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -20,8 +18,9 @@ if (signOutBtn != null) {
             })
 
             setTimeout(function(){
-              window.location.href = "/home.html";
+              window.location.href = "/newlanding.html";
           }, 2000);
+
       }).catch((error) => {
           // An error happened.
           const errorCode = error.code;
