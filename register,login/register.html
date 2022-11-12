@@ -130,35 +130,11 @@
                     <i class="bi bi-key-fill"></i>
                     <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
                         type="password" placeholder="Re-enter Password" id="password2" v-model="cfm_password">
-                </div>
-
-                <div class="input-group mb-4 mx-auto">
-                    <!-- <div class="d-flex justify-content-center col text-center"> -->
-                        <p class="fs-5 fw-bold mt-1 me-4 mt-3 ">
-                            I am a...
-                        </p>
-                        <p class="display-6 text-center fw-bold mb-5">
-                             <div class="form-check form-check-inline mt-3 ms-2">
-                            <input class="form-check-input" type="radio" name="usertype"
-                                id="inputRoommate" value="Roommate" v-model="user_type">
-                            <label class="form-check-label  form-check-label-lg fw-bold" for="inputRoommate">Roommate</label>
-                        </div>
-                        <div class="form-check form-check-inline mt-3 ms-2">
-                            <input class="form-check-input" type="radio" name="usertype"
-                                id="inputLandlord" value="Landlord" v-model="user_type">
-                            <label class="form-check-label form-check-label-lg fw-bold" for="inputLandlord">Landlord</label>
-                        </div>
-
-                    <!-- </div> -->
-                </div>
-
-                       
+                </div>         
                     
-                    
-                </div>
-                <div class="text-center">
+                <div class="text-center mt-2">
                     <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div>
-                    <button type = "submit" class="btn btn-secondary btn-lg px-5 py-3 fw-bold" 
+                    <button type = "submit" class="btn btn-secondary px-5 py-3 fw-bold" 
                         style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">Join the community  
                         <i class="bi bi-arrow-right-circle ms-2"></i>
                     </button>
