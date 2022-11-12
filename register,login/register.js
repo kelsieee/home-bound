@@ -32,7 +32,7 @@ if (signUp != null) {
         var month = dob_array[1]
         var year = dob_array[0]
 
-        var check_email = ['e.ntu.edu.sg', 'smu.edu.sg', 'nus.edu.sg'];
+        // var check_email = ['e.ntu.edu.sg', 'smu.edu.sg', 'nus.edu.sg'];
         var error = false;
         if(username != '' && dob != '' && email != '' && password != '' && cfm_password != ''){
             if(day > 31 || month > 12){
@@ -60,10 +60,10 @@ if (signUp != null) {
                 error = true;
             }
 
-            if(email.includes('@')){
-                var email_parts = email.split('@');
-                console.log(email_parts[1])
-                if(!check_email.includes(email_parts[1]) ) {
+            if(!email.includes('@')){
+                // var email_parts = email.split('@');
+                // console.log(email_parts[1])
+                // if(!check_email.includes(email_parts[1]) ) {
                     // console.log(check_email.includes(email_parts[1]))
                     document.getElementById("email_error").innerHTML = `
                     <div class="input-group mb-4 h-75">
@@ -71,24 +71,24 @@ if (signUp != null) {
                         <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
                             type="email" placeholder="Email" id="email" required>
                         <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                            Please enter a valid university email. 
+                            Please enter a valid email. 
                         </div>
                     </div>`;
                     error = true;
-                }
+                // }
             }
-            else{
-                document.getElementById("email_error").innerHTML = `
-                    <div class="input-group mb-4 h-75">
-                        <i class="bi bi-envelope-fill"></i>
-                        <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
-                            type="email" placeholder="Email" id="email" required>
-                        <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                            Please enter a valid university email. 
-                        </div>
-                    </div>`;
-                    error = true;
-            }
+            // else{
+            //     document.getElementById("email_error").innerHTML = `
+            //         <div class="input-group mb-4 h-75">
+            //             <i class="bi bi-envelope-fill"></i>
+            //             <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
+            //                 type="email" placeholder="Email" id="email" required>
+            //             <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+            //                 Please enter a valid university email. 
+            //             </div>
+            //         </div>`;
+            //         error = true;
+            // }
             if(password != cfm_password){
                 document.getElementById("password_error").innerHTML = `
                 <div class="input-group mb-4 h-75">
@@ -202,7 +202,7 @@ if (signUp != null) {
                         <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
                             type="email" placeholder="Email" id="email" required>
                         <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;"> 
-                            Please enter a valid university email. 
+                            Please enter a valid email. 
                         </div>
                     </div>`;
             }
