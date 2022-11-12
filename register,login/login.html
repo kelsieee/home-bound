@@ -86,21 +86,26 @@
 <div id="mainlogin">
     <div class="container justify-content-center" >
         <h1 class="fw-bold text-center mb-4 mt-5">Welcome back!</h1>
-        <h3 class="fw-bold text-center mb-5">Log in to continue</h3>
+        <h3 class="fw-bold text-center mb-5" style="text-transform: none;">Log in to continue</h3>
             
         <div class="container" id="form">
             <div class="row justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6">
-                    <div class="input-group mb-4 h-75">
-                        <i class="bi bi-person-fill"></i>
-                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
-                            type="email" placeholder="Email" id="inputEmail" v-model="inputEmail">
+
+                    <div id="email_error">
+                        <div class="input-group mb-4 h-75">
+                            <i class="bi bi-person-fill"></i>
+                            <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                                type="email" placeholder="Email" id="inputEmail">
+                        </div>
                     </div>
 
-                    <div class="input-group mb-5 h-75">
-                        <i class="bi bi-envelope-fill"></i>
-                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
-                            type="password" placeholder="Password" id="inputPassword" v-model="inputPassword">
+                    <div id="password_error">
+                        <div class="input-group mb-5 h-75">
+                            <i class="bi bi-envelope-fill"></i>
+                            <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                                type="password" placeholder="Password" id="inputPassword">
+                        </div>
                     </div>
 
                     <div class="text-center">

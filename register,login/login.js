@@ -13,7 +13,7 @@ if (loginBtn != null) {
     loginBtn.addEventListener("click", (e) => {
         const inputEmail = document.getElementById('inputEmail').value
         const inputPassword = document.getElementById('inputPassword').value
-        console.log(inputEmail);
+
         if (inputEmail != '' && inputPassword != '') {
             signInWithEmailAndPassword(auth, inputEmail, inputPassword)
             .then((userCredential) => {
@@ -54,7 +54,29 @@ if (loginBtn != null) {
             });
         }
         else{
-            document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Email or Password cannot be empty</div>`;
+            if(inputEmail == ''){
+                document.getElementById("email_error").innerHTML = `
+                <div class="input-group mb-4 h-75">
+                    <i class="bi bi-person-fill"></i>
+                    <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
+                        type="email" placeholder="Email" id="inputEmail">
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback" style="text-align: center; font-family: Montserrat, sans-serif;">
+                        Please enter a valid university email. 
+                    </div>
+                </div>`;
+            }
+            if(inputPassword == ''){
+                document.getElementById("password_error").innerHTML = `
+                <div class="input-group mb-5 h-75">
+                    <i class="bi bi-envelope-fill"></i>
+                    <input class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;"
+                        type="password" placeholder="Password" id="inputPassword">
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback" style="text-align: center; font-family: Montserrat, sans-serif;">
+                        Please enter a password. 
+                    </div>
+                </div>`;
+            }
+            // document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Email or Password cannot be empty</div>`;
         }
        
 

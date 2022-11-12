@@ -33,11 +33,19 @@
       
         ::placeholder {
             color: black;
-            font-weight: 500;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
         }
         
-        input[type=date] {
-            font-weight: 500;
+        input[type=date]{
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .form-check-label {
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
         }
 
         input {
@@ -51,16 +59,16 @@
 
         .input-group .bi {
             padding: 10px;
-            /* color: #ffb600; */
-            color: white;
+            color: black;
             min-width: 50px;
             text-align: center;
-            margin-bottom: 40px;
+            max-height: 75px;
+            /* margin-bottom: 40px; */
             font-size: 20px;
-            background-color: black;
-            border-radius: 30px;
+            background-color: #67aa94;;
+            border-radius: 10px;
         }
-        .form-check-input {
+        /* .form-check-input {
             justify-content: center;
             align-items: center;
             
@@ -68,12 +76,12 @@
         .form-check-label {
             font-size: 1.25rem;
             padding-left: 5px;
-        }
+        } */
 
-        input[type=radio] {
+        /* input[type=radio] {
             width: 20px;
             height: 20px;
-        }
+        } */
 
         .btn-secondary:hover {
             color: white;
@@ -90,52 +98,77 @@
     </div>
 
 <div>
-    <div class="container justify-content-center">
-
-        <p class="display-3 text-center fw-bold"
-            style="margin:auto; margin-top:50px; margin-bottom:50px;">Hey there, we're so happy to
-            have you.
-            <i class="bi bi-emoji-laughing ms-2"></i>
-        </p>
-        <p class="display-6 text-center fw-bold mb-5">Create an account to get started.</p>
+    <div class="container justify-content-center w-75">
+        <h1 class="fw-bold text-center mb-4 mt-5">Welcome to Home:Bound <i class="bi bi-emoji-laughing ms-2"></i></h1>
+        <h3 class="fw-bold text-center mb-5" style="text-transform: none;">Create an account to get started.</h3>
     </div>
     <div class="container" id="register">
         <div class="row justify-content-center text-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6 text-center">
-                <div class="input-group mb-4">
-                    <i class="bi bi-person-fill"></i>
-                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
-                        type="username" placeholder="Name" id="username" v-model="name">
+                
+                <div id="username_error">
+                    <div class="input-group mb-4 h-75">
+                        <i class="bi bi-person-fill"></i>
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                            type="username" placeholder="Name" id="username" required>
+                    </div>
+                </div>
+                <div id="date_error">
+                    <div class="input-group mb-4 h-75">
+                        <i class="bi bi-calendar-fill h-100 mb-6 text-center"></i>
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                            type="date"  id="dob" required>
+                    </div>
+                </div>
+                <div id="email_error">
+                    <div class="input-group mb-4 h-75">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                            type="email" placeholder="Email" id="email" required>
+                    </div>
+                </div>
+                <div id="password">
+                    <div class="input-group mb-4 h-75">
+                        <i class="bi bi-key-fill"></i>
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                            type="password" placeholder="Password" id="password1" required>
+                    </div>
+                </div>
+                
+                <div id="password_error">
+                    <div class="input-group mb-4 h-75">
+                        <i class="bi bi-key-fill"></i>
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
+                            type="password" placeholder="Re-enter Password" id="password2" required>
+                    </div>    
+                </div>     
+                
+                <div id="user">
+                    <div class="input-group mb-4">
+                        <div class="d-flex justify-content-center col text-center">
+                            <h6 class="fs-5 mt-1 me-4 mt-3">
+                                I am a...
+                            </h6>
+                            <div class="form-check form-check-inline mt-3 ms-2">
+                                <input class="form-check-input" type="radio" name="usertype"
+                                    id="inputRoommate" value="Roommate">
+                                <label class="form-check-label form-check-label-lg" for="inputRoommate">Roommate</label>
+                            </div>
+                            <div class="form-check form-check-inline mt-3 ms-2">
+                                <input class="form-check-input" type="radio" name="usertype"
+                                    id="inputLandlord" value="Landlord">
+                                <label class="form-check-label form-check-label-lg" for="inputLandlord">Landlord</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="input-group mb-4">
-                    <i class="bi bi-calendar-fill"></i>
-                    <input class="input-field text-center form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
-                        type="date"  id="dob" v-model="dob">
-                </div>
-
-                <div class="input-group mb-4">
-                    <i class="bi bi-envelope-fill"></i>
-                    <input class="input-field form-control-lg bg-secondary bg-opacity-25 fw-light" style="border-radius: 30px;"
-                        type="email" placeholder="Email" id="email" v-model="email">
-                </div>
-
-                <div class="input-group mb-4">
-                    <i class="bi bi-key-fill"></i>
-                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
-                        type="password" placeholder="Password" id="password1" v-model="password">
-                </div>
-
-                <div class="input-group mb-4">
-                    <i class="bi bi-key-fill"></i>
-                    <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
-                        type="password" placeholder="Re-enter Password" id="password2" v-model="cfm_password">
-                </div>         
-                    
-                <div class="text-center mt-2">
-                    <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div>
-                    <button type = "submit" class="btn btn-secondary px-5 py-3 fw-bold" 
-                        style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">Join the community  
+                <div class="text-center mt-2 h-75">
+                    <div id="error"></div>
+                    <!-- <div class="alert alert-danger p-30" id="error" v-if="show">{{ error }}</div> -->
+                    <button type = "submit" class="mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" 
+                        style="border-radius: 30px" id="signUp" name="signup_submit" @click="signup">
+                        <a style="text-decoration:none; color:white; font-family: Montserrat, sans-serif;">Join the community</a>
                         <i class="bi bi-arrow-right-circle ms-2"></i>
                     </button>
                 </div>
@@ -146,37 +179,37 @@
     </body>
 
     <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    users: [], // need to link to db
-                    name: '',
-                    dob: '',
-                    email: '',
-                    password: '',
-                    cfm_password: '',
-                    user_type: '',
-                    show: false,
-                    error: ''
-                };
-            },
-            methods: {
-                signup() {
-                    console.log("in validate")
-                    this.show = false;
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             users: [], // need to link to db
+        //             name: '',
+        //             dob: '',
+        //             email: '',
+        //             password: '',
+        //             cfm_password: '',
+        //             user_type: '',
+        //             show: false,
+        //             error: ''
+        //         };
+        //     },
+        //     methods: {
+        //         signup() {
+        //             console.log("in validate")
+        //             this.show = false;
 
-                    if (this.name == ''|| this.dob == '' || this.email == '' || this.password == '' || this.cfm_password == '' || this.user_type == '') { 
-                        this.error = "Please fill in all the fields!";
-                        this.show = true;
-                    } 
-                    if (this.password != this.cfm_password) {
-                            this.error = "Passwords must match!";
-                            this.show = true;
-                    }
-                }
-            }
-        });
-        const vm = app.mount('#register');
+        //             if (this.name == ''|| this.dob == '' || this.email == '' || this.password == '' || this.cfm_password == '' || this.user_type == '') { 
+        //                 this.error = "Please fill in all the fields!";
+        //                 this.show = true;
+        //             } 
+        //             if (this.password != this.cfm_password) {
+        //                     this.error = "Passwords must match!";
+        //                     this.show = true;
+        //             }
+        //         }
+        //     }
+        // });
+        // const vm = app.mount('#register');
     </script>
 
 <script src="/plugins/jQuery/jquery.min.js"></script>
