@@ -10,6 +10,14 @@ if (signOutBtn != null) {
       signOut(auth).then(() => {
           // Sign-out successful.
           alert("Successfully Signed Out!")
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'See You Again',
+            text: 'You have successfully logged out.',
+            showConfirmButton: false,
+            timer: 1500
+            })
       }).catch((error) => {
           // An error happened.
           const errorCode = error.code;
