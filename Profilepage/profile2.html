@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile page</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+  <!-- <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" /> -->
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="../plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="../plugins/slick/slick.css">
+  <link rel="stylesheet" href="../plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <!-- <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> -->
+  <!-- Template styles-->
+  <link rel="stylesheet" href="../home.css">
+
+  <!-- head icon -->
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+
+  <!-- <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+  <script type="module" src="/roomieCreation/roomieCreation.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  
+  <style>
+    input[type="file"] {
+      margin-top: 5px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .heading {
+      font-family: Montserrat;
+      font-size: 45px;
+      color: green;
+    }
+
+    .form-check, .form-check-input {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] + label, input[type="radio"], .form-control, .form-select, input::placeholder{
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .image-upload>input {
+      display: none;
+    }
+
+    input::file-selector-button {
+      background-color: #67aa94;
+      border-radius: 30px;
+      border: 1px solid grey;
+      color: black;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 5px;
+      margin-top: 5px;
+      padding-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .multiselect {
+      width: 200px;
+    }
+
+    .selectBox {
+      position: relative;
+    }
+
+    .selectBox select {
+      width: 100%;
+      font-weight: bold;
+    }
+
+    table {
+      border-collapse: separate; 
+      border-spacing: 0 20px;
+     }
+     
+  </style>
+
+</head>
+
+<body>
+  <div id="main">
+    <nav-component></nav-component>
+  </div>
+<div class="container-fluid mx-auto w-75 align-items-center">
+  <div class="row">
+ 
+    <div class="col-lg-6 mt-4 justify-content-left mx-auto">
+        <div style="overflow-x:auto;">
+        <table class="mx-auto text-center ">
+            <label for="photo">
+                <img id='preview' src="../images/a-small-balcony-on-a-yellow-apartment-building-a-white-sofa--c1f96de1177ecfedc73a9651dd94ecf0.webp" class="img-fluid mb-4" alt="pic" style="border-radius:10px" />
+              </label>
+          <th colspan="3">
+            <h3 class="fw-semibold mb-3 ">Personal Details</h3>
+          </th>
+          <tr>
+            <td
+            ><h6 class="p-2 text-align-left  ">Full Name</h6></td>
+            <td>
+                
+                <div class="alert alert-secondary "  role="alert">
+                    Full name here
+                  </div>
+            </td>
+
+            
+          </tr>
+
+          <tr>
+            <td><h6 class="p-2" >Date of Birth </h6></td>
+            <td>
+                <div class="alert alert-secondary" role="alert">
+                    DOB here
+                  </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><h6 class="p-2">Email</h6></td>
+            <td>
+                <div class="alert alert-secondary" role="alert">
+                    email here
+                  </div>
+            </td>
+            
+          </tr>
+          </table>
+          <div class="mx-auto text-center  pb-5">
+            <button type="button" class="btn btn-lg btn-warning w-50  mx-auto">Log out </button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+       </div>
+
+<footer id="footer" class="footer bg-overlay">
+    <div class="container pb-4">
+        <div class="row justify-content-between">
+                <h4 class=" pt-5 " style="color:#dbe6da">About Us</h4>
+                <h7  style="color:#fff" class="mt-3 mb-3">Find your affordable, clean and safe room to rent. Our mission is to simplify the process of connecting international students in Singapore with and allow everyone to list their home easily.</h7>
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="https://facebook.com/homebound" aria-label="Facebook"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/homebound" aria-label="Twitter"><i
+                                    class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://instagram.com/homebound" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+            </div><!-- Col end -->
+    </div><!-- Container end -->
+  </div><!-- Footer main end -->
+  </footer><!-- Footer end -->
+
+        </script>
+        <!-- Vue.js Version 3 CDN -->
+        <script src="../plugins/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="../plugins/bootstrap/bootstrap.min.js" defer></script>
+        <!-- Slick Carousel -->
+        <script src="../plugins/slick/slick.min.js"></script>
+        <script src="../plugins/slick/slick-animation.min.js"></script>
+      
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      
+        <!-- Refer to my own external JS -->
+        <script src="../navComponent.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      
+        <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+          crossorigin="anonymous"></script>
+      
+      
+        </body>
+      </html>
