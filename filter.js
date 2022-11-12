@@ -38,7 +38,7 @@ function show_two_dollar(){
 }
 
 function show_three_dollar(){  
-    var threedollars = document.querySelectorAll('.threedollar');
+    var threedollars = document.querySelectorAll('.threedollar3');
     var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
@@ -72,7 +72,7 @@ function show_nowifi(){
 
 
 function show_one_room (){
-    var oneroom = document.querySelectorAll('.oneroom');
+    var oneroom = document.querySelectorAll('.room1');
     var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
@@ -83,7 +83,7 @@ function show_one_room (){
 }
 
 function show_two_room (){
-    var tworoom = document.querySelectorAll('.tworoom');
+    var tworoom = document.querySelectorAll('.room2');
     var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
@@ -94,7 +94,7 @@ function show_two_room (){
 }
 
 function show_three_room (){
-    var threeroom = document.querySelectorAll('.threeroom');
+    var threeroom = document.querySelectorAll('.room3');
     var alls = document.querySelectorAll('.project_container');
     for (var i = 0; i < alls.length; ++i) { 
         alls[i].style.display = 'none'
