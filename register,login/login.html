@@ -33,8 +33,8 @@
     <style>
       
         ::placeholder {
-            color: black;
-            font-weight: 500;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
         }
 
         input {
@@ -48,14 +48,14 @@
 
         .input-group .bi {
             padding: 10px;
-            /* color: #ffb600; */
-            color: white;
+            color: black;
             min-width: 50px;
-            /* text-align: center; */
+            text-align: center;
             margin-bottom: 40px;
             font-size: 20px;
-            background-color: black;
-            border-radius: 30px;
+            background-color: #67aa94;
+            border-radius: 10px;
+   
         }
         .form-check-input {
             justify-content: center;
@@ -71,7 +71,6 @@
             color: white;
         }
     </style>
-    
 
 </head>
 
@@ -83,34 +82,33 @@
 </div>
 
     <div class="container justify-content-center" >
-
-        <p class="display-1 text-center fw-bold" style="margin:auto; margin-top:50px; margin-bottom:50px;">Welcome back!</p>
-        <p class="display-5 text-center fw-bold mb-5">Log in to continue.</p>
+        <h1 class="fw-bold text-center mb-4 mt-5">Welcome back!</h1>
+        <h3 class="fw-bold text-center mb-5">Log in to continue</h3>
             
         <div class="container" id="form">
             <div class="row justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6">
-                    <div class="input-group mb-4">
+                    <div class="input-group mb-4 h-75">
                         <i class="bi bi-person-fill"></i>
-                        <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
                             type="email" placeholder="Email" id="inputEmail" v-model="inputEmail">
                     </div>
 
-                    <div class="input-group mb-4">
+                    <div class="input-group mb-4 h-75">
                         <i class="bi bi-envelope-fill"></i>
-                        <input class="input-field form-control-lg bg-secondary bg-opacity-25" style="border-radius: 30px;"
+                        <input class="input-field form-control-lg bg-light" style="border-radius: 10px;"
                             type="password" placeholder="Password" id="inputPassword" v-model="inputPassword">
                     </div>
 
                     <div class="text-center">
                         <div class="alert alert-danger p-30" v-if="show">{{error}}</div>
-                        <button type="submit" class="btn btn-secondary btn-lg px-5 py-3 mt-3" 
+                        <button type="submit" class="mx-auto justify-content-center btn btn-secondary btn-lg w-50 rounded-pill" 
                             style="border-radius: 30px" id = "loginBtn">
-                            Let's go
+                            <a style="text-decoration:none; color:white; font-family: Montserrat, sans-serif;">Let's go </a>
                             <i class="bi bi-arrow-right-circle ms-1"></i>
                         </button>
                     </div>
-                    <p class=" text-center mt-4">Don't have an account? <a href="register.html" style="text-decoration:none ;color:green">Sign up now.</a></p>
+                    <h6 class="text-center mt-4">Don't have an account? <a href="register.html" style="text-decoration:none ;color:green">Sign up now.</a></h6>
                 </div>
             </div>
         </div>
