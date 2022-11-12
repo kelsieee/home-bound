@@ -6,7 +6,7 @@ main.component("nav-component", {
   template: `
 
 
-        <nav class="navbar navbar-expand-lg navbar-light " style='background-color:#dbe6da'>
+        <nav class="navbar navbar-expand-xl navbar-light " style='background-color:#dbe6da'>
         <a class="navbar-brand" href="../home.html">
         <img  class='mx-4 mt-3'src='/images/Screenshot 2022-11-07 at 12.40.27 AM.png' style='width : 220px; margin-left:10px'>
         </a>
