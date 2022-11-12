@@ -13,7 +13,9 @@ if (loginBtn != null) {
     loginBtn.addEventListener("click", (e) => {
         const inputEmail = document.getElementById('inputEmail').value
         const inputPassword = document.getElementById('inputPassword').value
-        signInWithEmailAndPassword(auth, inputEmail, inputPassword)
+        console.log(inputEmail);
+        if (inputEmail != '' && inputPassword != '') {
+            signInWithEmailAndPassword(auth, inputEmail, inputPassword)
             .then((userCredential) => {
                 var currentdate = new Date()
                 var datetime = "Last Login: " + currentdate.getDay() + "/" + currentdate.getMonth()
@@ -47,9 +49,14 @@ if (loginBtn != null) {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-
+                document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Email or Password is invalid. <br> Please try again! </div>`;
                 alert(errorMessage)
             });
+        }
+        else{
+            document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Email or Password cannot be empty</div>`;
+        }
+       
 
     })
 }
