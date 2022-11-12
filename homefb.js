@@ -141,7 +141,9 @@ function getAllDataOnce() {
         var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
 
         for(var i = 0; i<property.length; i++){
-            // console.log(property[i])
+            console.log(property[i])
+            const pInternet = property[i].internet
+
             const pTitle = property[i].title
             const pAdd = property[i].address
             const pRent = property[i].financial.rent
@@ -152,9 +154,33 @@ function getAllDataOnce() {
             if(property[i].propertyImg){
                 url = property[i].propertyImg
             }
+
+            console.log(parseInt(pRent))
+            if(parseInt(pRent)<750){
+                var dNum = "one"
+                var dSign = "$"
+            }
+            else if(parseInt(pRent)<2000){
+                var dNum = "two"
+                var dSign = "$$"
+            }
+            else if(parseInt(pRent)<750){
+                var dNum = "three"
+                var dSign = "$$$"
+            }
+
+            if(pInternet == "included"){
+                var wificlass = "wifiavailable"
+            }
+            else{
+                var wificlass ="nowifi"
+            }
+
+            console.log()
+
             str +=
             `
-            <div class="col project_container onedollar wifiavailable tworoom mb-3" >
+            <div class="col project_container ${dNum}dollar ${wificlass} room${pBedroom} mb-3" >
             <div class="card h-100" style='position:relative' >
                 <input type="checkbox" id="heart${count + i}" onchange="passValues(this)" ><label  for="heart${count + i}" >&#9829</label></input>
                 <img class="img-fluid card-img-top" style="object-fit:cover; height:150px" src=${url} alt="project-img">
@@ -165,9 +191,9 @@ function getAllDataOnce() {
                     
 
                     <div>
-                        <span class="badge bg-danger m-1">$</span>
+                        <span class="badge bg-danger m-1">${dSign}</span>
                         <span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi"></i></span>
-                        <span class="badge bg-info text-dark m-1">${pBedroom} rooms</span>
+                        <span class="badge bg-info text-dark m-1">${pBedroom} room(s)</span>
                     </div>
                     <div class="card-text d-flex pb-2 mt-2">
                         <span><i class="bi bi-geo-alt-fill" ></i></span>
