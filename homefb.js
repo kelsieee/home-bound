@@ -72,7 +72,7 @@ function getAllDataOnce(main_user) {
 
             smth +=
                 `
-            <div class="col mb-3">
+            <div class="col mb-3 gx-5">
                         <div class="card h-100" style='position:relative'  id="${listId}">
                             <input type="checkbox" id="heart${listId}" onchange="passValues(this)"><label  for="heart${listId}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
