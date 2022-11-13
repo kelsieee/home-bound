@@ -419,10 +419,14 @@ function populateP()
 
     </div>
   </div>
+  
+  
         `
 
     roomListingDiv.innerHTML = str
+    
   })
+
 }
 
 
