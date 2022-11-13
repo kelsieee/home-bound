@@ -80,17 +80,19 @@ onAuthStateChanged(auth, (user) => {
       const deposit = document.getElementById("deposit").value
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
-      // const gender = document.getElementById("gender").value
+      const gender = document.getElementById("gender").value
 
-      const female = document.getElementById('female').checked;
-      const male = document.getElementById('male').checked;
+      if(gender != ""){
+        const female = document.getElementById('female').checked;
+        const male = document.getElementById('male').checked;
 
-      var gender_type = ""
-      if (female == true) {
-          gender_type = "Female";
-      }
-      else {
-          gender_type = "Male";
+        var gender_type = ""
+        if (female == true) {
+            gender_type = "Female";
+        }
+        else {
+            gender_type = "Male";
+        }
       }
 
       console.log(document.getElementById('date'))
