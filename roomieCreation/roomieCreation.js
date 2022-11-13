@@ -13,22 +13,93 @@ let file = document.getElementById('inputFile')
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        const uid = user.uid;
+        console.log(uid)
+        const dbRef = ref(database)
+        get(child(dbRef,"users")).then((snapshot)=>{
+        var users = []
+        var index = 0
+        snapshot.forEach(childSnapshot=>{
+            users.push(childSnapshot.val())
+        });
+
+        console.log(users)
+        for(var i=0; i<users.length; i++){
+            if(users[i].uid==uid){
+                index = i
+            }
+        }
+        console.log(users[index].student)
+        if(users[index].student){
+            if (listRoomie != null) {
+                listRoomie.addEventListener("click", (e) => {
+                    createRoomie(user)                   
+                })
+            }
+        }
+        else{
+            let timerInterval
+            Swal.fire({
+              title: 'We are sorry...',
+              html: 'Restricted access for students only.<br><br>Redirecting in <b></b> milliseconds.',
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                  b.textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
+            setTimeout(function(){
+                window.location.href = "../home.html"
+             }, 3000);
+        }
+        })
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      console.log(user)
-    //   console.log(uid)
-      if (listRoomie != null) {
-        listRoomie.addEventListener("click", (e) => {
-            createRoomie(user)
-            
-        })
-    }
+
+  
       // ...
     } else {
       // User is signed out
       // ...
-      window.location.href = "../register,login/login.html"
+    //   window.location.href = "../register,login/login.html"
+      let timerInterval
+      Swal.fire({
+        title: 'Login as a Student To List',
+        html: 'Redirecting in <b></b> milliseconds.',
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+      setTimeout(function(){
+          window.location.href = "../register,login/login.html"
+       }, 2000);
+
 
     }
   });
