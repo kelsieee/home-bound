@@ -75,9 +75,9 @@ onAuthStateChanged(auth, (user) => {
       const bathroomquantity = document.getElementById("bathroomquantity").value
       const bedroomquantity = document.getElementById("bedroomquantity").value
       const internet = document.getElementById("internet").value
-      const rent = document.getElementById("rent")
+      const rent = document.getElementById("rent").value
       const bills = document.getElementById("bills").value
-      const deposit = document.getElementById("deposit")
+      const deposit = document.getElementById("deposit").value
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
       const gender = document.getElementById("gender").value
@@ -96,7 +96,7 @@ onAuthStateChanged(auth, (user) => {
 
 
       if (title != "" && address != "" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity" && internet != ""
-        && rent != null && bills != "" && deposit != null && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
+        && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
         && place != "" && phone != "" && email != "" && tele != "" && main_user != null) {
         let id = GenerateId()
         set(ref(database, 'property/' + id), {
@@ -117,9 +117,9 @@ onAuthStateChanged(auth, (user) => {
         })
 
         set(ref(database, `property/${id}/financial`), {
-          rent: rent.value,
+          rent: rent,
           bills: bills,
-          deposit: deposit.value,
+          deposit: deposit,
         })
 
         set(ref(database, `property/${id}/contact`), {
@@ -196,7 +196,7 @@ onAuthStateChanged(auth, (user) => {
               </div>`
         }
 
-        if (rent == null) {
+        if (rent == "") {
           document.getElementById("rent_error").innerHTML = `
           <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
               <span class="input-group-text " id="basic-addon1">$</span>
@@ -207,7 +207,7 @@ onAuthStateChanged(auth, (user) => {
           </div>`
         }
 
-        if (deposit == null) {
+        if (deposit == "") {
           document.getElementById("deposit_error").innerHTML = `
           <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
             <span class="input-group-text " id="basic-addon1">$</span>
