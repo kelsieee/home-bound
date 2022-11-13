@@ -42,6 +42,42 @@ function getAddress(){
 
 getAddress()
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      // alert("Successfully logged in!")
+      console.log("user logged in")
+      
+      // ...
+  } else {
+      // User is signed out
+      // ...
+      console.log("user signed out")
+      Swal.fire({
+        title: '<strong>Login To View </strong>',
+        icon: 'info',
+        confirmButtonColor: '#dbe6da',
+        cancelButtonColor: '#74adcf',
+        html:
+          
+          
+          'You have to login to view this content'
+          ,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+          ' <a href="../register,login/login.html"style=color:black;  >Login</a>',
+        cancelButtonText:
+          '<a href="../home.html" style=color:black>Back to Home</a>',
+          })
+
+  }
+});
+
+
+
 function populateP()
   {
     var url = document.URL
