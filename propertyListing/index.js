@@ -54,27 +54,34 @@ onAuthStateChanged(auth, (user) => {
       // User is signed out
       // ...
       console.log("user signed out")
+      let timerInterval
       Swal.fire({
-        title: '<strong>Login To View </strong>',
-        icon: 'info',
-        confirmButtonColor: '#dbe6da',
-        cancelButtonColor: '#74adcf',
-        html:
-          
-          
-          'You have to login to view this content'
-          ,
-        showCloseButton: true,
-        showCancelButton: true,
-        focusConfirm: false,
-        confirmButtonText:
-          ' <a href="../register,login/login.html"style=color:black;  >Login</a>',
-        cancelButtonText:
-          '<a href="../home.html" style=color:black>Back to Home</a>',
-          })
-
+        title: 'Login To View',
+        html: 'Redirecting in <b></b> milliseconds.',
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+      setTimeout(function(){
+          window.location.href = "../register,login/login.html"
+       }, 2000);
   }
 });
+
 
 
 
