@@ -136,6 +136,7 @@ onAuthStateChanged(auth, (user) => {
               showConfirmButton: false,
               timer: 2000
           })
+          
             setTimeout(function(){
                 window.location.href = "../home.html#project-area";
              }, 2000);
