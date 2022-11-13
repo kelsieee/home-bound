@@ -35,7 +35,7 @@ main.component("nav-component", {
               <a class="nav-link" href="/Lodginglisting/lodginglisting.html">
          
             <br>
-            <h1 class="fs-5 fw-bold">list a property <span class="sr-only">(current)</span></a></h1>
+            <h1 class="fs-5 fw-bold">list your lodging <span class="sr-only">(current)</span></a></h1>
             
             </li>
             </li>
