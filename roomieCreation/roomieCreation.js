@@ -246,6 +246,15 @@ function createRoomie(user) {
                     </div>`
             }
 
+            if(!email.includes('@')){
+                document.getElementById("email_error").innerHTML = `
+                <input type="email" class="form-control bg-light ps-3 mt-2 is-invalid" style="border-radius: 10px;" id="email" rows="1"
+                placeholder="Enter email.">
+                <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                    Please enter a valid email. 
+                </div>`
+            }
+
             if(!error) {
                 set(ref(database, 'roomie/' + user.uid), {
                     name: name,
