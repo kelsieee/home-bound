@@ -75,9 +75,9 @@ onAuthStateChanged(auth, (user) => {
       const bathroomquantity = document.getElementById("bathroomquantity").value
       const bedroomquantity = document.getElementById("bedroomquantity").value
       const internet = document.getElementById("internet").value
-      const rent = document.getElementById("rent")
+      const rent = document.getElementById("rent").value
       const bills = document.getElementById("bills").value
-      const deposit = document.getElementById("deposit")
+      const deposit = document.getElementById("deposit").value
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
       const gender = document.getElementById("gender").value
@@ -94,11 +94,44 @@ onAuthStateChanged(auth, (user) => {
 
       // console.log("bye")
 
-
+      var error = false;
       if (title != "" && address != "" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity" && internet != ""
-        && rent != null && bills != "" && deposit != null && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
+        && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
         && place != "" && phone != "" && email != "" && tele != "" && main_user != null) {
-        let id = GenerateId()
+        if (phone.length != 8) {
+          document.getElementById("number_error").innerHTML = `
+              <input type="number" class="form-control bg-light ps-3 mt-2 is-invalid" style="border-radius: 10px;" id="phone" rows="1"
+              placeholder="Enter phone number.">
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please enter a valid phone number. 
+              </div>`
+              error = true;
+        }
+
+        if (new Date(date).getTime() <= ToDate.getTime()) {
+          document.getElementById("date_error").innerHTML = `
+          <div id="date_error">
+              <input type="date" class="form-control form-control-lg bg-light h-75 is-invalid" style=" border-radius: 10px;"
+              id="date" required>
+          </div>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+              Please enter a future date.
+          </div>`
+          error = true;
+      }
+
+      if(!email.includes('@')){
+        document.getElementById("email_error").innerHTML = `
+        <input type="email" class="form-control bg-light ps-3 mt-2 is-invalid" style="border-radius: 10px;" id="email" rows="1"
+        placeholder="Enter email.">
+        <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+            Please enter a valid email. 
+        </div>`
+    }
+
+  
+        
+          let id = GenerateId()
         set(ref(database, 'property/' + id), {
           title: title,
           address: address,
@@ -117,9 +150,9 @@ onAuthStateChanged(auth, (user) => {
         })
 
         set(ref(database, `property/${id}/financial`), {
-          rent: rent.value,
+          rent: rent,
           bills: bills,
-          deposit: deposit.value,
+          deposit: deposit,
         })
 
         set(ref(database, `property/${id}/contact`), {
@@ -196,18 +229,18 @@ onAuthStateChanged(auth, (user) => {
               </div>`
         }
 
-        if (rent == null) {
+        if (rent == "") {
           document.getElementById("rent_error").innerHTML = `
           <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
               <span class="input-group-text " id="basic-addon1">$</span>
-              <input type="number" class="form-control bg-light is-invalid" id="budget" rows="1" required>
-          </div>
-          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+              <input type="number" class="form-control bg-light is-invalid" id="rent" rows="1" required>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
               Please enter your desired rent.
+            </div>
           </div>`
         }
 
-        if (deposit == null) {
+        if (deposit == "") {
           document.getElementById("deposit_error").innerHTML = `
           <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
             <span class="input-group-text " id="basic-addon1">$</span>
