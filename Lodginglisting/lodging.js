@@ -80,7 +80,19 @@ onAuthStateChanged(auth, (user) => {
       const deposit = document.getElementById("deposit").value
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
-      const gender = document.getElementById("gender").value
+      // const gender = document.getElementById("gender").value
+
+      const female = document.getElementById('female').checked;
+      const male = document.getElementById('male').checked;
+
+      var gender_type = ""
+      if (female == true) {
+          gender_type = "Female";
+      }
+      else {
+          gender_type = "Male";
+      }
+
       console.log(document.getElementById('date'))
       const date = document.getElementById("date").value
       const duration = document.getElementById("duration").value
@@ -138,7 +150,7 @@ onAuthStateChanged(auth, (user) => {
           internet: internet,
           property: property,
           furnishing: furnishing,
-          gender: gender,
+          gender: gender_type,
           date: date,
           duration: duration,
           place: place,
@@ -262,7 +274,7 @@ onAuthStateChanged(auth, (user) => {
               </div>`
         }
 
-        if (gender == 'Choose preferred gender') {
+        if (male == false && female == false){
           document.getElementById("gender_error").innerHTML = `
           <select id="gender" class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110) ;"
           aria-label="Default select example">
