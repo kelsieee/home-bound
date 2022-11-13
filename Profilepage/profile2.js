@@ -90,21 +90,21 @@ function populateInfo(){
                 </th>
                 <tr>
                   <td><h6 class="p-2">Name</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px;font-size: small; text-align: start;">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px;font-size: small; text-align: start; font-family: Montserrat, sans-serif;">
                   ${name}
                   </td>
                 </tr>
 
                 <tr>
                   <td><h6 class="p-2">Birthday</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px; font-size: small; text-align: start;">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px; font-size: small; text-align: start; font-family: Montserrat, sans-serif;">
                     ${day}/${month}/${year}
                   </td>
                 </tr>
 
                 <tr>
                   <td><h6 class="p-2">Email</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px;  border-radius: 10px;font-size: small; text-align: start;">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px;  border-radius: 10px;font-size: small; text-align: start; font-family: Montserrat, sans-serif;">
                     ${email}
                   </td>
                 </tr>
