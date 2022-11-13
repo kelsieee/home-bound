@@ -305,7 +305,7 @@ onAuthStateChanged(auth, (user) => {
           <option value="1-3">1-3 months</option>
           <option value="3-6">3-6 months</option>
           <option value="6-12">6-12 months</option>
-          <option value=">>12">>12 months</option>
+          <option value=">12">>12 months</option>
         </select>
               <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                   Please select the allowed stay duration.
