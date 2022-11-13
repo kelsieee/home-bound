@@ -26,11 +26,18 @@ if (signUp != null) {
         // else {
         //     type = "Landlord";
         // }
- 
-        var dob_array = dob.split('-');
-        var day = dob_array[2]
-        var month = dob_array[1]
-        var year = dob_array[0]
+        var check_email = ['ntu.edu.sg', 'smu.edu.sg', 'nus.edu.sg'];
+        var email_parts = email.split('@');
+        // console.log(email_parts[1])
+        if (!check_email.includes(email_parts[1])) {
+            console.log(check_email.includes(email_parts[1]))
+            var isStudent = false
+        }
+        else {
+            var isStudent = true
+        }
+
+            
 
             var dob_array = dob.split('-');
             var day = dob_array[2]
