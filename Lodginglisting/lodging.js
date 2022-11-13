@@ -291,7 +291,7 @@ onAuthStateChanged(auth, (user) => {
         if (date == '') {
           document.getElementById("date_error").innerHTML = `
               <input type="date" class="form-control form-control-lg bg-light h-75 is-invalid" style=" border-radius: 10px;"
-              id="movedate" required>
+              id="date" required>
               <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                   Please enter a valid date.
               </div>`
