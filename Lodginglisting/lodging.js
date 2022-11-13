@@ -81,6 +81,7 @@ onAuthStateChanged(auth, (user) => {
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
       const gender = document.getElementById("gender").value
+      console.log(document.getElementById('date'))
       const date = document.getElementById("date").value
       const duration = document.getElementById("duration").value
 
@@ -294,7 +295,7 @@ onAuthStateChanged(auth, (user) => {
                   Please enter a valid phone number. 
               </div>`
         }
-        
+
         if (email == '') {
           document.getElementById("email_error").innerHTML = `
             <input type="email" class="form-control bg-light ps-3 mt-2 is-invalid" style="border-radius: 10px;" id="email" rows="1"
