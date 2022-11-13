@@ -92,6 +92,7 @@ onAuthStateChanged(auth, (user) => {
         const tele = document.getElementById("tele").value
         
         // console.log("bye")
+
     
         if (title != "" && address!="" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity"&& internet != ""
             && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
@@ -128,6 +129,13 @@ onAuthStateChanged(auth, (user) => {
     
             // alert('property listed')
             uploadListingImage(id)
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Lodging successfully listed!',
+              showConfirmButton: false,
+              timer: 2000
+          })
             setTimeout(function(){
                 window.location.href = "../home.html#project-area";
              }, 2000);
