@@ -192,7 +192,7 @@ function createRoomie(user) {
     const tele = document.getElementById("tele").value
 
     var error = false;
-    if (firstname != "" && lastname != "" && age!="" && gender_type !="" && budget != "" && locations != [] && rooms != "No. of Rooms" && date != ""
+    if (firstname != "" && lastname != "" && age!="" && gender_type !="" && budget != "" && locations.length != 0 && rooms != "No. of Rooms" && date != ""
         && duration != "" && introduction != "" && hobbies != "" && phone != "" && email != "" && tele != "" && user != null) {
             // const specialChars = /1234567890[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
             // if (specialChars.test(firstname)){
