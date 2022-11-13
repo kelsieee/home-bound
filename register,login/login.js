@@ -61,7 +61,7 @@ if (loginBtn != null) {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 document.getElementById("error").innerHTML = `<div class="alert alert-danger p-10" style="font-family: Montserrat, sans-serif; color:black;">Email or Password is invalid. <br> Please try again! </div>`;
-                alert(errorMessage)
+                // alert(errorMessage)
             });
         }
         else{
