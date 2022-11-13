@@ -23,7 +23,7 @@
 
 <br>
 
-1. Download and install <a href="https://nodejs.org/en/download/">Node JS</a>.
+1. Download and install <a href="https://code.visualstudio.com/download">Visual Studio Code</a>.
 
 2. Download and install <a href="https://desktop.github.com/">Github Desktop</a>.
 
@@ -37,10 +37,14 @@
    git clone https://github.com/kelsieee/home-bound.git
   ```
 
-5. Launch <strong>newlanding.html</strong> and you're good to go! Find it using this path:
-  ```
-  C:\\..\GitHub\home-bound\newlanding.html 
-  ```
+5. Launch GitHub Desktop and select the home-bound repository. 
+
+6. Install the Live Server extension on Visual Studio Code (extension ID: ritwickdey.LiveServer).
+  <br>
+  <img src="live-server.png" width="500px"/>
+  <br>
+
+7. Launch <strong>newlanding.html</strong> using the Live Server (right click on the file > "Open with Live Server" option) and you're good to go! 
 
 <br>
 
