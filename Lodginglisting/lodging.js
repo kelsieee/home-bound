@@ -80,11 +80,10 @@ onAuthStateChanged(auth, (user) => {
       const deposit = document.getElementById("deposit").value
       const property = document.getElementById("property").value
       const furnishing = document.getElementById("furnishing").value
-      const gender = document.getElementById("gender").value
+      // const gender = document.getElementById("gender").value
 
-      if(gender != ""){
-        let female = document.getElementById('female').checked;
-        let male = document.getElementById('male').checked;
+      const female = document.getElementById('female').checked;
+      const male = document.getElementById('male').checked;
 
         var gender_type = ""
         if (female == true) {
@@ -93,7 +92,6 @@ onAuthStateChanged(auth, (user) => {
         else {
             gender_type = "Male";
         }
-      }
 
       console.log(document.getElementById('date'))
       const date = document.getElementById("date").value
@@ -110,7 +108,7 @@ onAuthStateChanged(auth, (user) => {
 
       var error = false;
       if (title != "" && address != "" && bathroomquantity.value != "Choose Quantity" && bedroomquantity != "Choose Quantity" && internet != ""
-        && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender != "" && date != "" && duration != ""
+        && rent != "" && bills != "" && deposit != "" && property != "" && furnishing != "" && gender_type != "" && date != "" && duration != ""
         && place != "" && phone != "" && email != "" && tele != "" && main_user != null) {
         if (phone.length != 8) {
           document.getElementById("number_error").innerHTML = `
