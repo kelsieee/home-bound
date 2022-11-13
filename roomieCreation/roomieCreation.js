@@ -278,8 +278,19 @@ function createRoomie(user) {
                 })
         
                 // alert('roomie listed')
+              
+
                 console.log("listed")
                 uploadProfileImage(user)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Roomie successfully listed',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                
+                  
                 setTimeout(function(){
                     window.location.href = "../home.html#project-area";
                  }, 2000);
@@ -337,11 +348,13 @@ function createRoomie(user) {
             
         }
         if (budget == ''){
-            document.getElementById("budget_error").innerHTML = `
-            <input type="number" id="budget" class="form-control form-control-lg bg-light is-invalid" style="border-radius: 10px;"
-            placeholder=$>
-            <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                Please enter your budget.
+            document.getElementById("budget_error").innerHTML = `            
+            <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
+                <span class="input-group-text " id="basic-addon1">$</span>
+                <input type="text" class="form-control bg-light is-invalid" id="budget" rows="1" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                    Please enter your budget.
+                </div>
             </div>`
         }
         if (rooms == 'No. of Rooms'){
@@ -440,13 +453,17 @@ function createRoomie(user) {
                     Please enter a valid email. 
                 </div>`
         } 
-        if (tele == '' || tele[0] != '@'){
+        if (tele == ''){
             document.getElementById("tele_error").innerHTML = `
-            <input type="text" class="form-control bg-light ps-3 mt-2 is-invalid" style="border-radius: 10px;" id="tele" rows="1"
-            placeholder="Enter Telegram handle.">
-            <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+            <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control bg-light is-invalid" id="tele" rows="1"
+                placeholder="Enter Telegram handle." required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                 Please enter a telegram username.
-            </div>`
+                </div>
+            </div>
+           `
         }
     }
 }
