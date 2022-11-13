@@ -242,6 +242,7 @@ function createRoomie(user) {
                     <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                         Please enter a valid phone number. 
                     </div>`
+                error = true;
             }
 
             if(!email.includes('@')){
