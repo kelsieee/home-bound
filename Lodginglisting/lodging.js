@@ -175,7 +175,7 @@ onAuthStateChanged(auth, (user) => {
             <option value="5">5</option>
             </select>
               <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
-                  Please select number of bedroom. 
+                  Please select number of bedrooms. 
               </div>`
         }
 
@@ -197,8 +197,10 @@ onAuthStateChanged(auth, (user) => {
 
         if (rent == ''){
           document.getElementById("rent_error").innerHTML = `
-          <input type="number" class="form-control bg-light is-invalid" id="rent" style="border-radius: 10px;"
-          rows="1" placeholder=$>
+          <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
+              <span class="input-group-text " id="basic-addon1">$</span>
+              <input type="number" class="form-control bg-light is-invalid" id="budget" rows="1" required>
+          </div>
           <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
               Please enter your desired rent.
           </div>`
@@ -206,10 +208,12 @@ onAuthStateChanged(auth, (user) => {
 
         if (deposit == ''){
           document.getElementById("deposit_error").innerHTML = `
-          <input type="number" id="deposit" class="form-control bg-light is-invalid"
-          style="border-radius: 10px;" rows="1" placeholder=$>
-          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+          <div class="input-group mb-3 mt-2" style="border-radius: 20px;">
+            <span class="input-group-text " id="basic-addon1">$</span>
+            <input type="number" class="form-control bg-light is-invalid" id="deposit" rows="1" required>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
               Please enter the required deposit.
+            </div>
           </div>`
         }
         
@@ -271,6 +275,22 @@ onAuthStateChanged(auth, (user) => {
               <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                   Please enter information about the place.
               </div>`
+        }
+
+        if (roomies == ''){
+          document.getElementById("roomies_error").innerHTML = `
+            <textarea id="roomies" class="form-control bg-light mt-2" style="border-radius: 10px;" rows="5"
+              placeholder="Share more about the roommates here, if any."></textarea>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please enter information about the place.
+              </div>`
+        }
+
+        if (phone == '') {
+          document.getElementById("number_error").innerHTML = `
+          <input type="number" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
+          placeholder="Enter phone number.">
+          `
         }
 
       
