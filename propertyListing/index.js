@@ -42,6 +42,49 @@ function getAddress(){
 
 getAddress()
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      // alert("Successfully logged in!")
+      console.log("user logged in")
+      
+      // ...
+  } else {
+      // User is signed out
+      // ...
+      console.log("user signed out")
+      let timerInterval
+      Swal.fire({
+        title: 'Login To View',
+        html: 'Redirecting in <b></b> milliseconds.',
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+      setTimeout(function(){
+          window.location.href = "../register,login/login.html"
+       }, 2000);
+  }
+});
+
+
+
+
 function populateP()
   {
     var url = document.URL
@@ -376,10 +419,14 @@ function populateP()
 
     </div>
   </div>
+  
+  
         `
 
     roomListingDiv.innerHTML = str
+    
   })
+
 }
 
 

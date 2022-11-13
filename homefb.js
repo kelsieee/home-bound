@@ -72,7 +72,7 @@ function getAllDataOnce(main_user) {
 
             smth +=
                 `
-            <div class="col mb-3">
+            <div class="col mb-3 gx-5">
                         <div class="card h-100" style='position:relative'  id="${listId}">
                             <input type="checkbox" id="heart${listId}" onchange="passValues(this)"><label  for="heart${listId}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
@@ -118,7 +118,7 @@ function getAllDataOnce(main_user) {
         var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
 
         for (var i = 0; i < property.length; i++) {
-            console.log(property[i])
+            // console.log(property[i])
             const pInternet = property[i].internet
 
             const pTitle = property[i].title
@@ -132,7 +132,7 @@ function getAllDataOnce(main_user) {
                 url = property[i].propertyImg
             }
 
-            console.log(parseInt(pRent))
+            // console.log(parseInt(pRent))
             if ((parseInt(pRent)) < 750) {
                 var dNum = "one"
                 var dSign = "$"
@@ -155,7 +155,7 @@ function getAllDataOnce(main_user) {
                 var wifiline = `<span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi-off"></i></span>`
             }
 
-            console.log(wificlass)
+            // console.log(wificlass)
 
             str +=
                 `
@@ -199,7 +199,7 @@ function getAllDataOnce(main_user) {
         }
 
         str += "</div>"
-        console.log(propertyDiv)
+        // console.log(propertyDiv)
 
         propertyDiv.innerHTML = str
     })
@@ -301,7 +301,7 @@ function getAllDataOnce(main_user) {
                     var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
 
                     for (var i = 0; i < property.length; i++) {
-                        console.log(property[i])
+                        // console.log(property[i])
                         let isChecked2 = ""
                         for (var j = 0; j < fav.length; j++) {
                             if (fav[j] == property[i].listId) {
@@ -384,8 +384,9 @@ function getAllDataOnce(main_user) {
                         `
                     }
 
+
                     str += "</div>"
-                    console.log(propertyDiv)
+                    // console.log(propertyDiv)
 
                     propertyDiv.innerHTML = str
                 })
@@ -474,7 +475,7 @@ function getAllDataOnce(main_user) {
                     var str = `<div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">`
 
                     for (var i = 0; i < property.length; i++) {
-                        console.log(property[i])
+                        // console.log(property[i])
                         const pInternet = property[i].internet
 
                         const pTitle = property[i].title
@@ -513,8 +514,8 @@ function getAllDataOnce(main_user) {
                             var wifiline = `<span class="badge bg-warning text-dark m-1"><i class="bi bi-wifi-off"></i></span>`
                         }
 
-                        console.log(dNum)
-                        console.log(wificlass)
+                        // console.log(dNum)
+                        // console.log(wificlass)
 
                         str +=
                             `
@@ -558,7 +559,7 @@ function getAllDataOnce(main_user) {
                     }
 
                     str += "</div>"
-                    console.log(propertyDiv)
+                    // console.log(propertyDiv)
 
                     propertyDiv.innerHTML = str
                 })
