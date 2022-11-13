@@ -130,7 +130,8 @@ if (signUp != null) {
                     set(ref(database, 'users/' + user.uid), {
                         username: username,
                         dob: dob,
-                        email: email
+                        email: email,
+                        uid: user.uid
                     })
 
                     // alert('Succesfully Registered!')
