@@ -21,8 +21,6 @@
 
 # Installation
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <br>
 
 1. Install MAMP/WAMP/XAMP on your machine using the links below.
