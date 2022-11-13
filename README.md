@@ -21,8 +21,6 @@
 
 # Installation
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <br>
 
 1. Install MAMP/WAMP/XAMP on your machine using the links below.
@@ -45,6 +43,17 @@
   ```
   npm install -g git
   ```
+
+3. Clone the Home:Bound repository.
+  ```sh
+   git clone https://github.com/kelsieee/home-bound.git
+   ```
+
+4. Launch MAMP.
+
+5. Launch Github Desktop and open the Home:Bound repository.
+
+6. Launch newlanding.html and you're good to go!
 
 <br>
 
