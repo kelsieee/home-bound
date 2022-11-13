@@ -141,6 +141,142 @@ onAuthStateChanged(auth, (user) => {
              }, 2000);
             // alert("Loading...")
         }
+      
+        else{
+          
+          if (title == ''){
+            document.getElementById("listing_error").innerHTML = `
+            <input type="text" class="form-control bg-light mx-auto is-invalid" style="border-radius: 10px;" id="title" rows="1"
+            placeholder="Enter listing title.">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                Please enter your listing title.
+            </div>`
+        }
+
+        if (address == ''){
+          document.getElementById("address_error").innerHTML = `
+          <input type="text" class="form-control bg-light mx-auto is-invalid" style="border-radius: 10px;" id="address" rows="1"
+          placeholder="Enter address.">
+          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+              Please enter a valid address.
+          </div>`
+        }
+
+        if (bedroomquantity == 'Choose quantity'){
+          document.getElementById("bedroom_error").innerHTML = `
+            <select class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110) ; border-radius: 10px;"
+            aria-label="Default select example" id="bedroomquantity">
+            <option selected>Choose quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please select number of bedroom. 
+              </div>`
+        }
+
+        if (bathroomquantity == 'Choose quantity'){
+          document.getElementById("bathroom_error").innerHTML = `
+              <select class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110); border-radius: 10px;"
+              aria-label="Default select example" id="bathroomquantity">
+              <option selected>Choose quantity</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              </select>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please select number of bathrooms. 
+              </div>`
+        }
+
+        if (rent == ''){
+          document.getElementById("rent_error").innerHTML = `
+          <input type="number" class="form-control bg-light is-invalid" id="rent" style="border-radius: 10px;"
+          rows="1" placeholder=$>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+              Please enter your desired rent.
+          </div>`
+        }
+
+        if (deposit == ''){
+          document.getElementById("deposit_error").innerHTML = `
+          <input type="number" id="deposit" class="form-control bg-light is-invalid"
+          style="border-radius: 10px;" rows="1" placeholder=$>
+          <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+              Please enter the required deposit.
+          </div>`
+        }
+        
+        if (property == 'Choose property type'){
+          document.getElementById("property_error").innerHTML = `
+          <select id="property" class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110) ;"
+          aria-label="Default select example">
+          <option selected>Choose property type</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Room">Room</option>
+        </select>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please select property type. 
+              </div>`
+        }
+
+        if (gender == 'Choose preferred gender'){
+          document.getElementById("gender_error").innerHTML = `
+          <select id="gender" class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110) ;"
+          aria-label="Default select example">
+          <option selected>Choose preferred gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Any">Any</option>
+        </select>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please select your preferred gender.
+              </div>`
+        }
+
+        if (date == ''){
+          document.getElementById("date_error").innerHTML = `
+              <input type="date" class="form-control form-control-lg bg-light h-75 is-invalid" style=" border-radius: 10px;"
+              id="movedate" required>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please enter a valid date.
+              </div>`
+        }
+
+        if (duration == 'Choose stay duration'){
+          document.getElementById("duration_error").innerHTML = `
+          <select id="duration" class="form-select bg-light is-invalid" style="color:rgb(110, 110, 110) ;"
+          aria-label="Default select example">
+          <option selected>Choose stay duration</option>
+          <option value="1-3">1-3 months</option>
+          <option value="3-6">3-6 months</option>
+          <option value="6-12">6-12 months</option>
+          <option value=">>12">>12 months</option>
+        </select>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please select the allowed stay duration.
+              </div>`
+        }
+
+        if (place == ''){
+          document.getElementById("place_error").innerHTML = `
+          <textarea id="place" class="form-control bg-light mt-2 is-invalid" style="border-radius: 10px;" rows="5"
+            placeholder="Share more about your place here."></textarea>
+              <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
+                  Please enter information about the place.
+              </div>`
+        }
+
+      
+
+
+
+        }
     
     }
 
