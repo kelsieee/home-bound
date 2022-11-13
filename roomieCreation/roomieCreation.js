@@ -278,8 +278,19 @@ function createRoomie(user) {
                 })
         
                 // alert('roomie listed')
+              
+
                 console.log("listed")
                 uploadProfileImage(user)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Roomie successfully listed',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                
+                  
                 setTimeout(function(){
                     window.location.href = "../home.html#project-area";
                  }, 2000);
