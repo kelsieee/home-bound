@@ -35,13 +35,9 @@
 4. Clone the Home:Bound repository.
   ```sh
    git clone https://github.com/kelsieee/home-bound.git
-   ```
+  ```
 
-5. Launch MAMP.
-
-6. Launch Github Desktop and open the Home:Bound repository.
-
-7. Launch <strong>newlanding.html</strong> and you're good to go! Find it using this path:
+5. Launch <strong>newlanding.html</strong> and you're good to go! Find it using this path:
   ```
   C:\\..\GitHub\home-bound\newlanding.html 
   ```
