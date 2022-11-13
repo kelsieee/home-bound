@@ -107,13 +107,11 @@ onAuthStateChanged(auth, (user) => {
               </div>`
               error = true;
         }
-
+        var ToDate = new Date();
         if (new Date(date).getTime() <= ToDate.getTime()) {
           document.getElementById("date_error").innerHTML = `
-          <div id="date_error">
               <input type="date" class="form-control form-control-lg bg-light h-75 is-invalid" style=" border-radius: 10px;"
               id="date" required>
-          </div>
           <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
               Please enter a future date.
           </div>`
@@ -130,7 +128,7 @@ onAuthStateChanged(auth, (user) => {
     }
 
   
-        
+      if(!error) {
           let id = GenerateId()
         set(ref(database, 'property/' + id), {
           title: title,
@@ -175,6 +173,7 @@ onAuthStateChanged(auth, (user) => {
           window.location.href = "../home.html#project-area";
         }, 2000);
         // alert("Loading...")
+        }
       }
 
       else {
