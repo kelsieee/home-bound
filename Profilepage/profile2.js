@@ -73,17 +73,17 @@ function populateInfo(){
 
         var str = 
         `
-        <div class="container-fluid mx-auto w-75 align-items-center mt-5">
-        <div class="row">
+        <div class="container-fluid mx-auto w-50 align-items-center mt-5">
+        <div class="row mb-5">
     
-          <div class="col-lg-6 mt-5 justify-content-center mx-auto">
+          <div class="col mt-5 d-flex justify-content-center">
             <div></div>
             <label for="photo">
-              <img id='preview' src="profile.png" class="img-fluid mb-4" alt="pic" style="border-radius:10px ; max-width:350px"; width:100% />
+              <img id='preview' src="profile_graphics.png" class="img-fluid mb-4" style="border-radius:10px ; max-width:300px"; width:100% />
             </label>
           </div>
     
-          <div class="col-lg-6 mt-4 justify-content-center mx-auto">
+          <div class="col mt-4 d-flex justify-content-center">
             <div style="overflow-x:auto;">
               <table class="mx-auto text-center ">
                 <th colspan="2">
