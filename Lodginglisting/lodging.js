@@ -83,8 +83,8 @@ onAuthStateChanged(auth, (user) => {
       const gender = document.getElementById("gender").value
 
       if(gender != ""){
-        const female = document.getElementById('female').checked;
-        const male = document.getElementById('male').checked;
+        let female = document.getElementById('female').checked;
+        let male = document.getElementById('male').checked;
 
         var gender_type = ""
         if (female == true) {
