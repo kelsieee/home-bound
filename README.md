@@ -23,37 +23,24 @@
 
 <br>
 
-1. Install MAMP/WAMP/XAMP on your machine using the links below.
-    * MAMP: 
-      ```
-      $ npm install -g mamp
-      ```
+1. Download and install <a href="https://nodejs.org/en/download/">Node JS</a>.
 
-    * WAMP: 
-      ```
-      npm install -g wamp
-      ```
+2. Download and install <a href="https://desktop.github.com/">Github Desktop</a>.
 
-    * XAMP:
-      ```
-      npm install -g xampp-windows-cli
-      ```
-
-2. Download and install Github Desktop.
+3. Download and install git.
   ```
   npm install -g git
   ```
 
-3. Clone the Home:Bound repository.
+4. Clone the Home:Bound repository.
   ```sh
    git clone https://github.com/kelsieee/home-bound.git
-   ```
+  ```
 
-4. Launch MAMP.
-
-5. Launch Github Desktop and open the Home:Bound repository.
-
-6. Launch newlanding.html and you're good to go!
+5. Launch <strong>newlanding.html</strong> and you're good to go! Find it using this path:
+  ```
+  C:\\..\GitHub\home-bound\newlanding.html 
+  ```
 
 <br>
 
@@ -63,6 +50,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to do anything! Just visit this <a href="https://home-bound.vercel.app/newlanding.html">link</a>.
+You don't have to do anything! Just visit this <a href="https://home-bound.vercel.app/newlanding.html">link</a> for our <strong>live website</strong>!
 
 <br><br>
