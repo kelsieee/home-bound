@@ -26,7 +26,7 @@ if (signUp != null) {
         // else {
         //     type = "Landlord";
         // }
-
+ 
         var dob_array = dob.split('-');
         var day = dob_array[2]
         var month = dob_array[1]
@@ -177,7 +177,7 @@ if (signUp != null) {
                 document.getElementById("username_error").innerHTML = `
                 <div class="input-group mb-4 h-75">
                     <i class="bi bi-person-fill"></i>
-                        <input type="username" class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;" id="validationServerUsername" 
+                        <input type="username" class="input-field form-control-lg bg-light is-invalid" style="border-radius: 10px;" id="username" 
                         placeholder="Name" required>
                         <div id="validationServerUsernameFeedback" class="invalid-feedback" style="font-family: Montserrat, sans-serif;">
                         Please choose a name.

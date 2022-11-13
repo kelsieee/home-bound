@@ -148,38 +148,49 @@
             <h3 class="fw-semibold mb-3">Personal Details</h3>
           </th>
           <tr>
-            <td><h6 class="p-2 text-align-left">First Name</h6></td>
-            <td><input type="text" class="form-control form-control-lg bg-light h-75"
-              style="border-radius: 10px;" id="firstname" required>
-            </td>
+            
+              <td><h6 class="p-2 text-align-left">First Name</h6></td>
+              <td>
+                <div id="firstname_error">
+                  <input type="text" class="form-control form-control-lg bg-light h-75"
+                  style="border-radius: 10px;" id="firstname" required>
+                </div>
+              </td>
+            
           </tr>
 
           <tr>
             <td><h6 class="p-2" >Last Name</h6></td>
             <td>
-              <input type="text" class="form-control form-control-lg bg-light h-75"
-              style="border-radius: 10px;" id="lastname" required>
+              <div id="lastname_error">
+                <input type="text" class="form-control form-control-lg bg-light h-75"
+                style="border-radius: 10px;" id="lastname" required>
+              </div>
             </td>
           </tr>
 
           <tr>
             <td><h6 class="p-2">Age</h6></td>
             <td>
-              <input type="number" class="form-control form-control-lg bg-light h-75 "
-              style="border-radius: 10px;" id="age" required>
+              <div id="age_error">
+                <input type="number" class="form-control form-control-lg bg-light h-75 "
+                style="border-radius: 10px;" id="age" required>
+              </div>
             </td>
           </tr>
 
           <tr>
             <td><h6 class="p-2">Gender</h6></td>
             <td>
-              <div class="form-check px-4">
-                <input class="form-check-input"  type="radio" value="Female" name="gender">
-                Female
-              </div>
-              <div class="form-check px-4" >
-                <input class="form-check-input"  type="radio" value="Male" name="gender">
-                Male
+              <div id="gender_error">
+                <div class="form-check px-4">
+                  <input class="form-check-input"  type="radio" value="Female" name="gender" id="female">
+                  Female
+                </div>
+                <div class="form-check px-4" >
+                  <input class="form-check-input"  type="radio" value="Male" name="gender" id="male">
+                  Male
+                </div>
               </div>
             </td>
           </tr>
@@ -200,31 +211,37 @@
               </h6>
             </td>
             <td>
-              <input type="number" id="budget" class="form-control form-control-lg bg-light" style="border-radius: 10px;"
-                placeholder=$>
+              <div id="budget_error">
+                <input type="number" id="budget" class="form-control form-control-lg bg-light" style="border-radius: 10px;"
+                  placeholder=$ required>
+              </div>
             </td>
           </tr>
 
           <tr>
             <td>
-              <h6 class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill me-2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                </svg>
-                No. of Rooms
-              </h6>
+
+                <h6 class="p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill me-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                  </svg>
+                  No. of Rooms
+                </h6>
+              </div>
             </td>
             <td>
-              <select class="form-select form-select-lg bg-light h-100 mb-0" style=" border-radius: 10px;"
-                aria-label="Default select example" id="rooms">
-                <option selected>No. of Rooms</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <div id="rooms_error">
+                <select class="form-select form-select-lg bg-light h-100 mb-0" style=" border-radius: 10px;"
+                  aria-label="Default select example" id="rooms" required>
+                  <option selected>No. of Rooms</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
             </td>
           </tr>
 
@@ -238,29 +255,31 @@
               </h6>
             </td>
             <td>
-                <div>
-                  <input type="checkbox" id="north" name="location" value="North">
-                  <label for="north">North</label>
-                </div>
-            
-                <div>
-                  <input type="checkbox" id="south" name="location" value="South" >
-                  <label for="south">South</label>
-                </div>
+                <div id="location_error">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="north" name="location" value="North">
+                    <label class="form-check-label" for="north">North</label>
+                  </div>
+              
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="south" name="location" value="South" >
+                    <label class="form-check-label" for="south">South</label>
+                  </div>
 
-                <div>
-                  <input type="checkbox" id="central" name="location" value="Central">
-                  <label for="central">Central</label>
-                </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="central" name="location" value="Central">
+                    <label class="form-check-label" for="central">Central</label>
+                  </div>
 
-                <div>
-                  <input type="checkbox" id="east" name="location" value="East">
-                  <label for="east">East</label>
-                </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="east" name="location" value="East">
+                    <label class="form-check-label" for="east">East</label>
+                  </div>
 
-                <div>
-                  <input type="checkbox" id="west" name="location" value="West">
-                  <label for="west">West</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="west" name="location" value="West">
+                    <label class="form-check-label" for="west">West</label>
+                  </div>
                 </div>
             </td>
           </tr>
@@ -275,8 +294,10 @@
               </h6>
             </td>
             <td>
-              <input type="date" class="form-control form-control-lg bg-light h-75" style=" border-radius: 10px;"
-              id="movedate" required>
+              <div id="date_error">
+                <input type="date" class="form-control form-control-lg bg-light h-75" style=" border-radius: 10px;"
+                id="movedate" required>
+              </div>
             </td>
           </tr>
 
@@ -290,8 +311,10 @@
               </h6>
             </td>
             <td>
-              <input type="number" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px;"
-                id="duration" required> 
+              <div id="duration_error">
+                <input type="number" class="form-control form-control-lg bg-light h-75" style="border-radius: 10px;"
+                  id="duration" required> 
+              </div>
            </td>
           </tr>
         </table>
@@ -305,8 +328,10 @@
         Introduction</h3>
       <div class="p-2">
         <div>
-          <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5"
-            placeholder="You can talk about yourself here."></textarea>
+          <div id="intro_error">
+            <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="intro" rows="5"
+              placeholder="You can talk about yourself here." required></textarea>
+          </div>
         </div>
       </div>
     </div>
@@ -316,8 +341,10 @@
         Your hobbies</h3>
       <div class="p-2">
         <div>
-          <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5"
-            placeholder="Share more about your hobbies here."></textarea>
+          <div id="hobby_error">
+            <textarea class="form-control bg-light mt-2" style="border-radius: 10px;" id="hobbies" rows="5"
+              placeholder="Share more about your hobbies here." required></textarea>
+          </div>
         </div>
       </div>
     </div>
@@ -329,24 +356,30 @@
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
             </svg> -->
-        <input type="number" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
-          placeholder="Enter phone number.">
+        <div id="phone_error">
+          <input type="number" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="phone" rows="1"
+            placeholder="Enter phone number." required>
+        </div>
       </div>
   
       <div class="p-2">
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
             </svg> -->
-        <input type="email" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
-          placeholder="Enter email.">
+        <div id="email_error">
+          <input type="email" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="email" rows="1"
+            placeholder="Enter email." required>
+        </div>
       </div>
   
       <div class="p-2">
         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
             </svg> -->
-        <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
-          placeholder="Enter Telegram handle.">
+        <div id="tele_error">
+          <input type="text" class="form-control bg-light ps-3 mt-2" style="border-radius: 10px;" id="tele" rows="1"
+            placeholder="Enter Telegram handle." required>
+        </div>
       </div>
     </div>
         
@@ -361,7 +394,7 @@
   </div>
 </div>
 
-<footer id="footer" class="footer bg-overlay">
+<footer id="footer" class="footer mb-5 pb-5 bg-overlay">
   <div class="container pb-4">
       <div class="row justify-content-between">
               <h4 class="pt-5 ps-4" style="color:#dbe6da">About Us</h4>
