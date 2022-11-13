@@ -73,46 +73,44 @@ function populateInfo(){
 
         var str = 
         `
-        <div class="container-fluid mx-auto w-50 align-items-center mt-5">
-        <div class="row mb-5">
-    
-          <div class="col mt-5 d-flex justify-content-center">
-            <div></div>
+        <div class="d-flex justify-content-center row mt-5 mb-4">
+
+        <div class="col-md-auto d-flex justify-content-center">
+          <div></div>
             <label for="photo">
               <img id='preview' src="profile_graphics.png" class="img-fluid mb-4" style="border-radius:10px ; max-width:300px"; width:100% />
             </label>
           </div>
-    
-          <div class="col mt-4 d-flex justify-content-center">
+
+          <div class="col-md-auto">
             <div style="overflow-x:auto;">
-              <table class="mx-auto text-center ">
+              <table class="mx-auto text-center">
                 <th colspan="2">
                   <h3 class="fw-semibold mb-3 ">Personal Details</h3>
                 </th>
                 <tr>
                   <td><h6 class="p-2">Name</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px;font-size: small">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px;font-size: small; text-align: start;">
                   ${name}
                   </td>
                 </tr>
-    
+
                 <tr>
                   <td><h6 class="p-2">Birthday</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px; font-size: small; ">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px; border-radius: 10px; font-size: small; text-align: start;">
                     ${day}/${month}/${year}
                   </td>
                 </tr>
-    
+
                 <tr>
                   <td><h6 class="p-2">Email</h6></td>
-                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px;  border-radius: 10px;font-size: small;">
+                  <td style="background-color:#dbe6da; padding-left: 10px; padding-right: 10px;  border-radius: 10px;font-size: small; text-align: start;">
                     ${email}
                   </td>
                 </tr>
               </table>
             </div>
           </div>
-        </div>
       </div>
         `
 
