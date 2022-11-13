@@ -42,7 +42,7 @@ onAuthStateChanged(auth, (user) => {
             Swal.fire({
               title: 'We are sorry...',
               html: 'Restricted access for students only.<br><br>Redirecting in <b></b> milliseconds.',
-              timer: 3000,
+              timer: 2500,
               timerProgressBar: true,
               didOpen: () => {
                 Swal.showLoading()
@@ -62,7 +62,7 @@ onAuthStateChanged(auth, (user) => {
             })
             setTimeout(function(){
                 window.location.href = "../home.html"
-             }, 3000);
+             }, 2500);
         }
         })
       // User is signed in, see docs for a list of available properties
@@ -76,7 +76,7 @@ onAuthStateChanged(auth, (user) => {
     //   window.location.href = "../register,login/login.html"
       let timerInterval
       Swal.fire({
-        title: 'Login as a Student To List',
+        title: 'Login To List',
         html: 'Redirecting in <b></b> milliseconds.',
         timer: 1500,
         timerProgressBar: true,
