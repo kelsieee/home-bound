@@ -23,7 +23,7 @@ onAuthStateChanged(auth, (user) => {
             users.push(childSnapshot.val())
         });
 
-        console.log(users)
+        // console.log(users)
         for(var i=0; i<users.length; i++){
             if(users[i].uid==uid){
                 index = i
