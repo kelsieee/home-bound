@@ -177,7 +177,6 @@ onAuthStateChanged(auth, (user) => {
       }
 
       else {
-        console.log(deposit)
         if (title == '') {
           document.getElementById("listing_error").innerHTML = `
             <input type="text" class="form-control bg-light mx-auto is-invalid" style="border-radius: 10px;" id="title" rows="1"

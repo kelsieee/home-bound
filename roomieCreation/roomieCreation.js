@@ -371,7 +371,6 @@ function createRoomie(user) {
                 </div>`
         }
         if (locations.length == 0){
-            console.log("hi")
             document.getElementById("location_error").innerHTML = `
                   <div class="form-check">
                     <input class="form-check-input is-invalid" type="checkbox" id="north" name="location" value="North">
