@@ -46,6 +46,17 @@
   npm install -g git
   ```
 
+3. Install the Home:Bound repository.
+  ```
+  gh repo clone kelsieee/home-bound
+  ```
+
+4. Launch MAMP.
+
+5. Launch Github Desktop and open the Home:Bound repository.
+
+6. Launch newlanding.html and you're good to go!
+
 <br>
 
 <a id="running"></a>
