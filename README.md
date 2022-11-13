@@ -46,10 +46,10 @@
   npm install -g git
   ```
 
-3. Install the Home:Bound repository.
-  ```
-  gh repo clone kelsieee/home-bound
-  ```
+3. Clone the Home:Bound repository.
+  ```sh
+   git clone https://github.com/kelsieee/home-bound.git
+   ```
 
 4. Launch MAMP.
 
