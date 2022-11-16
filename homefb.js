@@ -77,7 +77,7 @@ function getAllDataOnce(main_user) {
                             <input type="checkbox" id="heart${listId}" onchange="passValues(this)"><label  for="heart${listId}" >&#9829</label></input>
                             <img class="img-fluid card-img-top" style="object-fit:cover; height:200px" src=${url} alt="project-img">
                             <div class="card-body">
-                                <a href="/roomieListing/roomieListing.html?listId=${listId}" id = "${listId}">
+                                <a href="/roomielisting/roomieListing.html?listId=${listId}" id = "${listId}">
                                     <h5 class="card-title text-success fw-bolder">${rName}, ${rAge}</h5>
                                 </a>
                                 <div class="card-text d-flex pb-2">
